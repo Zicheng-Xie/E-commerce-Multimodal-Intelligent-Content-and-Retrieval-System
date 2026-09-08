@@ -1,8 +1,7 @@
 # E-commerce Multimodal Intelligent Content and Retrieval System
 
 ## Overview
-An AI project for e-commerce content generation, multimodal product retrieval,
-and fine-grained fashion understanding.
+An AI project for e-commerce content generation, multimodal product retrieval, and fine-grained fashion understanding.
 
 ## Current Stage
 Phase 1: Business Research and Technical Solution Design

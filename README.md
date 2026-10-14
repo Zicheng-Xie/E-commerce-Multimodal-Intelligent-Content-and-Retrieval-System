@@ -18,77 +18,173 @@ Phase 1: Business Research and Technical Solution Design
 - scripts/: utility scripts
 - configs/: model and experiment configurations
 
-## 多模态商品检索基线
+## 商品内容智能生成子系统
 
-基于本地 Qwen3-VL-Embedding-2B 模型与 FAISS，实现中文文本搜商品
-和图片搜商品。当前图库只编码商品图片，商品标题、类别用于展示，
-尚未参与向量匹配或综合排序。
+### 功能与算法
 
-### 环境与资源
+使用 Qwen3.5-4B 预训练生成模型，结合商品属性解析、
+品类知识规则和提示词约束，生成三类简体中文电商内容：
 
-已验证环境：
-- Python 3.11.7
+- 商品标题：呈现商品类型、品牌型号和关键特征。
+- 详情文案：连贯介绍商品属性、设计及已知功能。
+- 核心卖点：提炼商品主要特征。
+
+支持3C数码、服饰穿搭、家居日用品类的表达风格适配。
+服饰商品还支持从已有属性中提取结构化标签。
+
+处理流程：
+
+官方格式商品数据 → 属性解析与事实整理 → 品类提示词构建
+→ 模型生成 → 格式、事实和属性覆盖检查 → 必要时局部修复
+→ 保存文案及评测文件
+
+当前实现属于“预训练模型推理 + 规则约束”，未进行专门的模型微调。
+服饰标签来自商品属性映射，不是图像识别结果。
+
+### 输入格式
+
+保持官方数据集格式：顶层以商品ID为键，每个商品包含
+title、label、pv、url、video字段。
+
+```json
+{
+  "demo_001": {
+    "title": "示例直筒休闲裤",
+    "label": "休闲裤",
+    "pv": "品牌#:#示例品牌#;#服装版型#:#直筒#;#裤长#:#长裤#;#材质成分#:#聚酯纤维65% 棉35%",
+    "url": "",
+    "video": ""
+  }
+}
+```
+
+pv使用 `#:#` 分隔属性名与属性值，使用 `#;#` 分隔属性项。
+本子系统主要使用文本属性，url和video保留在输入中，
+不代表当前生成流程已经使用图片或视频。
+
+### 输出格式
+
+每条商品保存为独立JSON文件。生成文案位于其中的result字段：
+
+```json
+{
+  "title": "示例品牌直筒休闲长裤",
+  "description": "这款休闲裤采用直筒版型，面料由65%聚酯纤维与35%棉混纺而成，裤长为长裤。",
+  "selling_points": [
+    "直筒版型，呈现直线裤腿轮廓",
+    "65%聚酯纤维与35%棉混纺",
+    "长裤款式"
+  ]
+}
+```
+
+以上为格式示例，不是模型效果评测结果。
+
+结果目录：
+
+```text
+outputs/copywriting_v3/<运行时间>/
+├── records/          # 每条商品的文案、输入、校验结果和生成耗时
+├── manifest.json     # 本次样本与生成配置
+├── loading.json      # 模型加载时间与设备信息
+├── review.json       # 待填写的质量评分
+└── summary.json      # 汇总与验收状态
+```
+
+records中的generation_seconds为该条文案的生成耗时，
+包含修复重试，不包含模型加载时间。
+attempts记录每次生成的耗时与输出token数量。
+
+### 环境准备
+
+已验证的本地环境：
+
+- Python 3.11
 - PyTorch 2.9.1+cu128
-- Transformers 4.57.6
-- NVIDIA RTX 4060 Laptop GPU，8GB 显存
+- Transformers 5.3.0
+- Accelerate 1.15.0
+- BitsAndBytes 0.50.2
+- NVIDIA RTX 4060 Laptop GPU，8GB显存
 
-其他依赖包括 numpy、faiss、Pillow、ijson、qwen-vl-utils，
-具体版本见 requirements-retrieval.txt。
+生成和检索建议使用不同虚拟环境，避免依赖版本冲突。
 
-需要准备：
-- 模型目录：models/Qwen3-VL-Embedding-2B/
-- 模型辅助代码：模型目录下 scripts/qwen3_vl_embedding.py
-- 官方数据：data/ecommerce_multimodal/product1m_product5m_test_id_label.json
+在项目根目录创建生成环境：
 
-数据准备需要联网下载图片；建库和查询使用本地模型与图片，
-需要可用的 CUDA 环境。
+```powershell
+py -3.11 -m venv .venv-generation
+.\.venv-generation\Scripts\python.exe -m pip install --upgrade pip
+.\.venv-generation\Scripts\python.exe -m pip install torch==2.9.1 --index-url https://download.pytorch.org/whl/cu128
+.\.venv-generation\Scripts\python.exe -m pip install transformers==5.3.0 accelerate==1.15.0 bitsandbytes==0.50.2
+```
 
-### 运行方法
+将Qwen3.5-4B模型文件放入：
 
-以下命令均在项目根目录、检索 Python 环境中执行。
+```text
+models/Qwen3.5-4B/
+```
 
-安装依赖：
+模型目录需要包含config.json、模型权重和tokenizer相关文件。
+模型权重不包含在本仓库中，需另行获取。
 
-    python -m pip install -r requirements-retrieval.txt
+### 使用方法
 
-准备100个商品：
+以下命令均在项目根目录执行。
+输入文件示例路径为 `data/test data/raw_samples.json`，
+也可以通过--samples指定其他官方格式JSON文件。
 
-    python scripts/multimodal_retrieval.py prepare --limit 100
+1. 检查输入，不加载模型：
 
-构建索引：
+```powershell
+.\.venv-generation\Scripts\python.exe .\scripts\test_copywriting_batch.py run --samples '.\data\test data\raw_samples.json' --dry-run
+```
 
-    python scripts/multimodal_retrieval.py build
+2. 生成一条商品文案：
 
-文字查询：
+```powershell
+.\.venv-generation\Scripts\python.exe .\scripts\test_copywriting_batch.py run --samples '.\data\test data\raw_samples.json' --model-dir '.\models\Qwen3.5-4B' --quantization 4bit --compact-prompt --use-cache --max-tokens 384 --limit 1
+```
 
-    python scripts/multimodal_retrieval.py search --text "木制水果盘" --top-k 3
+3. 批量生成：
 
-图片查询：
+删除上述命令末尾的 `--limit 1`。
 
-    python scripts/multimodal_retrieval.py search --image "queries/example.jpg" --top-k 3
+4. 自定义表达风格与长度：
 
-图片查询路径相对于 data/retrieval，查询图片需先放入对应目录。
-更改商品清单或图片编码设置后，应重新构建索引。
+在生成命令后添加：
 
-### 初步评测
+```text
+--style "专业简洁" --length short
+```
 
-当前索引包含100个真实商品。
+length支持short、medium、long。
+style控制文案语气，不应作为商品本身的属性。
 
-6条文字查询、每条一个指定目标的测试结果：
-- Top-1命中率：66.7%
-- Top-3命中率：100%
+5. 断点续跑：
 
-2条图库图片自身检索均排名第一。
-自身检索仅验证编码与索引对应关系，不代表图库外图片检索效果。
+```powershell
+.\.venv-generation\Scripts\python.exe .\scripts\test_copywriting_batch.py run --resume-dir '.\outputs\copywriting_v3\<实际运行目录>' --model-dir '.\models\Qwen3.5-4B' --quantization 4bit --compact-prompt --use-cache --max-tokens 384
+```
 
-模型单次加载、分模态预热后的性能测试：
-- 文字查询平均耗时约45毫秒
-- 图片查询平均耗时约11秒
-- 上述耗时不包含模型加载、网络与界面开销
+请将 `<实际运行目录>` 替换为已生成目录名。
+断点续跑使用该目录保存的样本与配置；
+修改生成逻辑后进行对比测试，应创建新的运行目录。
 
-### 已知限制
+6. 查看全部可用参数：
 
-- 查询及相关性标注样本较少，尚未完成正式业务指标验收。
-- 图片查询尚未达到项目要求的5秒响应时间。
-- 当前采用纯图片向量召回，尚未加入标题特征、品类属性综合排序。
-- 结果以终端输出和JSON报告为主。
+```powershell
+.\.venv-generation\Scripts\python.exe .\scripts\test_copywriting_batch.py --help
+```
+
+### 评测与限制
+
+目标验收指标：
+
+- 文案相关度：≥80%。
+- 文案通顺度：≥85%。
+
+规则检查和核心属性覆盖率不能直接替代相关度、通顺度评分。
+需要逐条审核文案，填写review.json，并使用独立样本验证效果。
+
+当前尚未完成正式验收。规则检查可能存在同义表达漏判、
+数值匹配误报和无依据效果表述漏检。
+官方商品属性也可能存在缺失或冲突，因此生成内容需复核后使用。

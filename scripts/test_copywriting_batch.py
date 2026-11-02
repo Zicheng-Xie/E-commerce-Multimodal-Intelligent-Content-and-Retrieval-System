@@ -19,7 +19,7 @@ from copy import deepcopy
 from datetime import datetime
 from decimal import Decimal
 from pathlib import Path
-from typing import Any, TypedDict, cast
+from typing import Any, Literal, TypedDict, cast
 
 
 class ProductRecord(TypedDict):
@@ -814,7 +814,7 @@ def deduplicate_selling_points(
     before = result["selling_points"]
     if not all(isinstance(point, str) for point in before):
         return answer, []
-    after = []
+    after: list[str] = []
     signatures = []
     for point in before:
         signature = point_fact_signature(point, payload["facts"])
@@ -1777,11 +1777,11 @@ def copy_expression_key(text: str) -> str:
 def cross_field_repetition(result: CopywritingResult) -> list[str]:
     """定位完整复述标题或详情的卖点，不禁止必要的属性重叠。"""
     issues = []
-    references = [
-        copy_expression_key(result.get(field, ""))
-        for field in ["title", "description"]
-        if isinstance(result.get(field), str)
-    ]
+    references: list[str] = []
+    for field in ["title", "description"]:
+        value = result.get(field)
+        if isinstance(value, str):
+            references.append(copy_expression_key(value))
     points = result.get("selling_points", [])
     if not isinstance(points, list):
         return issues
@@ -2530,22 +2530,27 @@ def fact_covered(field: str, value: str, text: str) -> bool:
             value
         ) == bound_sign(text)
     if field == "接口":
-        expected = interface_tokens(value)
-        if expected:
-            return expected <= interface_tokens(text)
+        expected_interfaces = interface_tokens(value)
+        if expected_interfaces:
+            return expected_interfaces <= interface_tokens(text)
     if field == "面料成分":
-        expected = composition(value)
+        expected_composition = composition(value)
         actual = composition(text)
         return (
-            bool(expected)
-            and all((actual.get(key) == value for key, value in expected.items()))
-            if expected
+            bool(expected_composition)
+            and all(
+                (
+                    actual.get(key) == value
+                    for key, value in expected_composition.items()
+                )
+            )
+            if expected_composition
             else canonical_text(value) in canonical_text(text)
         )
     if field == "尺寸":
-        expected = parse_dimensions(value)
-        if expected:
-            return dimensions_covered(expected, parse_dimensions(text))
+        expected_dimensions = parse_dimensions(value)
+        if expected_dimensions:
+            return dimensions_covered(expected_dimensions, parse_dimensions(text))
     if field == "功能":
         aliases = {
             "支持音乐": "音乐",
@@ -2572,9 +2577,9 @@ def fact_covered(field: str, value: str, text: str) -> bool:
         normalized = re.sub(r"蓝牙(?:v)?\d+(?:\.\d+)*", "蓝牙", normalize_terms(text))
         return "蓝牙连接" in normalized
     if field == "数量":
-        expected = re.fullmatch(r"(\d+)\s*(个|件|只|条|套|支|把|双|副)", value)
-        if expected:
-            count, unit = int(expected[1]), expected[2]
+        expected_count = re.fullmatch(r"(\d+)\s*(个|件|只|条|套|支|把|双|副)", value)
+        if expected_count:
+            count, unit = int(expected_count[1]), expected_count[2]
             units = "个|件" if unit in {"个", "件"} else unit
             if re.search(r"(?<!\d)" + str(count) + r"\s*(?:" + units + ")", text):
                 return True
@@ -3024,7 +3029,7 @@ def finalize_quality_issues(
     checks: ValidationChecks, result: Any, payload: GenerationPayload
 ) -> None:
     """将兼容的字符串诊断转为分类证据记录，供统计及字段修复共同使用。"""
-    issues = []
+    issues: list[dict[str, Any]] = []
     seen = set()
 
     def add(field: str, reason: str) -> None:
@@ -3202,9 +3207,9 @@ def parallel_power_issues(text: str, facts: dict[str, str]) -> list[str]:
     """接口数量不等于多设备供电能力，泛指和量化声明使用同一范围校验。"""
     implicit_pattern = r"同时(?:为|给)?[^，,。；;！？]{0,12}(?:供电|充电)"
 
-    def requests(value: str) -> list[int | str | None]:
+    def requests(value: str) -> list[int | Literal["implicit"] | None]:
         """多设备表示至少两台，未量化的同时声明不能推导具体台数。"""
-        result: list[int | str | None] = (
+        result: list[int | Literal["implicit"] | None] = (
             [None] if re.search(r"多设备(?:同时)?(?:供电|充电)", value) else []
         )
         for match in re.finditer(
@@ -3243,7 +3248,9 @@ def parallel_power_issues(text: str, facts: dict[str, str]) -> list[str]:
         )
     ]
     supported = [count for value in support for count in requests(value)]
-    concrete = [count for count in supported if type(count) is int]
+    concrete: list[int] = [
+        cast(int, count) for count in supported if type(count) is int
+    ]
     for count in wanted:
         if count == "implicit":
             claims = re.findall(implicit_pattern, text)
@@ -3293,7 +3300,6 @@ def claim_issues(text: str, facts: dict[str, str]) -> list[str]:
         )
         if claim_scope not in evidence:
             issues.append("兼容范围无依据：" + claim_scope)
-    basis = "；".join(value for _, value in positive_evidence(facts))
     positioning = [
         value for _, value in positive_evidence(facts, {"品牌定位", "品牌介绍"})
     ]
@@ -3304,13 +3310,13 @@ def claim_issues(text: str, facts: dict[str, str]) -> list[str]:
         r"(?:适用|适配|兼容|连接|收纳).{0,3}(?:所有|各类|任意|主流)[^，。；;！？]{0,10}(?:设备|电脑|手机|电池|型号|系统)",
         text,
     ):
-        evidence = [
+        scope_evidence = [
             value
             for _, value in positive_evidence(
                 facts, {"功能", "兼容范围", "兼容设备", "适用对象", "适配电池"}
             )
         ]
-        if not any(normalize_terms(match.group()) in value for value in evidence):
+        if not any(normalize_terms(match.group()) in value for value in scope_evidence):
             issues.append("适用范围无依据：" + match.group())
     if re.search(
         r"(?:分类|分别)?(?:整理|收纳(?!盒|箱|袋|架|柜)|存放)[^，,。；;！？]{0,8}(?:不同|各种|各类|多种)规格",
@@ -3425,7 +3431,6 @@ def validate(
         )
     text = " ".join(fields.values())
     facts = payload["facts"]
-    basis = " ".join((f"{key}:{value}" for key, value in facts.items()))
     risks: list[str] = []
     model = facts.get("型号")
     if model and compact(model) not in compact(text):
@@ -3475,7 +3480,6 @@ def validate(
                 problems.append("成分比例矛盾：" + fiber)
         if expected.get("棉", Decimal(0)) != 100 and expected and ("纯棉" in part):
             problems.append("混纺不能写成纯棉")
-        capacity = facts.get("容量", "")
         parts = result["selling_points"] if field == "selling_points" else [part]
         for piece in parts:
             if isinstance(piece, str):
@@ -3889,7 +3893,7 @@ def repair_grounded_copy(
                 for key, value in payload["facts"].items()
                 if not fact_covered(key, value, base)
             }
-            chosen = []
+            chosen: list[str] = []
             rest = list(unique)
             while rest and len(chosen) < budget:
                 best = max(

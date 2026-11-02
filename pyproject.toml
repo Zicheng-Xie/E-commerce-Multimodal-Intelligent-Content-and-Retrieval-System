@@ -1,0 +1,30 @@
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.11"
+files = [
+    "scripts/test_copywriting_batch.py",
+    "tests/unit/test_copywriting_logic.py",
+]
+follow_imports = "skip"
+ignore_missing_imports = true
+warn_unused_configs = true
+
+# Model dependencies are loaded lazily. Check the application's own types without
+# requiring GPU wheels in the style-check environment.
+[tool.pylint.main]
+py-version = "3.11"
+
+[tool.pylint.messages_control]
+# Gradual adoption: errors are blocking; design/refactoring suggestions are reviewed.
+disable = ["all"]
+enable = ["E", "F"]
+
+[tool.pylint.typecheck]
+ignored-modules = ["torch", "transformers"]

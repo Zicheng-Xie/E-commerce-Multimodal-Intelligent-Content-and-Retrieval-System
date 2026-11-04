@@ -1,0 +1,143 @@
+{
+  "weekly_report": "docs/reports/20261019_20261104_双周周报.docx",
+  "period": "2026-10-19 through 2026-11-04",
+  "sources": {
+    "artifacts/module2_independent_business_blind/predictions.json": {
+      "sha256": "f480f216ce2241c48c2dbfdee589038ddbbf64cc9d59da87e0f68271830f687b",
+      "bytes": 2005955
+    },
+    "artifacts/module2_independent_business_blind/AI_blind_metrics.json": {
+      "sha256": "234a46d7d2fb2961d9e944a91bfc362abe3263849097500c90dcd28736e63b4b",
+      "bytes": 132515
+    },
+    "artifacts/module2_independent_business_blind/judgments.ai.jsonl": {
+      "sha256": "61894385d0ba13b2bb110d8464771f2ad660a7e8f1dee0ef6af3ed3f2f9c20ae",
+      "bytes": 5639727
+    },
+    "artifacts/module2_grounded_independent_blind/predictions.json": {
+      "sha256": "ea1e5516b89488bf038c41ed4f1c21e6104efb56da4b2a278e369e560c7b7660",
+      "bytes": 289145
+    },
+    "artifacts/module2_grounded_independent_blind/internal_metrics.ai.blind.json": {
+      "sha256": "04c08f5f4751a83dc911e0bf8bacdcc8a00138638404abc24d050839d599d74b",
+      "bytes": 73236
+    },
+    "artifacts/module2_grounded_independent_blind/judgments.ai.jsonl": {
+      "sha256": "d35e55debef6cb853717d48382a4c0e59d8e54e937180a131485a4c4bd833ef2",
+      "bytes": 1214094
+    },
+    "artifacts/module2_business_joint_attention/tune/predictions.json": {
+      "sha256": "ee672bc92ea3c71f4a5634181c2d73e11a3739383fe5dd736e44b925d6000c63",
+      "bytes": 1309277
+    },
+    "artifacts/module2_business_joint_attention/tune/internal_metrics.ai.development.json": {
+      "sha256": "dc86d634cc20dfdc5f62dfa3d580d3080cbdd2fb49bf5d9114b268868806f434",
+      "bytes": 92884
+    },
+    "artifacts/module2_balanced_gallery/tune/judgments.ai.jsonl": {
+      "sha256": "fe8b690152e8632d2987921cb7551f9f9820a26196c2495ed37cfab0c30eee50",
+      "bytes": 1507687
+    },
+    "artifacts/module2_business_joint_attention/regression/predictions.json": {
+      "sha256": "26753d877465e94e859f98d8441fa3ca1e91607bcc909a47bfd5d5a843829e16",
+      "bytes": 1309277
+    },
+    "artifacts/module2_business_joint_attention/regression/internal_metrics.ai.development.json": {
+      "sha256": "f8afcd6734582b4225e40cd99fb2d01f5b2076e5fefd12002deb46e233417249",
+      "bytes": 92818
+    },
+    "artifacts/module2_balanced_gallery/regression/judgments.ai.jsonl": {
+      "sha256": "9d8e736425a686dccf388ac3af7efbaa12c1b6fe9918b409cadb222fba4f6062",
+      "bytes": 1507277
+    },
+    "artifacts/module2_business_joint_attention/fresh/predictions.json": {
+      "sha256": "34473fe2d7e153a64400d6f25e8b5936f2b069e02d9ec3f297926699fc3cd5c4",
+      "bytes": 654645
+    },
+    "artifacts/module2_business_joint_attention/fresh/internal_metrics.ai.development.json": {
+      "sha256": "6ca430aeadf3ff2bde60fac6c422a504642ff6303626359340310bf482480faa",
+      "bytes": 49820
+    },
+    "artifacts/module2_balanced_gallery/fresh/judgments.ai.jsonl": {
+      "sha256": "bb94acc8c9f8533f3c3255e595da4553069372952995197e21799a1ad88dfa65",
+      "bytes": 695238
+    },
+    "artifacts/module2_role_pool_development/tune/predictions.json": {
+      "sha256": "c7fec8ea645ff161796f91d11a14db0b14866d6ed64fb686aae81de60eedc822",
+      "bytes": 1495965
+    },
+    "artifacts/module2_role_pool_development/tune/internal_metrics.ai.development.json": {
+      "sha256": "8b14502833b3dff4c66c7f3eb6d6f73af16e5764de977b1fc76dda3273dc0c29",
+      "bytes": 105170
+    },
+    "artifacts/module2_role_pool_development/regression/predictions.json": {
+      "sha256": "f0e152f2ab751f088cd4bdb14e4118e5209ff561755c405464c15929cb8fbb13",
+      "bytes": 1495965
+    },
+    "artifacts/module2_role_pool_development/regression/internal_metrics.ai.development.json": {
+      "sha256": "0b6809db9eb175f18699b9f07157d7e04fe32c2191faef6151a2eef85d107520",
+      "bytes": 105147
+    },
+    "artifacts/module2_role_pool_development/fresh/predictions.json": {
+      "sha256": "1761bd96fcff3ec84a23ae6da1d43a4787ad55d15f05a08f7e815904228e36de",
+      "bytes": 747989
+    },
+    "artifacts/module2_role_pool_development/fresh/internal_metrics.ai.development.json": {
+      "sha256": "98d53bfa8e4676b6049a2b1b832dacf774e494b08ee133b12d8744b3276b8dca",
+      "bytes": 56376
+    },
+    "artifacts/module2_grounded_subject_repair/tune/predictions.json": {
+      "sha256": "347bda079a88b475af22ea32ca2d699d6a7b05010f0a1a5d3bf5f3c1556baacb",
+      "bytes": 4115117
+    },
+    "artifacts/module2_grounded_subject_repair/tune/internal_metrics.ai.development.json": {
+      "sha256": "4ece97144c88ff1a2ac91bde6a858efa3f5281c90c5ff029c23d20580a0a65b2",
+      "bytes": 284445
+    },
+    "artifacts/module2_grounded_subject_repair/regression/predictions.json": {
+      "sha256": "7219e7a5ae54ae8783853c6a072336bf16900524e3fc01ea0a12b930dde7c2f7",
+      "bytes": 4115117
+    },
+    "artifacts/module2_grounded_subject_repair/regression/internal_metrics.ai.development.json": {
+      "sha256": "f715e2f582c97452c15c0dd499d07943177c347be9740316807c15b1bdd70cf3",
+      "bytes": 284645
+    },
+    "artifacts/module2_grounded_subject_repair/fresh/predictions.json": {
+      "sha256": "f65aa9180915aeaf212f86454bc792669fe0f7104c8c3918f7483709aa5f8871",
+      "bytes": 2057565
+    },
+    "artifacts/module2_grounded_subject_repair/fresh/internal_metrics.ai.development.json": {
+      "sha256": "042cda3e4953d8535366323518714593dc1ba0ef781499f873e9fe9d8fbc28a4",
+      "bytes": 152931
+    },
+    "docs/reports/20261019_20261104_双周周报.docx": {
+      "sha256": "9d53e1ad27ccb5da7181988f5ed5bbdcf00b7ff806460bc9ae6fe81f22f37b24",
+      "bytes": 66975
+    }
+  },
+  "transformations": [
+    "Keep every complete ranking, every query and the entire gallery; encode candidate IDs as indices and intern identical orders.",
+    "Deduplicate the same development judgment bank across methods and experiments; preserve null unchanged.",
+    "Omit raw images, titles, free-text annotation reasons, weights, caches and historical source snapshots.",
+    "The interval evaluator expects review_origin=model. The loader uses that generic AI origin and retains each original AI reviewer string in original_review_origins; human_labels stays zero.",
+    "Metric replay verifies arithmetic from frozen outputs; it does not rerun backbones, demonstrate new heldout performance or certify subjective AI judgments.",
+    "Deterministic gzip compression stores only one compact evidence artifact."
+  ],
+  "ranking_counts": {
+    "blind_300": 180,
+    "blind_96": 96,
+    "joint_tune": 112,
+    "joint_regression": 112,
+    "joint_fresh": 56,
+    "role_pool_tune": 128,
+    "role_pool_regression": 128,
+    "role_pool_fresh": 64,
+    "grounded_tune": 352,
+    "grounded_regression": 352,
+    "grounded_fresh": 176
+  },
+  "unique_order_arrays": 899,
+  "artifact_sha256": "c79e3f8a60d3f1a4117888248adc9b50b1cf98305a7984fbabeaf1f2a86257ce",
+  "uncompressed_artifact_sha256": "b69951a206f89b7799237a5035b6601ff3f6deedb36e0c7876c22330845a9da5",
+  "artifact_encoding": "gzip compressed UTF-8 JSON; deterministic mtime=0"
+}

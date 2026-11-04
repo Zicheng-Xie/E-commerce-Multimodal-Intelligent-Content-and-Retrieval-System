@@ -1,0 +1,17 @@
+{
+  "version": "p60_required_r85_preferred_v1",
+  "user_instruction": "Precision@10必须≥60%，Recall@10尽量≥85%",
+  "scope": "module2_pdf_product_business_relevance",
+  "k": 10,
+  "precision_at_10_required": 0.6,
+  "recall_at_10_preferred": 0.85,
+  "recall_preferred_is_mandatory": false,
+  "report_scopes": ["all", "text", "image"],
+  "nonregression_baselines": ["global", "region_title"],
+  "nonregression_metrics": ["recall@10", "ap", "ndcg@10", "mrr", "hit@1"],
+  "relevance_definition_unchanged": true,
+  "fixed_top10_denominator": true,
+  "independent_heldout_acceptance_required": true,
+  "historical_70_percent_recall_protocol_is_retained_for_replay_only": true,
+  "historical_contract": "artifacts/module2_business_review/confirmed_target_contract.json"
+}

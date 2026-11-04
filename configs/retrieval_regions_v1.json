@@ -1,0 +1,16 @@
+{
+  "version": "module2-regions-v1",
+  "foreground_threshold": 35,
+  "foreground_min_fraction": 0.04,
+  "foreground_max_fraction": 0.85,
+  "roi_padding": 0.08,
+  "center_fraction": 0.8,
+  "tile_fraction": 0.65,
+  "zoom_max_edge": 768,
+  "max_views": 7,
+  "attention_temperature": 0.07,
+  "global_weight": 0.6,
+  "text_weight": 0.2,
+  "category_bonus": 0.03,
+  "attribute_bonus": 0.05
+}

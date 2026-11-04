@@ -1,0 +1,769 @@
+{
+  "source_baseline": "local coding-standard source release 2026-11-04; original full workspace 341 tests passed",
+  "packaged_tests": "101 passed in 0.62s",
+  "scope": "module2-dev only; selected source, tests and explicitly authorized compact AI evidence",
+  "curation_notes": [
+    "No generated-copy method, module-one entrypoint, virtual environments, images, weights, vectors, caches, failed-run folders or historical source snapshots.",
+    "pair_identity.py and gpu_admission.py contain exact shared functions extracted from their old orchestration modules.",
+    "The paired regression test uses the canonical querywise evaluator and preserves all behavioral assertions.",
+    "Model paths are portable relative .models directories; frozen historical receipts are not rewritten."
+  ],
+  "files": [
+    {
+      "path": ".flake8",
+      "packaged_sha256": "d31419b4d8e58dd58cd6d412d03495d5da1cc5cf2fae07400d373c8077756d80",
+      "original_sha256": "d31419b4d8e58dd58cd6d412d03495d5da1cc5cf2fae07400d373c8077756d80",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": ".github/workflows/module2-quality.yml",
+      "packaged_sha256": "a6b3a1a40d2ba01b3345229d026a2ecfd6ebcee66157fa4fa4fdd092c3d60299",
+      "original_sha256": null,
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": ".gitignore",
+      "packaged_sha256": "3146d11f167ef5f0bc784202dcb4615d63a5b0b27a1221c7720a0d5d9cf8f8ad",
+      "original_sha256": "a888c4f149647a45756ebd02b2410206e008ea2493d7ac1acf2a7b65d78d26e6",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "README.md",
+      "packaged_sha256": "17aa0818edeb88b13faa6ec70274daae29006f418a9bf4f08324ea6ace9ef318",
+      "original_sha256": "de86f88e04c6a615e174cf3be4e2464ac2064161bbead4353694a7bb206e4db9",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "assets/resident_retrieval.html",
+      "packaged_sha256": "e2b57a8e4a461966d29c29c9f08498ddb1ea83fa834841c4baa1936234bd01a2",
+      "original_sha256": "e2b57a8e4a461966d29c29c9f08498ddb1ea83fa834841c4baa1936234bd01a2",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "configs/coding_standard_policy.json",
+      "packaged_sha256": "6b2d4cf4cd7d6bba6a8ea20bdf291c715f6f3521447c91ab0b134b5da7d29aac",
+      "original_sha256": "6b2d4cf4cd7d6bba6a8ea20bdf291c715f6f3521447c91ab0b134b5da7d29aac",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "configs/dino_model.json",
+      "packaged_sha256": "20e4d57f496bcf7a0642253089a9e77c086650b37ac6e66ea1fadf7657aef646",
+      "original_sha256": "37eedf2173f30767ad091d6d8d9cee242472af776f3bbbc32b5db9531c7449a5",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "configs/embedding_model.json",
+      "packaged_sha256": "82db1c876ba19538fe64c753b9f3817c19acdd9c6c62bc1212ff035f041e233c",
+      "original_sha256": "4b394483a04ee17a4da0af887d4c665a97e4270e3e0e227f377c43444bfcb5c7",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "configs/module2_current_target.json",
+      "packaged_sha256": "d2f102c76f8949966800f93bb41a3eb1e4fe722c239935d536a37eb29b110574",
+      "original_sha256": "d2f102c76f8949966800f93bb41a3eb1e4fe722c239935d536a37eb29b110574",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "configs/reranker_model.json",
+      "packaged_sha256": "f2d58ddc995ca19ed9ef4cc7179a4c64025290da1033a5c09c3b6dbd501811f3",
+      "original_sha256": "5060159395dc99fbda40e77365419f37671f055b48937f80fa45891a9d224607",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "configs/retrieval_attributes_example.json",
+      "packaged_sha256": "73b49de76e99d7b7d02de767fe0161e35c77a6f5483cbf8a7847a5e66c8e5c57",
+      "original_sha256": "73b49de76e99d7b7d02de767fe0161e35c77a6f5483cbf8a7847a5e66c8e5c57",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "configs/retrieval_regions_v1.json",
+      "packaged_sha256": "bb5b634de441e5ad1091fb799e94e8096e6ab76995f05581169585787745e7f2",
+      "original_sha256": "bb5b634de441e5ad1091fb799e94e8096e6ab76995f05581169585787745e7f2",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "configs/taxonomy_v2.json",
+      "packaged_sha256": "595871689953fdb0d156ce39203afb3f2d694f2fe7e04e8f142fa8abb997792f",
+      "original_sha256": "595871689953fdb0d156ce39203afb3f2d694f2fe7e04e8f142fa8abb997792f",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "docs/reproduction.md",
+      "packaged_sha256": "eca7087399352df5f95549fb9be7077be4d165506a6f427586172f969e389daf",
+      "original_sha256": null,
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "docs/weekly_metrics.md",
+      "packaged_sha256": "a4828e59557a651d0925495680b32992af73ea1bdd5f2d935a66ae8337b33319",
+      "original_sha256": null,
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "evidence/provenance.json",
+      "packaged_sha256": "fc5afa285d8e78d3278e3cf6c6be05dc0628920f16eff5cd175dbc495075d99a",
+      "original_sha256": null,
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "evidence/runtime_receipts.json",
+      "packaged_sha256": "62af300122c095f988a96f9162cc757f39bf93f943a3f2d565640f138e9c5e35",
+      "original_sha256": null,
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "evidence/weekly_replay.json.gz",
+      "packaged_sha256": "c79e3f8a60d3f1a4117888248adc9b50b1cf98305a7984fbabeaf1f2a86257ce",
+      "original_sha256": null,
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "integration_tests/test_weekly_replay.py",
+      "packaged_sha256": "c10b8cbbf836d3d23c83ccb0a802ce1d6c0c769a41800c97fe9aae3acd778c37",
+      "original_sha256": null,
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "pyproject.toml",
+      "packaged_sha256": "bdceefb525f7bc5a530a437b598882f6f56bce146e617f2ccc487c4677754468",
+      "original_sha256": "3e5b49f8e4f7b9131fbf2e7264488648af5a3b60f674ae7c99d5bdf8e4e01856",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "scripts/audit_coding_standard.py",
+      "packaged_sha256": "be219f22b2de7ac514e9503f94cd87a061e6ab842930e77051104fa249c57044",
+      "original_sha256": "dc52ce1cfa480bb26e9e03332bafb21cf1a9cba3f5d8fea8dd6ce64c9fb150f8",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "scripts/benchmark_resident.py",
+      "packaged_sha256": "d940c10e924925fa8fa973a9ef25f8bdf41a8e7e7b575fae944a39b7448c8929",
+      "original_sha256": "d940c10e924925fa8fa973a9ef25f8bdf41a8e7e7b575fae944a39b7448c8929",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/business_grounding_audit.py",
+      "packaged_sha256": "1c1cfa8dd86fe2fd7fde3e2eae3151679b2b6959175fc11273811a650bf3b18b",
+      "original_sha256": "1c1cfa8dd86fe2fd7fde3e2eae3151679b2b6959175fc11273811a650bf3b18b",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/business_joint_experiment.py",
+      "packaged_sha256": "2f871b308f180a689ba45913f11571431a74250aac9caf0d106d2a03b61be5ef",
+      "original_sha256": "d0d2a5eec817a1b2faa7f912371b258986ebb7f599aeced32192b8ca3d20e59f",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "scripts/business_joint_model.py",
+      "packaged_sha256": "a1ebdcd9b02ff07feef960488f1e1cb45a9c849c4e51352ef4b7b5d31e03ca9d",
+      "original_sha256": "a1ebdcd9b02ff07feef960488f1e1cb45a9c849c4e51352ef4b7b5d31e03ca9d",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/business_mask_verifier.py",
+      "packaged_sha256": "cfab3217f433be673d04bd7a99e66c38c319a1ae28debb8cf038543ba5dfc7c3",
+      "original_sha256": "6dd628e9f8a3a63e483abe19af152947e3dba97ec831de0f7e07855ead6489b3",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "scripts/business_metric_experiment.py",
+      "packaged_sha256": "111d8148c4eec72ec0e2d26c3bf9b0d701f3d39d7da9fc407f97f65ec64223c9",
+      "original_sha256": "111d8148c4eec72ec0e2d26c3bf9b0d701f3d39d7da9fc407f97f65ec64223c9",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/business_metric_model.py",
+      "packaged_sha256": "2e3e53ae6c641a343a2c3fb38dc51fb2e86a98138b9e4a38e1703bbb676eb6eb",
+      "original_sha256": "2e3e53ae6c641a343a2c3fb38dc51fb2e86a98138b9e4a38e1703bbb676eb6eb",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/business_subject_views.py",
+      "packaged_sha256": "d5ed9c0f721e95d5923e9d9a52d8d447cadefde46b7b27faadd106c5d2d79ece",
+      "original_sha256": "612db1eb08c17de775921350ac086acc0751a7419e08c5b5c9f9bbafde09b869",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "scripts/business_view_qa_and_pairs.py",
+      "packaged_sha256": "f2377cd480a82c04b40fe9f1399e63671d7728d34222acc7e2e8990f6c2e1153",
+      "original_sha256": "f2377cd480a82c04b40fe9f1399e63671d7728d34222acc7e2e8990f6c2e1153",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/check_quality.py",
+      "packaged_sha256": "5f816aa835a3d48811223c4a98785c07e8e1c9a05dad45b3a4a5643061ae05d4",
+      "original_sha256": "3309b4f2782bfd141dfcf0a8c8c1480b27d7b67f7c8a8f3080049d6f8377cd69",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "scripts/download_models_mac.py",
+      "packaged_sha256": "ec5e953a9f55c08f41e8b94363ecf5740cc8618d81e6ab57dd092e77a54d31c0",
+      "original_sha256": "ec5e953a9f55c08f41e8b94363ecf5740cc8618d81e6ab57dd092e77a54d31c0",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/gpu_admission.py",
+      "packaged_sha256": "9606580ed86e0f118ea9418c14ecc5ddc3463291e2ff67c4d9a4acf22614dae5",
+      "original_sha256": null,
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "scripts/grounded_subject_runtime.py",
+      "packaged_sha256": "02950b45d6fb1ebfdc060c8d3a7a964af40dc5624a80435c415256ea5d3cf81a",
+      "original_sha256": "02950b45d6fb1ebfdc060c8d3a7a964af40dc5624a80435c415256ea5d3cf81a",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/learned_fusion_model.py",
+      "packaged_sha256": "d59d6e90f7d09e96a97d3006e5bcc0e6f93a7c6fa06cd6a1f683c877ace50262",
+      "original_sha256": "d59d6e90f7d09e96a97d3006e5bcc0e6f93a7c6fa06cd6a1f683c877ace50262",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/pair_identity.py",
+      "packaged_sha256": "f975853d056cab38fb9d01e51dd4fea2e2c725a016a40f71912138a7ee98afd4",
+      "original_sha256": null,
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "scripts/prepare_business_grounding_model.py",
+      "packaged_sha256": "06d90a3c06f25be096716c8ac431f688cebe305ef563f0dd6bfb7475fe88d374",
+      "original_sha256": "06d90a3c06f25be096716c8ac431f688cebe305ef563f0dd6bfb7475fe88d374",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/prepare_fgclip2_model.py",
+      "packaged_sha256": "5e00a91d4b7a5313c046496fee6a83537c98bf6d9e4fe15df8b8e7fb089ce85a",
+      "original_sha256": "5e00a91d4b7a5313c046496fee6a83537c98bf6d9e4fe15df8b8e7fb089ce85a",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/prepare_grounding_model.py",
+      "packaged_sha256": "64ddf037d3bba949ba491bf2ba627765a6bea2bb95526d5d35ed7e4733205bc2",
+      "original_sha256": "64ddf037d3bba949ba491bf2ba627765a6bea2bb95526d5d35ed7e4733205bc2",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/primary_subject_ranker.py",
+      "packaged_sha256": "89a193e900bd5a824ccac71e011d759bedd1ebd1d204b4ef21619d9152dfc4b7",
+      "original_sha256": "89a193e900bd5a824ccac71e011d759bedd1ebd1d204b4ef21619d9152dfc4b7",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/querywise_paired_bounds.py",
+      "packaged_sha256": "1c1b79fb68c4a0d4a30a89fdacbfff930b152f408c60af3ff60404076dfc3062",
+      "original_sha256": "1c1b79fb68c4a0d4a30a89fdacbfff930b152f408c60af3ff60404076dfc3062",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/replay_weekly.py",
+      "packaged_sha256": "a229693610841b5970d0a4fedd6d5852d9a76e9bbdce76deca4d14f404543f3a",
+      "original_sha256": null,
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "scripts/retrieve_postrank.py",
+      "packaged_sha256": "d3393afbdfb57527fe65470ae6d925661c7478b144a08adf46888f111d280be1",
+      "original_sha256": "d3393afbdfb57527fe65470ae6d925661c7478b144a08adf46888f111d280be1",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/retrieve_regions.py",
+      "packaged_sha256": "c84cd82631bbb8898d605ad1c68b64b3f4e7fa585c2b8bdaa09b4d3777cfa1fc",
+      "original_sha256": "c84cd82631bbb8898d605ad1c68b64b3f4e7fa585c2b8bdaa09b4d3777cfa1fc",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/roi_semantic_gate_review.py",
+      "packaged_sha256": "9f0a9be4c2ef68a6f554de7f00635120ced588822f7ed7a7743ee557d846a59f",
+      "original_sha256": "9f0a9be4c2ef68a6f554de7f00635120ced588822f7ed7a7743ee557d846a59f",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/role_pool_experiment.py",
+      "packaged_sha256": "31d67ac76e871fc23c11ea329fc81001de91f482f39e1c4bbc261347122dc649",
+      "original_sha256": "b575b841c4cc3d6d4c8e4533f8bdce21bbc5d828e870243f100cc88a336677a3",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "scripts/role_pool_profiles.py",
+      "packaged_sha256": "37c6d3fdee7a0b151daec69b8c50bc94f06451d82e029cb2a9ec1b53baa174f4",
+      "original_sha256": "d029113d75e9608f8c1ff46b2fb2a250eacd9e918a997a8bb57f22556f0624ab",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "scripts/run.py",
+      "packaged_sha256": "6784a6b9705d9348e44090142f01b3b2c5bc1033bd927259580fad652cfb8d60",
+      "original_sha256": "4b4cc0bc3249bf7fc8c5c51e787b412dd81c69018b3cc6c1b4c57f480cb333fe",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "scripts/serve_retrieval.py",
+      "packaged_sha256": "0076d80daf7c32ef66cf1f86ee6f9aa83cc90e27b30ae1207edbb27950b3cd02",
+      "original_sha256": "0076d80daf7c32ef66cf1f86ee6f9aa83cc90e27b30ae1207edbb27950b3cd02",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "scripts/subject_attribute_ranker.py",
+      "packaged_sha256": "59fd5a5507d88c02e422bb46a74ace98c7156d5bd8441aec24cbaca83964140e",
+      "original_sha256": "59fd5a5507d88c02e422bb46a74ace98c7156d5bd8441aec24cbaca83964140e",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/__init__.py",
+      "packaged_sha256": "23a40d96f6cc65c1272c06e8054fcda307083025c305faec4c6baa89a7a14de9",
+      "original_sha256": "23a40d96f6cc65c1272c06e8054fcda307083025c305faec4c6baa89a7a14de9",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/ai_review_metrics.py",
+      "packaged_sha256": "b5a60462c7164ac2a3d4fc0158471c4cc4d8b9f0f1fb544246a855f7a66770d9",
+      "original_sha256": "b5a60462c7164ac2a3d4fc0158471c4cc4d8b9f0f1fb544246a855f7a66770d9",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/blind_evaluation.py",
+      "packaged_sha256": "abede77e821a5f3fcb23dc512e842c9a94dd7c5e1a566d930a4b6cf558798688",
+      "original_sha256": "abede77e821a5f3fcb23dc512e842c9a94dd7c5e1a566d930a4b6cf558798688",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/business_constraints.py",
+      "packaged_sha256": "5b15428b10941568bcd94e40d261ec1f503c765c97d9f239f8ab45055f72d955",
+      "original_sha256": "5b15428b10941568bcd94e40d261ec1f503c765c97d9f239f8ab45055f72d955",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/business_evaluation.py",
+      "packaged_sha256": "3dc8b955b5b79dde267f5d8a7018d6dd104b7a86d2b42d5945298dbcc3f600c8",
+      "original_sha256": "3dc8b955b5b79dde267f5d8a7018d6dd104b7a86d2b42d5945298dbcc3f600c8",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/business_retrieval.py",
+      "packaged_sha256": "155fb81e9f430d9876a0937d5d484cca8335e983c85acebcd3ba18027214bd88",
+      "original_sha256": "155fb81e9f430d9876a0937d5d484cca8335e983c85acebcd3ba18027214bd88",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/current_target.py",
+      "packaged_sha256": "4c9cbb17a6fc2badb6ab65a44dc4a44b2a765c7008ae8fc516fd37b77e180a02",
+      "original_sha256": "4c9cbb17a6fc2badb6ab65a44dc4a44b2a765c7008ae8fc516fd37b77e180a02",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/data.py",
+      "packaged_sha256": "700c330af79f47f5a32193ccd753b363550b64ebba2e86eb0e6c321b24c6ad6a",
+      "original_sha256": "700c330af79f47f5a32193ccd753b363550b64ebba2e86eb0e6c321b24c6ad6a",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/dataset_release.py",
+      "packaged_sha256": "052a048a4447554f6454a069e2a3caf3af1e1c0a34d5588974ba4d356658cf4e",
+      "original_sha256": "052a048a4447554f6454a069e2a3caf3af1e1c0a34d5588974ba4d356658cf4e",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/embedding.py",
+      "packaged_sha256": "588d6d0d2639b15a890916159547e97fb97edee70a1dfecff5c71dd53edc4438",
+      "original_sha256": "588d6d0d2639b15a890916159547e97fb97edee70a1dfecff5c71dd53edc4438",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/exceptions.py",
+      "packaged_sha256": "03ad2edfd1e2bfd338053514f3bb8160f1601373f35a930509669c81b0f7b292",
+      "original_sha256": "03ad2edfd1e2bfd338053514f3bb8160f1601373f35a930509669c81b0f7b292",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/fgclip_retrieval.py",
+      "packaged_sha256": "3406a62e0e5b3ef6bb921af2ead49c2cb5725b1ff99cad87fc6007175f21576a",
+      "original_sha256": "3406a62e0e5b3ef6bb921af2ead49c2cb5725b1ff99cad87fc6007175f21576a",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/holdout_data.py",
+      "packaged_sha256": "aa218b7c64054044222521957c6f5fdfb98e6bcd5a3fa242c2f1ee8ffa217550",
+      "original_sha256": "aa218b7c64054044222521957c6f5fdfb98e6bcd5a3fa242c2f1ee8ffa217550",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/intent_retrieval.py",
+      "packaged_sha256": "c877e6babd3fcc112fa3629ab4eafc46441be3735adde7853184bf0da062c710",
+      "original_sha256": "c877e6babd3fcc112fa3629ab4eafc46441be3735adde7853184bf0da062c710",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/interval_retrieval_metrics.py",
+      "packaged_sha256": "c9d8a6cecf57752ae6a8c69339bbead79e3258e0227a4ae8f50031012ebbc31e",
+      "original_sha256": "c9d8a6cecf57752ae6a8c69339bbead79e3258e0227a4ae8f50031012ebbc31e",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/machine_teacher.py",
+      "packaged_sha256": "b79cf1c9b17f0af63a8a4717e8e90460b270c615331a05db644b21b424df1c4a",
+      "original_sha256": "b79cf1c9b17f0af63a8a4717e8e90460b270c615331a05db644b21b424df1c4a",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/measurement.py",
+      "packaged_sha256": "53287616edbe28461263943bfb9b9d22add6e0f79aa28728eb3ae170538042ec",
+      "original_sha256": "53287616edbe28461263943bfb9b9d22add6e0f79aa28728eb3ae170538042ec",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/metric_training.py",
+      "packaged_sha256": "4f1af0e21787914c09639ba5f1f8c3a7cb7abbaf2275e4dbe8e4b15dcd969cd6",
+      "original_sha256": "4f1af0e21787914c09639ba5f1f8c3a7cb7abbaf2275e4dbe8e4b15dcd969cd6",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/model_interfaces.py",
+      "packaged_sha256": "7ba797108f717723e60af2a110ca2c346c76829eadc4ba6bed9e931e4ee14634",
+      "original_sha256": "8a6e0ebc1bbef908013aa01d762ad2fccee685c73c550ca484d2d30792a02862",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "src/multimodal_ecommerce/ollama_client.py",
+      "packaged_sha256": "a4b21403eccd576a8c23c586eafa6113841adfb273c33dad26c482c37cdf3ef2",
+      "original_sha256": "90ce1a07e01e7d42f049128e0530f9086c137cc4d432f2cfd8cbf24b8b715a4b",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "src/multimodal_ecommerce/pair_reranker.py",
+      "packaged_sha256": "636dc76f80ece7c3feff478cdd6a87b64ad3a3bd18cc235dd283692028284bca",
+      "original_sha256": "636dc76f80ece7c3feff478cdd6a87b64ad3a3bd18cc235dd283692028284bca",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/platform_lock.py",
+      "packaged_sha256": "757ccbcc840a5830414d427a5f0b6bf5909ea59e4b0b37c5741ef2b54b40d737",
+      "original_sha256": "757ccbcc840a5830414d427a5f0b6bf5909ea59e4b0b37c5741ef2b54b40d737",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/postranking.py",
+      "packaged_sha256": "d2fa2c04bb722b2ba898c615005b5f3110de5ab0f0220aa61862425904da7795",
+      "original_sha256": "d2fa2c04bb722b2ba898c615005b5f3110de5ab0f0220aa61862425904da7795",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/precision_boundary.py",
+      "packaged_sha256": "7de5056fc026a742cd7f7d68f8d125f25ab02e3b3a85ab9b2d43bb0750c309dc",
+      "original_sha256": "7de5056fc026a742cd7f7d68f8d125f25ab02e3b3a85ab9b2d43bb0750c309dc",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/precision_reranking.py",
+      "packaged_sha256": "defac65a667b31f465f67de765643c1fd8b6133327ba3d1bba6fd4c1f5700686",
+      "original_sha256": "defac65a667b31f465f67de765643c1fd8b6133327ba3d1bba6fd4c1f5700686",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/precision_target.py",
+      "packaged_sha256": "00e01e586d7a5ee81e2eb270020f9e69f0c9efb0926978b80809aa37abd3c0bc",
+      "original_sha256": "00e01e586d7a5ee81e2eb270020f9e69f0c9efb0926978b80809aa37abd3c0bc",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/query_fusion.py",
+      "packaged_sha256": "55ae899a07c4420cea41b49274f2bfda08aac2ad36ebf22cef4c9bfaad572577",
+      "original_sha256": "55ae899a07c4420cea41b49274f2bfda08aac2ad36ebf22cef4c9bfaad572577",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/rank_correction.py",
+      "packaged_sha256": "8a95191be563915c4d4ca72e54af22837988b50443dbb73204d1f689d063d368",
+      "original_sha256": "8a95191be563915c4d4ca72e54af22837988b50443dbb73204d1f689d063d368",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/rank_stability.py",
+      "packaged_sha256": "77edfff8a338c1d4a30693a1d8c74035be903f8baac2d039ab2f098d326d1f9e",
+      "original_sha256": "77edfff8a338c1d4a30693a1d8c74035be903f8baac2d039ab2f098d326d1f9e",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/regional_retrieval.py",
+      "packaged_sha256": "9a16726098dba0fe637c114b59d5c4def051c5fdf0c0ae8818d2d0e9a64cc75b",
+      "original_sha256": "9a16726098dba0fe637c114b59d5c4def051c5fdf0c0ae8818d2d0e9a64cc75b",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/resident_retrieval.py",
+      "packaged_sha256": "371a8b600765079f0bd82ba90506fe64abc86dc3ebc4542fef0a823a229ce1be",
+      "original_sha256": "371a8b600765079f0bd82ba90506fe64abc86dc3ebc4542fef0a823a229ce1be",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/retrieval.py",
+      "packaged_sha256": "5d1abf680f3a1d5eee6ad4819de2a9fc59c0a6042553290f865072b7a901fe72",
+      "original_sha256": "5d1abf680f3a1d5eee6ad4819de2a9fc59c0a6042553290f865072b7a901fe72",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/retrieval_http.py",
+      "packaged_sha256": "9c0e0569b36fa94f6b9c4a510e4d452c83af7a351baa55bc14e0095c5011a25f",
+      "original_sha256": "9c0e0569b36fa94f6b9c4a510e4d452c83af7a351baa55bc14e0095c5011a25f",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/retrieval_strategies.py",
+      "packaged_sha256": "311007c05406c7967a7c46e43a54ab520ef160e097be07fb559eca01b63c372f",
+      "original_sha256": "311007c05406c7967a7c46e43a54ab520ef160e097be07fb559eca01b63c372f",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/runtime_device.py",
+      "packaged_sha256": "a9cbcb48682ef5e1b62c7505807734dc04c16fb1071fb07b618759e8bfce5ecb",
+      "original_sha256": "a9cbcb48682ef5e1b62c7505807734dc04c16fb1071fb07b618759e8bfce5ecb",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/safety.py",
+      "packaged_sha256": "ee297592361d12a82ea453861802adba9f37880258c841ba8fafc175590acb35",
+      "original_sha256": "ee297592361d12a82ea453861802adba9f37880258c841ba8fafc175590acb35",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/semantic_ranker.py",
+      "packaged_sha256": "45351ae49f40a6d973811358c968a536fc0a82cc7893873ecdc3260075a78740",
+      "original_sha256": "45351ae49f40a6d973811358c968a536fc0a82cc7893873ecdc3260075a78740",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/subject_roi.py",
+      "packaged_sha256": "b01fb7e98ecc01c50f9bf228478ca480eef40d69a7f80db89e4c76de9ac6df25",
+      "original_sha256": "b01fb7e98ecc01c50f9bf228478ca480eef40d69a7f80db89e4c76de9ac6df25",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/trained_attention.py",
+      "packaged_sha256": "7d438247edce13383c5d11dd4e65f7823e6bcb9a160d086556f0f8ef7cf8253b",
+      "original_sha256": "7d438247edce13383c5d11dd4e65f7823e6bcb9a160d086556f0f8ef7cf8253b",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "src/multimodal_ecommerce/visual_query.py",
+      "packaged_sha256": "ade47433deef395374456b29a477b3528a0473c330c9a0cdb56e48fdcf8e2321",
+      "original_sha256": "ade47433deef395374456b29a477b3528a0473c330c9a0cdb56e48fdcf8e2321",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/conftest.py",
+      "packaged_sha256": "0feb77e840e062098fb830ac12baa29effadf99b4cdb8595d4cd73b54063a7fe",
+      "original_sha256": "0feb77e840e062098fb830ac12baa29effadf99b4cdb8595d4cd73b54063a7fe",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_ai_review_metrics.py",
+      "packaged_sha256": "486ab9b284f7b862586818206f704cc9fb2f582bae18c9bee1f5b007ab6f43b4",
+      "original_sha256": "486ab9b284f7b862586818206f704cc9fb2f582bae18c9bee1f5b007ab6f43b4",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_business_constraints.py",
+      "packaged_sha256": "f7a3754fb51aec8287b64d1af680cf1c8284088cf657b92bfc00dae8c6988f0b",
+      "original_sha256": "f7a3754fb51aec8287b64d1af680cf1c8284088cf657b92bfc00dae8c6988f0b",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_business_grounding_audit.py",
+      "packaged_sha256": "1d0f1b440bdda41412f04f9853d8107da0e825f59103b9dd17abeda9bd9e3450",
+      "original_sha256": "1d0f1b440bdda41412f04f9853d8107da0e825f59103b9dd17abeda9bd9e3450",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_business_joint_model.py",
+      "packaged_sha256": "76b4b0b9074ac0a587ccc09fe523655234aef734f0c998d77b6d53145eeaca2d",
+      "original_sha256": "76b4b0b9074ac0a587ccc09fe523655234aef734f0c998d77b6d53145eeaca2d",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_business_mask_verifier.py",
+      "packaged_sha256": "f1a0836b21639780b98c33ab3a61f76e98cf492a98500511755cb77bc8c509eb",
+      "original_sha256": "f1a0836b21639780b98c33ab3a61f76e98cf492a98500511755cb77bc8c509eb",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_business_metric_model.py",
+      "packaged_sha256": "270e9a8a76c535ab84b043738f937e0132ecf8c80aa31b8e88376333ee975cd8",
+      "original_sha256": "270e9a8a76c535ab84b043738f937e0132ecf8c80aa31b8e88376333ee975cd8",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_business_subject_views.py",
+      "packaged_sha256": "1be6f9fa153ef10442f70af26db18fff1392955296c682bee66e2e0b4bea82cc",
+      "original_sha256": "1be6f9fa153ef10442f70af26db18fff1392955296c682bee66e2e0b4bea82cc",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_business_view_qa_and_pairs.py",
+      "packaged_sha256": "3c87d7aa93056ba202a41ac5fe6fdf2952a25d57b74b8f9f61a838cde575dabd",
+      "original_sha256": "3c87d7aa93056ba202a41ac5fe6fdf2952a25d57b74b8f9f61a838cde575dabd",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_code_standard.py",
+      "packaged_sha256": "011f454ef45d1d9407495008cdaa4e74b81b6de9f56cf3a699d9f29cbcb3e155",
+      "original_sha256": "011f454ef45d1d9407495008cdaa4e74b81b6de9f56cf3a699d9f29cbcb3e155",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_current_target.py",
+      "packaged_sha256": "5401ac84399d8be36e0dd2d2450c1932434ef613fdcc8ea7dc690f0f5c56b9d1",
+      "original_sha256": "5401ac84399d8be36e0dd2d2450c1932434ef613fdcc8ea7dc690f0f5c56b9d1",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_fgclip_retrieval.py",
+      "packaged_sha256": "c163e37c7afe193b519b7937cf1da69f0d563b8672a84277f0f538139e07227a",
+      "original_sha256": "c163e37c7afe193b519b7937cf1da69f0d563b8672a84277f0f538139e07227a",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_grounded_subject_runtime.py",
+      "packaged_sha256": "74614ad60c48645cf4bf7062509c556e4bab780474894f4ff1b19dbff1eb1696",
+      "original_sha256": "74614ad60c48645cf4bf7062509c556e4bab780474894f4ff1b19dbff1eb1696",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_intent_retrieval.py",
+      "packaged_sha256": "44a7e395a3f36d263a28c18ddeab6b654d729a2121c6e035c826dda9c13f0234",
+      "original_sha256": "44a7e395a3f36d263a28c18ddeab6b654d729a2121c6e035c826dda9c13f0234",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_interval_retrieval_metrics.py",
+      "packaged_sha256": "78b9e017aba977d131e9fb159907d390ce49916bea8a2d784891b6d9e13c909a",
+      "original_sha256": "78b9e017aba977d131e9fb159907d390ce49916bea8a2d784891b6d9e13c909a",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_learned_fusion_model.py",
+      "packaged_sha256": "7c5af9d09c83937379a236d0fcdcd69e5d3c95d2f802ad105ce8b9a59bad8775",
+      "original_sha256": "7c5af9d09c83937379a236d0fcdcd69e5d3c95d2f802ad105ce8b9a59bad8775",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_mac_runtime.py",
+      "packaged_sha256": "1786831dee3bbb0d753ee7e860e7871c9b6e7fb5a748aa632dca99eaf67fa64e",
+      "original_sha256": "1786831dee3bbb0d753ee7e860e7871c9b6e7fb5a748aa632dca99eaf67fa64e",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_ollama_client.py",
+      "packaged_sha256": "30bf248d82c216c8dacc7c737ffb3f9fdb4f05ca981b3563a60253bfa13e0079",
+      "original_sha256": "22636e87e37deac8cbed0e05e62c903cd5571d34f2c6a3dd5e9933c525bf91eb",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "tests/test_paired_development.py",
+      "packaged_sha256": "ff083b80dd1c5c54932a3812fe65bb8c2a97b0c12a9d0fa19071876f9119792c",
+      "original_sha256": "815df5177fbda4aeb87e8a83930d972c1842d5ad0c4002722fe4cdd42b51f545",
+      "selection": "module-two extraction, portable configuration, or focused release artifact"
+    },
+    {
+      "path": "tests/test_primary_subject_ranker.py",
+      "packaged_sha256": "9f95a04a3f0c13ac1b8766a48a7d137aaf3ec44962b20b45ecd89adc5166dd60",
+      "original_sha256": "9f95a04a3f0c13ac1b8766a48a7d137aaf3ec44962b20b45ecd89adc5166dd60",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_querywise_paired_bounds.py",
+      "packaged_sha256": "94a691770a6359f6d4e265765b6283712250a1e3cb66dd7d12236fbd6ccb503e",
+      "original_sha256": "94a691770a6359f6d4e265765b6283712250a1e3cb66dd7d12236fbd6ccb503e",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_rank_stability.py",
+      "packaged_sha256": "695bc97965b11a17a08e726b5d41e12269af1345af32a4505ee52fdc6d6ddb1e",
+      "original_sha256": "695bc97965b11a17a08e726b5d41e12269af1345af32a4505ee52fdc6d6ddb1e",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_regional_retrieval.py",
+      "packaged_sha256": "c61ddccb5f94c25a93ab830220fcc4fd8f801ec0adcc16fc3585ee6b6327a9b3",
+      "original_sha256": "c61ddccb5f94c25a93ab830220fcc4fd8f801ec0adcc16fc3585ee6b6327a9b3",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_retrieval_strategies.py",
+      "packaged_sha256": "1390401723f58a87fe9fd31a65ad6d824b0a7d211b8393478e634498e88f4bb6",
+      "original_sha256": "1390401723f58a87fe9fd31a65ad6d824b0a7d211b8393478e634498e88f4bb6",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_roi_semantic_gate_review.py",
+      "packaged_sha256": "6e8182692e7d37d83dd132b566dc83f9bd67c698c758f61832fa452cd58acc19",
+      "original_sha256": "6e8182692e7d37d83dd132b566dc83f9bd67c698c758f61832fa452cd58acc19",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_role_pool.py",
+      "packaged_sha256": "3accb12f932839859c2d4f5a4f01966c8d9016eb1dc73860bd56d4e18e040749",
+      "original_sha256": "3accb12f932839859c2d4f5a4f01966c8d9016eb1dc73860bd56d4e18e040749",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_role_pool_experiment.py",
+      "packaged_sha256": "b825b8eea2f7ec2a88dface24a6e20eb5cd24cfa031586f091da77681eb34948",
+      "original_sha256": "b825b8eea2f7ec2a88dface24a6e20eb5cd24cfa031586f091da77681eb34948",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_safety.py",
+      "packaged_sha256": "03dcad6bd708e735ca6f52e449cdb390945cfa921d852c8964d6560d154b8d1b",
+      "original_sha256": "03dcad6bd708e735ca6f52e449cdb390945cfa921d852c8964d6560d154b8d1b",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_semantic_ranker.py",
+      "packaged_sha256": "4c204e61b92e815b9ce410fa0301e81e5af9424f71ad5018130db44bf73ce711",
+      "original_sha256": "4c204e61b92e815b9ce410fa0301e81e5af9424f71ad5018130db44bf73ce711",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_subject_roi.py",
+      "packaged_sha256": "a45f4a0ac000dc0a1460c862fd28949ab1c0345462bf1e2b1047fe79e7ac5c8c",
+      "original_sha256": "a45f4a0ac000dc0a1460c862fd28949ab1c0345462bf1e2b1047fe79e7ac5c8c",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "tests/test_visual_query.py",
+      "packaged_sha256": "347318edea56fd62827efa5f87cb653dfb9077b0a1b3cd99bab8fa62ba9dc5b7",
+      "original_sha256": "347318edea56fd62827efa5f87cb653dfb9077b0a1b3cd99bab8fa62ba9dc5b7",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "vendor/qwen3_vl_embedding/LICENSE",
+      "packaged_sha256": "f08c07d73a60444803f8902b00f7b14c839647a48cc07fba59b3c1bda656ec3c",
+      "original_sha256": "f08c07d73a60444803f8902b00f7b14c839647a48cc07fba59b3c1bda656ec3c",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "vendor/qwen3_vl_embedding/NOTICE.md",
+      "packaged_sha256": "47a6838b9eb3d5159f42240be0181aee2c851079609fd4812c5edc78503678d1",
+      "original_sha256": "47a6838b9eb3d5159f42240be0181aee2c851079609fd4812c5edc78503678d1",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "vendor/qwen3_vl_embedding/qwen3_vl_embedding.py",
+      "packaged_sha256": "0e447b6a80e05527f3fd437ab4f1617a6e7d0df102b8164348bbce787a41b267",
+      "original_sha256": "0e447b6a80e05527f3fd437ab4f1617a6e7d0df102b8164348bbce787a41b267",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "vendor/qwen3_vl_reranker/LICENSE",
+      "packaged_sha256": "f08c07d73a60444803f8902b00f7b14c839647a48cc07fba59b3c1bda656ec3c",
+      "original_sha256": "f08c07d73a60444803f8902b00f7b14c839647a48cc07fba59b3c1bda656ec3c",
+      "selection": "unchanged current implementation"
+    },
+    {
+      "path": "vendor/qwen3_vl_reranker/qwen3_vl_reranker.py",
+      "packaged_sha256": "7f55d5598d0e93585dcd9de7cad522756bb9eed7b1e783a66f8d53a1f7f47e6c",
+      "original_sha256": "7f55d5598d0e93585dcd9de7cad522756bb9eed7b1e783a66f8d53a1f7f47e6c",
+      "selection": "unchanged current implementation"
+    }
+  ]
+}

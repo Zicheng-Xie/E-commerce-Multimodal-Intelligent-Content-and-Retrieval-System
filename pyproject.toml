@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multimodal-ecommerce-module2"
+version = "0.1.0"
+description = "Module 2 multimodal retrieval and auditable weekly metric replay"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+  "httpx==0.28.1",
+  "ijson==3.5.1",
+  "numpy==2.5.3",
+  "pillow==12.3.0",
+]
+
+[project.optional-dependencies]
+retrieval = ["torch==2.8.0", "torchvision==0.23.0", "transformers==4.57.1", "qwen-vl-utils==0.0.14", "accelerate==1.12.0"]
+dev = ["pytest==9.1.1", "black==26.5.1", "isort==9.0.1", "flake8==7.3.0", "mypy==2.3.1", "pylint==4.0.8", "pypdf==6.19.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "scripts"]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+src_paths = ["src", "scripts", "tests", "integration_tests"]
+known_first_party = ["multimodal_ecommerce"]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+check_untyped_defs = true
+warn_unused_ignores = true
+
+[tool.pylint.main]
+# NumPy's compiled and generated members have incomplete astroid inference.
+ignored-modules = ["numpy", "numpy.*"]
+extension-pkg-allow-list = ["numpy"]
+persistent = false

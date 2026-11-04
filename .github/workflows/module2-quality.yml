@@ -1,0 +1,32 @@
+name: Module 2 quality
+on:
+  push:
+    branches: [module2-dev]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Install CPU test dependencies
+        run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.8.0 torchvision==0.23.0
+          python -m pip install -e '.[dev,retrieval]'
+      - name: Enforce PDF rules, style, types and regression tests
+        run: python scripts/check_quality.py
+      - name: Replay authorized weekly evidence
+        run: |
+          python scripts/replay_weekly.py
+          python -m pytest -q integration_tests

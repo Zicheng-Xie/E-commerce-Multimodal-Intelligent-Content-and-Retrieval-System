@@ -1,0 +1,18 @@
+{
+  "repository": "Qwen/Qwen3-VL-Embedding-2B",
+  "revision": "9f2f7e710d6d81056aa5c0a4f04764fec6bb7bda",
+  "path": ".models/Qwen3-VL-Embedding-2B",
+  "code_revision": "393e2978d27852b0d0230d6994f37f9c15bed73c",
+  "vendor_sha256": {
+    "qwen3_vl_embedding.py": "0e447b6a80e05527f3fd437ab4f1617a6e7d0df102b8164348bbce787a41b267",
+    "LICENSE": "f08c07d73a60444803f8902b00f7b14c839647a48cc07fba59b3c1bda656ec3c"
+  },
+  "backend": "transformers",
+  "dtype": "bfloat16",
+  "max_pixels": 262144,
+  "max_length": 2048,
+  "batch_size": 1,
+  "query_instruction": "Retrieve images or text relevant to the user's query.",
+  "document_instruction": "Represent the user's input.",
+  "source": "https://github.com/QwenLM/Qwen3-VL-Embedding"
+}

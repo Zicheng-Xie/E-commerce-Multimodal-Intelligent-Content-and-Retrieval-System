@@ -1,0 +1,86 @@
+{
+  "standard": "Alibaba阿里算法实习/编码规范.pdf",
+  "review_date": "2026-11-04",
+  "scope": {
+    "owned_python": [
+      "src/**/*.py",
+      "scripts/**/*.py",
+      "tests/**/*.py"
+    ],
+    "preserved": [
+      "Alibaba阿里算法实习/**",
+      "vendor/**",
+      ".venv*/**",
+      ".runtime/**",
+      ".models/**",
+      "data/**",
+      "artifacts/**历史封存副本"
+    ]
+  },
+  "interpretation": [
+    {
+      "sections": [
+        "1.1",
+        "12.1"
+      ],
+      "rule": "Black 88 是格式化依据。",
+      "supplement": "保留 Black 无法自动断开的单个字符串、f-string、URL、JSON 协议字段和必要的检查器指令；普通代码与文档按 88 列换行。flake8 按 PDF 12.1 忽略 E501，E203/W503 与 Black 保持一致。"
+    },
+    {
+      "sections": [
+        "3.2",
+        "4.2"
+      ],
+      "rule": "协议接口保留外部约定。",
+      "supplement": "do_GET/do_POST 来自 BaseHTTPRequestHandler，visit_AnnAssign 来自 ast.NodeTransformer；TypedDict 的 type/format/mediaType 等字段保留真实 JSON 协议拼写。"
+    },
+    {
+      "sections": [
+        "4.1",
+        "8.3"
+      ],
+      "rule": "启动与延迟导入的必要例外。",
+      "supplement": "少数 CLI 在导入数值库前设置线程环境变量，run.py 在加载业务包前建立本项目路径。相应 E402 保留原因；公共模型适配器在构造时延迟加载权重依赖。导入模块不发出网络请求或启动模型。"
+    },
+    {
+      "sections": [
+        "6.2",
+        "6.3"
+      ],
+      "rule": "公共入口有注解，固定配置与接口使用数据类、TypedDict、Protocol。",
+      "supplement": "JSON 反序列化和经路径/摘要核验的动态模块边界仍采用渐进类型；保留字典结构后在业务入口校验。第三方缺失存根保留既有 ignore_missing_imports；测试中的非法输入和替身仅使用带原因的局部类型例外。"
+    },
+    {
+      "sections": [
+        "8.3"
+      ],
+      "rule": "单文件 500 行为建议。",
+      "supplement": "长流程模块保留行号明确的 advisory，并单独列入 findings.json；该项不冒充强制规则，也不为压缩行数拆散冻结实验流程。后续新增独立能力优先放入小模块。"
+    },
+    {
+      "sections": [
+        "9.2"
+      ],
+      "rule": "不执行不可信代码。",
+      "supplement": "pair_reranker.reference_module 唯一保留 exec，用于编译路径和 SHA256 均已核验的固定 vendor 参考源码；动态脚本加载限制在本项目 scripts 目录，失败时清理模块注册。"
+    },
+    {
+      "sections": [
+        "12.1"
+      ],
+      "rule": "Pylint 的错误级别检查纳入完整入口。",
+      "supplement": "NumPy 编译扩展的成员推断使用 ignored-modules/extension-pkg-allow-list；ResidentRetrieval 中 astroid 将 RegionalIndex.load 的 cls 误判为调用者的 8 个位置，使用逐行 disable-next=no-member，类型由 mypy 和真实回归共同验证。Windows msvcrt 与动态参考类各保留局部例外，不关闭全局错误规则。"
+    }
+  ],
+  "historical_evidence": "历史协议、数据、指标及来源摘要保持原样。当前源码已变更，继续冻结实验必须生成新的来源版本；不能修改旧摘要来冒充原实验通过。",
+  "ci": {
+    "local": "scripts/check_quality.py",
+    "workflow": ".github/workflows/code-quality.yml",
+    "remote_status": "已配置，当前文件夹无 Git 仓库，未发布或在 GitHub 执行。",
+    "verified_action_sources": [
+      "https://github.com/actions/checkout/tree/v6",
+      "https://github.com/actions/setup-python/tree/v6",
+      "https://github.com/actions/setup-node/tree/v6"
+    ]
+  }
+}

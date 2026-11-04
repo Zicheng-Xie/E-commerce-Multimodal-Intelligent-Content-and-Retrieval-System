@@ -1,0 +1,188 @@
+{
+  "artifacts/module2_business_joint_attention/verification.json": {
+    "source_sha256": "808671eaa34c89e031d97ee961f4732617928fba32df119a47ac3355e4830570",
+    "record": {
+      "passed": true,
+      "head_checkpoints_replayed": 18,
+      "rankings_replayed": 280,
+      "AI_relations_unchanged": 12600,
+      "formal_metrics": null
+    }
+  },
+  "artifacts/module2_role_pool_development/verification.json": {
+    "source_sha256": "9b321b5d4588b43b491ca30c9277d5a99b9ef346df8be87842c31173ceaf9464",
+    "record": {
+      "passed": true,
+      "complete_rankings_replayed": 320,
+      "exact_original_control_replayed": 24,
+      "metric_and_shared_unknown_scopes_recomputed": 3,
+      "AI_relations_unchanged": 12600,
+      "formal_metrics": null,
+      "default_strategy_changed": false,
+      "new_independent_AI_blind_predictions": 0
+    }
+  },
+  "artifacts/module2_grounded_subject_repair/verification.json": {
+    "source_sha256": "e5457c941efcc17397807422ca2849388d0fd63cec1aed432210981aff73fe15",
+    "record": {
+      "passed": true,
+      "replayed_rankings": 880,
+      "parent_rankings_unchanged": 760,
+      "AI_relations_unchanged": 12600,
+      "human_labels": 0,
+      "formal_metrics": null
+    }
+  },
+  "artifacts/module2_business_grounding_development/subject_quality_gate.json": {
+    "source_sha256": "c6b77a20901f93cfb0e452aa679128840b1eaedd5fca03a639ac08fb026935c7",
+    "record": {
+      "automatic_mask_training_ready": false,
+      "automatic_mask_default_promotion_allowed": false,
+      "reason": "Native development inspection found destroyed sale-item structures and retained props. No reusable semantic/structure preservation rule is validated yet.",
+      "next_action": "Freeze a candidate/query-only mask verifier using original+crop+mask evidence, evaluate it on development, and keep full-image fallback. Do not hardcode these query IDs.",
+      "training_started": false,
+      "STIR_started": false,
+      "fusion_quality_comparison_started": false,
+      "all_original_queries_gallery_labels_retained": true,
+      "formal_metrics": null
+    }
+  },
+  "joint_runtime": {
+    "source_sha256": "84e23fd6ed23fc3265438db815da0379f26c68d2150e56a315683f484dc466c5",
+    "record": {
+      "parameters": 22056576,
+      "dtype": "torch.float32",
+      "layers": 12,
+      "actual_joint_pairs": 7560,
+      "full_batch_forward_calls": 1890,
+      "torch": "2.8.0+cu128",
+      "transformers": "4.57.1",
+      "peak_allocated_mib": 167.22021484375,
+      "peak_reserved_mib": 234.0
+    }
+  },
+  "sam2_runtime": {
+    "source_sha256": "b35fb0587eaea63d488f37092b04fb0f73e9d38444163e7100eb99994788a829",
+    "record": {
+      "loading": {
+        "missing_keys": [],
+        "unexpected_keys": [],
+        "mismatched_keys": [],
+        "error_msgs": []
+      },
+      "parameters": 73328401,
+      "dtype": "torch.float32",
+      "peak_allocated_mib": 776.63037109375,
+      "peak_reserved_mib": 1042.0,
+      "complete_checkpoint": true
+    },
+    "actual_calls": 383
+  },
+  "subject_detection_runtime": {
+    "source_sha256": "4ebadd6beeecf34f7b8825765f54593ff7d660a5110dc15307b5ad7606cdbdb9",
+    "record": {
+      "repository": "IDEA-Research/grounding-dino-tiny",
+      "revision": "a2bb814dd30d776dcf7e30523b00659f4f141c71",
+      "parameter_count": 172249090,
+      "dtype": "torch.float32",
+      "device": "cuda:0",
+      "full_checkpoint_loading": {
+        "missing_keys": [],
+        "unexpected_keys": [],
+        "mismatched_keys": [],
+        "error_msgs": []
+      },
+      "disable_custom_kernels": true,
+      "load_seconds": 0.6133458000003884,
+      "peak_allocated_mib": 1885.171875,
+      "peak_reserved_mib": 2806.0
+    },
+    "actual_calls": 412
+  },
+  "mac_20261101": {
+    "source_sha256": "fbd320270733b8a50912933039416069182ee5850b0887c2505398c887b18060",
+    "record": {
+      "scope": "Mac runtime smoke check; not a quality benchmark",
+      "embedding_text": {
+        "shape": [
+          2048
+        ],
+        "finite": true,
+        "norm": 1.0
+      },
+      "embedding_image": {
+        "shape": [
+          2048
+        ],
+        "finite": true,
+        "norm": 1.0
+      },
+      "embedding_device": "mps:0",
+      "embedding_calls": [
+        {
+          "query": true,
+          "seconds": 2.4219937920279335
+        },
+        {
+          "query": false,
+          "seconds": 4.288079249992734
+        }
+      ],
+      "reranker_scores": [
+        -0.83203125
+      ],
+      "reranker_finite": true,
+      "reranker_device": null,
+      "reranker_calls": [
+        {
+          "document_id": "smoke",
+          "seconds": 1.5435109169920906
+        }
+      ],
+      "reranker_gpu": "Apple Silicon MPS"
+    }
+  },
+  "mac_20261104": {
+    "source_sha256": "471b42b37e16753355082bed0626c5e1f4cc78a030c2e564641634096a530922",
+    "record": {
+      "scope": "Mac runtime smoke check; not a quality benchmark",
+      "embedding_text": {
+        "shape": [
+          2048
+        ],
+        "finite": true,
+        "norm": 1.0
+      },
+      "embedding_image": {
+        "shape": [
+          2048
+        ],
+        "finite": true,
+        "norm": 1.0
+      },
+      "embedding_device": "mps:0",
+      "embedding_calls": [
+        {
+          "query": true,
+          "seconds": 2.799208707991056
+        },
+        {
+          "query": false,
+          "seconds": 4.549532457953319
+        }
+      ],
+      "reranker_scores": [
+        -0.83203125
+      ],
+      "reranker_finite": true,
+      "reranker_device": null,
+      "reranker_calls": [
+        {
+          "document_id": "smoke",
+          "seconds": 1.5924983749864623
+        }
+      ],
+      "reranker_gpu": "Apple Silicon MPS"
+    }
+  }
+}

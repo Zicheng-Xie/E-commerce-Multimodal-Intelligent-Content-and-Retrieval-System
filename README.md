@@ -185,6 +185,25 @@ flowchart TB
 
 参数和统计口径见[生成脚本](scripts/test_copywriting_batch.py)，运行说明见[模块 1 README](docs/copywriting_human_evaluation.md)。
 
+### 模块 1 文件清单
+
+| 文件 | 用途 |
+|---|---|
+| [README.md](README.md) | 项目说明、输入输出和快速开始 |
+| [.gitignore](.gitignore) | 忽略模型、数据和本地输出 |
+| [.flake8](.flake8) | Flake8 检查配置 |
+| [pyproject.toml](pyproject.toml) | 格式化与类型检查配置 |
+| [requirements-copywriting-dev.txt](requirements-copywriting-dev.txt) | 开发检查依赖 |
+| [.github/workflows/copywriting-quality.yml](.github/workflows/copywriting-quality.yml) | GitHub Actions 质量检查 |
+| [scripts/test_copywriting_batch.py](scripts/test_copywriting_batch.py) | 批量文案生成、原标题编辑与事实校验 |
+| [scripts/test_copywriting_logic.py](scripts/test_copywriting_logic.py) | 单元测试入口 |
+| [scripts/evaluate_copywriting.py](scripts/evaluate_copywriting.py) | 创建评测表、冻结样本和汇总人工评分 |
+| [scripts/show_copywriting_results.py](scripts/show_copywriting_results.py) | 查看文案与导出 HTML |
+| [tests/unit/test_copywriting_logic.py](tests/unit/test_copywriting_logic.py) | 文案生成与评测流程的测试用例 |
+| [docs/copywriting_human_evaluation.md](docs/copywriting_human_evaluation.md) | 开发试评与独立验收操作说明 |
+| [docs/copywriting-code-standard.md](docs/copywriting-code-standard.md) | 文案模块编码规范 |
+| [docs/copywriting-timing.md](docs/copywriting-timing.md) | 耗时记录与统计说明 |
+
 ## 模块 2：多模态商品检索
 
 **用中文或图片寻找相关商品，并查看匹配依据。** 支持整图、多区域及 ROI 局部检索；基础区域检索、后排序和模型精排是可选路径，按入口与配置使用。

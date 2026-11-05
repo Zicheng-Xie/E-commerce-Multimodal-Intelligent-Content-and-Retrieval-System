@@ -216,3 +216,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+models/
+
+.cache/
+
+.venv-generation/
+
+/data/
+/outputs/
+/reports/
+/.idea/

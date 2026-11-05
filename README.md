@@ -18,7 +18,7 @@
 
 | 模块 | 用户可以完成什么 | 核心技术 | 实现分支 |
 | :--- | :--- | :--- | :--- |
-| **01 · 商品内容智能生成** | 批量生成中文标题、详情文案与核心卖点，校验事实和属性覆盖，支持局部修复与断点续跑 | Qwen3.5-4B · 规则约束 · 提示词工程 · 4-bit 量化 | [`shz-dev`](https://github.com/Zicheng-Xie/E-commerce-Multimodal-Intelligent-Content-and-Retrieval-System/tree/shz-dev) |
+| **01 · 商品内容智能生成** | 批量生成中文标题、详情文案与核心卖点，校验事实和属性覆盖，支持局部修复与断点续跑 | Qwen3.5-4B · 规则约束 · 提示词工程 · 4-bit 量化 | `main` |
 | **02 · 多模态商品检索** | 中文搜商品、以图搜商品、框选局部检索，查看排序与区域匹配解释 | Qwen3-VL-Embedding-2B · 多视图融合 · 可选 Qwen3-VL-Reranker-2B 精排 | [`module2-dev`](https://github.com/Zicheng-Xie/E-commerce-Multimodal-Intelligent-Content-and-Retrieval-System/tree/module2-dev) |
 | **03 · 细粒度服饰语义理解** | 项目规划模块；本页集中展示前两个分支已提供的实现 | 待独立模块完善 | — |
 
@@ -102,13 +102,13 @@ flowchart TB
 
 当前为预训练模型推理与规则约束，未进行专门微调。具体输入、参数和验收口径见下文。
 
-**源码入口：** [生成与修复主流程](https://github.com/Zicheng-Xie/E-commerce-Multimodal-Intelligent-Content-and-Retrieval-System/blob/shz-dev/scripts/test_copywriting_batch.py) · [环境与使用说明](https://github.com/Zicheng-Xie/E-commerce-Multimodal-Intelligent-Content-and-Retrieval-System/blob/shz-dev/README.md)
+**源码入口：** [生成与修复主流程](scripts/test_copywriting_batch.py) · [环境与使用说明](docs/copywriting_human_evaluation.md)
 
 ### 1.1 解决什么问题
 
 商家往往已经有品牌、材质、尺寸等信息，但这些信息分散在属性字段里，不能直接作为商品详情发布。模块 1 先把属性整理清楚，再让模型按品类和指定风格组织语言，最后检查是否遗漏关键事实、写错数字或添加没有依据的功效。
 
-例如，一条商品只有“直筒、长裤、聚酯纤维 65% / 棉 35%”等属性时，系统可以把它组织成标题、详情和三条卖点。这个例子用于说明输入输出；真实生成内容需要经过规则检查和质量复核。
+例如，一条商品只有“直筒、长裤、聚酯纤维 65% / 棉 35%”等属性时，系统可以把它组织成标题、详情和若干条有依据的卖点。这个例子用于说明输入输出；真实生成内容需要经过规则检查和质量复核。
 
 ### 1.2 输入与输出
 
@@ -128,7 +128,7 @@ flowchart TB
 
 | 输出内容 | 含义 | 保存位置或字段 |
 | :--- | :--- | :--- |
-| 商品标题 | 组织商品类型、品牌型号和关键特征 | 每条记录的 `result.title` |
+| 商品标题 | 编辑原题中有属性依据的片段，保留商品类型、已核实型号和关键特征 | 每条记录的 `result.title` |
 | 详情文案 | 连贯介绍已知属性与设计信息 | `result.description` |
 | 核心卖点 | 按要求提炼主要特征 | `result.selling_points` |
 | 服饰标签 | 将已有服饰属性映射成结构化标签 | `fashion_tags`；来源是属性文本 |
@@ -136,6 +136,8 @@ flowchart TB
 | 运行与质量汇总 | 保存本次配置、加载信息、待填写评分和验收状态 | `manifest.json`、`loading.json`、`review.json`、`summary.json` |
 
 结果写入 `outputs/copywriting_v3/<运行时间>/`，其中 `records/` 为逐商品 JSON。图片 URL 与视频字段随输入保留，当前生成过程使用商品文本属性。
+
+标题优先沿用原题中有属性依据的表达。例如，原题同时出现 `AW3418DW` 和 `AW3418HW`，而属性表与规格选项支持 `AW3418DW` 时，标题保留已核实的 `AW3418DW`，例如「Dell/戴尔 AW3418DW 显示器 3440×1440」。型号仍有实质冲突时转人工核验。详情和卖点也会检查无依据的材质、功能与规格声明。
 
 ### 1.3 常用生成参数
 
@@ -160,7 +162,7 @@ flowchart TB
 | 长度档位 | 标题上限 | 详情上限 | 每条卖点上限 |
 | :--- | ---: | ---: | ---: |
 | `short` | 24 | 80 | 24 |
-| `medium` | 30 | 150 | 40 |
+| `medium` | 40 | 150 | 40 |
 | `long` | 40 | 300 | 60 |
 
 上表为字符长度约束，可分别通过 `--title-max`、`--description-max`、`--point-max` 覆盖。分支使用示例采用 `4bit + compact-prompt + use-cache + max-tokens 384`，其中 `384` 是示例值，命令行默认仍为 `512`。
@@ -169,8 +171,8 @@ flowchart TB
 
 | 指标 | 目标或统计口径 | 怎么理解 |
 | :--- | :--- | :--- |
-| 文案相关度 | **验收目标 ≥80%**；`acceptance_relevance_rate` | 商品事实准确、内容相关、关键内容完整且风格适配均通过，才计为一条合格文案 |
-| 文案通顺度 | **验收目标 ≥85%**；`fluency.final_pass_rate` | 根据独立评分，检查语言是否自然、连贯、易读 |
+| 文案相关度 | **验收目标 ≥80%**；两维人工评测 | 核对核心属性命中与关键遗漏，存在无依据事实的文案记不通过 |
+| 文案通顺度 | **验收目标 ≥85%**；两维人工评测 | 根据独立评分，检查语言是否自然、连贯、易读 |
 | 格式通过率 | `format_pass_rate`；无单独公开验收阈值 | 是否按规定输出可解析的标题、详情和卖点结构 |
 | 事实 / 文案规则通过率 | `fact_rule_pass_rate`、`copywriting_rule_pass_rate` | 自动规则有没有发现数值错误、无依据表述、重复等问题 |
 | 综合规则通过率 | `quality_gate_pass_rate` | 自动检查这一关是否通过，之后仍需质量评分 |
@@ -181,7 +183,7 @@ flowchart TB
 
 规则通过率按本次计划商品总数计算，缺失记录不会从分母中删掉。`review.json` 使用 `1 / 0 / null` 表示通过、未通过和未评分；评分或运行未完成时，正式指标保持 `null`（待评测）。当前分支尚未公开完成正式验收的相关度、通顺度和统一性能成绩，因此本页展示目标与计算方法，不填写推测值。
 
-参数和统计口径见[生成脚本](https://github.com/Zicheng-Xie/E-commerce-Multimodal-Intelligent-Content-and-Retrieval-System/blob/shz-dev/scripts/test_copywriting_batch.py)，运行说明见[模块 1 README](https://github.com/Zicheng-Xie/E-commerce-Multimodal-Intelligent-Content-and-Retrieval-System/blob/shz-dev/README.md)。
+参数和统计口径见[生成脚本](scripts/test_copywriting_batch.py)，运行说明见[模块 1 README](docs/copywriting_human_evaluation.md)。
 
 ## 模块 2：多模态商品检索
 
@@ -438,7 +440,7 @@ A/tune 为调参开发组，B/regression 为回归开发组，C/fresh 为已曝�
 
 | 项目 | 模块 1：内容生成 | 模块 2：商品检索 |
 | :--- | :--- | :--- |
-| 分支 | `shz-dev` | `module2-dev` |
+| 分支 | `main` | `module2-dev` |
 | Python | 已验证 3.11 | 使用 3.12；工程声明 `>=3.12,<3.15` |
 | PyTorch | `2.9.1+cu128` | `2.8.0`，torchvision `0.23.0` |
 | Transformers / Accelerate | `5.3.0 / 1.15.0` | `4.57.1 / 1.12.0` |
@@ -451,20 +453,22 @@ A/tune 为调参开发组，B/regression 为回归开发组，C/fresh 为已曝�
 
 ### 4.2 模块 1：先检查输入，再生成一条
 
-切换到 `shz-dev` 并按该分支 README 安装环境、准备权重后，在分支根目录执行。下面以已激活生成环境后的 `python` 为例：
+在仓库根目录运行以下命令。先准备本地 Qwen3.5-4B 权重和官方格式的商品 JSON，再用实际文件路径替换示例路径。生成环境的版本与安装步骤见[模块一使用说明](docs/copywriting_human_evaluation.md)。
 
 ```bash
-# 只检查输入，不加载模型
-python scripts/test_copywriting_batch.py run --samples 'data/test data/raw_samples.json' --dry-run
+# 检查输入
+python scripts/test_copywriting_batch.py run --samples path/to/products.json --dry-run
 
-# 单件试跑：输入路径按自己的文件位置修改
-python scripts/test_copywriting_batch.py run --samples 'data/test data/raw_samples.json' --model-dir models/Qwen3.5-4B --quantization 4bit --compact-prompt --use-cache --max-tokens 384 --limit 1
+# 生成一条文案
+python scripts/test_copywriting_batch.py run --samples path/to/products.json --model-dir models/Qwen3.5-4B --run-dir outputs/copywriting_demo --quantization 4bit --compact-prompt --use-cache --max-tokens 384 --limit 1
 
-# 查看全部参数
-python scripts/test_copywriting_batch.py --help
+# 导出浏览器可打开的文案展示页
+python scripts/show_copywriting_results.py outputs/copywriting_demo --html outputs/copywriting_demo/results.html
 ```
 
-删除 `--limit 1` 可以批量生成。完成后检查 `records/`，在 `review.json` 填写质量评分，再通过 `summarize --run-dir <实际运行目录>` 汇总本次结果。Windows 环境安装与断点续跑的完整命令见[模块 1 使用说明](https://github.com/Zicheng-Xie/E-commerce-Multimodal-Intelligent-Content-and-Retrieval-System/blob/shz-dev/README.md)。
+批量生成时可提高 `--limit` 或省略此参数。每条 JSON 记录的 `result` 包含标题、详情和核心卖点，`validation` 保存自动诊断结果。
+
+人工评测先用 **20 条开发样本**校准评分流程，再用**冻结的 30 条独立样本**做正式评测。3C 数码、服饰穿搭、家居日用各 10 条，按原始属性逐条打分。相关度要求至少 **24/30**，通顺度要求至少 **26/30**。当前状态为待正式验收。生成评测表、冻结样本和汇总评分的命令见[两维人工评测流程](docs/copywriting_human_evaluation.md)。
 
 ### 4.3 模块 2：无需模型，先复核历史结果
 
@@ -515,7 +519,7 @@ python scripts/retrieve_regions.py search --index data/index_regions --image dat
 | 分支 | 职责 | 阅读入口 |
 | :--- | :--- | :--- |
 | `main` | 项目总览、模块功能流程与技术栈 | 当前 README |
-| `shz-dev` | 模块 1：商品内容智能生成 | [README 与运行方法](https://github.com/Zicheng-Xie/E-commerce-Multimodal-Intelligent-Content-and-Retrieval-System/blob/shz-dev/README.md) |
+| `main` | 模块 1：商品内容智能生成 | [README 与运行方法](docs/copywriting_human_evaluation.md) |
 | `module2-dev` | 模块 2：多模态商品检索 | [README 与运行方法](https://github.com/Zicheng-Xie/E-commerce-Multimodal-Intelligent-Content-and-Retrieval-System/blob/module2-dev/README.md) |
 
 两个模块的依赖版本不同，建议分别创建虚拟环境。模型、数据准备和具体命令请进入对应分支查看。
@@ -524,7 +528,7 @@ python scripts/retrieve_regions.py search --index data/index_regions --image dat
 
 | 入口 | 主要内容 |
 | :--- | :--- |
-| [模块 1 生成脚本](https://github.com/Zicheng-Xie/E-commerce-Multimodal-Intelligent-Content-and-Retrieval-System/blob/shz-dev/scripts/test_copywriting_batch.py) | 属性解析、生成、修复、计时与质量汇总 |
+| [模块 1 生成脚本](scripts/test_copywriting_batch.py) | 属性解析、生成、修复、计时与质量汇总 |
 | [模块 2 scripts/](https://github.com/Zicheng-Xie/E-commerce-Multimodal-Intelligent-Content-and-Retrieval-System/tree/module2-dev/scripts) | 索引构建、查询、服务、研究实验和回放入口 |
 | [模块 2 src/](https://github.com/Zicheng-Xie/E-commerce-Multimodal-Intelligent-Content-and-Retrieval-System/tree/module2-dev/src/multimodal_ecommerce) | 图文编码、区域检索、精排与指标计算实现 |
 | [模块 2 configs/](https://github.com/Zicheng-Xie/E-commerce-Multimodal-Intelligent-Content-and-Retrieval-System/tree/module2-dev/configs) | 固定模型版本、区域参数和当前目标 |

@@ -1,0 +1,4 @@
+[flake8]
+max-line-length = 88
+# Black controls line length; pycodestyle counts Chinese display width differently.
+extend-ignore = E203,W503,E501

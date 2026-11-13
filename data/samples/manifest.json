@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰细分属性\\round1_fashionAI_attributes_test_a\\Images\\collar_design_labels\\60951f5761ea3a01d6ed80e76b7f81ac.jpg",
+      "path": "images/fashionai/test_a/collar_design_labels/60951f5761ea3a01d6ed80e76b7f81ac.jpg",
+      "sha256": "3fa695714cb3f8245246506d3a053844a9fd47623f13a59f9427286f3b2b71c9",
+      "size_bytes": 69123
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰细分属性\\round1_fashionAI_attributes_test_a\\Images\\collar_design_labels\\677e1183282769a3fe8ac5f1f0154bbd.jpg",
+      "path": "images/fashionai/test_a/collar_design_labels/677e1183282769a3fe8ac5f1f0154bbd.jpg",
+      "sha256": "9fe413606195505e72ad2d1ffc46e2be1e3dd7e293c777b869d3bb67f2b669e9",
+      "size_bytes": 106683
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰细分属性\\round1_fashionAI_attributes_test_a\\Images\\neckline_design_labels\\76f1391325bbe1275c1c4b6a9a2808f4.jpg",
+      "path": "images/fashionai/test_a/neckline_design_labels/76f1391325bbe1275c1c4b6a9a2808f4.jpg",
+      "sha256": "28c3ce9d0bb8de46725c8cf95aac812ef156f18a89f379b9c20754ca9c952429",
+      "size_bytes": 97910
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰细分属性\\round1_fashionAI_attributes_test_a\\Images\\neckline_design_labels\\3d784813cda050811eb25b7096e722ce.jpg",
+      "path": "images/fashionai/test_a/neckline_design_labels/3d784813cda050811eb25b7096e722ce.jpg",
+      "sha256": "3b3ffe1a3e2d2d93a90b426aed240d80250a6a3c7b3cd63cb2a929e5ec894929",
+      "size_bytes": 145837
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰细分属性\\round1_fashionAI_attributes_test_a\\Images\\skirt_length_labels\\704c6687f416cf0ec750c312ff112e17.jpg",
+      "path": "images/fashionai/test_a/skirt_length_labels/704c6687f416cf0ec750c312ff112e17.jpg",
+      "sha256": "3ed94d03ed369d920fd955422758ab362b2ddb9f61c44a7fa9b8b90061bf53b6",
+      "size_bytes": 111896
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰细分属性\\round1_fashionAI_attributes_test_a\\Images\\skirt_length_labels\\77b794c13dd8fcfd6065aa3be05e204c.jpg",
+      "path": "images/fashionai/test_a/skirt_length_labels/77b794c13dd8fcfd6065aa3be05e204c.jpg",
+      "sha256": "069368bbed210d2624215debe0347554adaf0f657b61b6dc8679bff263f62d60",
+      "size_bytes": 31838
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰细分属性\\round1_fashionAI_attributes_test_a\\Images\\sleeve_length_labels\\29eb4b57785544814f0a28257d1b7a7d.jpg",
+      "path": "images/fashionai/test_a/sleeve_length_labels/29eb4b57785544814f0a28257d1b7a7d.jpg",
+      "sha256": "a897d11abf93e03dc7af0902333c7ed6d3497c86aa99eab506317d1fa474c25f",
+      "size_bytes": 109233
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰细分属性\\round1_fashionAI_attributes_test_a\\Images\\sleeve_length_labels\\ef39554afc8c0493fa517e8daaf2729f.jpg",
+      "path": "images/fashionai/test_a/sleeve_length_labels/ef39554afc8c0493fa517e8daaf2729f.jpg",
+      "sha256": "7b755ae4cad30d96a5bd2ff5a58adad96b93c812ca8b7b4745005bdadafd5bc4",
+      "size_bytes": 77070
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰细分属性\\round1_fashionAI_attributes_test_a\\Images\\neck_design_labels\\177aaf9332d1022296e495ec9fd2df52.jpg",
+      "path": "images/fashionai/test_a/neck_design_labels/177aaf9332d1022296e495ec9fd2df52.jpg",
+      "sha256": "76527723d7885f00344ac6b19b58851f14c64125a7ae52c803580b6b94bc2129",
+      "size_bytes": 83151
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰细分属性\\round1_fashionAI_attributes_test_a\\Images\\neck_design_labels\\713c35da98e86f750d53aa802ab499ed.jpg",
+      "path": "images/fashionai/test_a/neck_design_labels/713c35da98e86f750d53aa802ab499ed.jpg",
+      "sha256": "6da54db3e6bf3cd456d5ae4ea5230067a8d6aefacadca49bd2c5f75bc8321fcb",
+      "size_bytes": 77957
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰细分属性\\round1_fashionAI_attributes_test_a\\Images\\coat_length_labels\\905b13d58c621844b45b6e5e2a4de3a2.jpg",
+      "path": "images/fashionai/test_a/coat_length_labels/905b13d58c621844b45b6e5e2a4de3a2.jpg",
+      "sha256": "727815dc992befe763446afbd4112c1a0e32648c005450f4be39c13c7edcf54b",
+      "size_bytes": 89450
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰细分属性\\round1_fashionAI_attributes_test_a\\Images\\coat_length_labels\\56630c0f4a23a9159dccfcc7d9b5e7f8.jpg",
+      "path": "images/fashionai/test_a/coat_length_labels/56630c0f4a23a9159dccfcc7d9b5e7f8.jpg",
+      "sha256": "7f832e5d9442df07a00a6bac7a6bc3a3cdbe4d57ef7bf5e9e7666d3f5805c0c9",
+      "size_bytes": 61714
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰细分属性\\round1_fashionAI_attributes_test_a\\Images\\lapel_design_labels\\f695c2ec334c21875426f73d48b8de30.jpg",
+      "path": "images/fashionai/test_a/lapel_design_labels/f695c2ec334c21875426f73d48b8de30.jpg",
+      "sha256": "549b0b81571ff64cbcbee857badd68d153ef2cf5e0fc88c35e3fe7b05a39c021",
+      "size_bytes": 122461
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰细分属性\\round1_fashionAI_attributes_test_a\\Images\\lapel_design_labels\\156228a4743bfd86cefd8aee70ad44c4.jpg",
+      "path": "images/fashionai/test_a/lapel_design_labels/156228a4743bfd86cefd8aee70ad44c4.jpg",
+      "sha256": "ab7e97a00da99a5948fa80c708213a03691b913422150a65af9fb87b7d36f28d",
+      "size_bytes": 141153
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰细分属性\\round1_fashionAI_attributes_test_a\\Images\\pant_length_labels\\7e25106e7a0f5ac5d26a42fbe9648eaa.jpg",
+      "path": "images/fashionai/test_a/pant_length_labels/7e25106e7a0f5ac5d26a42fbe9648eaa.jpg",
+      "sha256": "f6d2116b7ff01d3647197e0405fbca81b565a28784c189d2ac4e897aad429aee",
+      "size_bytes": 85106
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰细分属性\\round1_fashionAI_attributes_test_a\\Images\\pant_length_labels\\3f96c13d864f387e5831068d87a9f1de.jpg",
+      "path": "images/fashionai/test_a/pant_length_labels/3f96c13d864f387e5831068d87a9f1de.jpg",
+      "sha256": "172714587d100cb2ecae9c93f0c71d2d79c70d523baf66b1f1a021e8e6a17a09",
+      "size_bytes": 100184
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰分割\\train\\image\\000001.jpg",
+      "path": "images/deepfashion/train/000001.jpg",
+      "sha256": "daef875f9fb8ad01022466651035228cef88c56aebb5343189c14f20f4e93322",
+      "size_bytes": 31292
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰分割\\train\\annos\\000001.json",
+      "path": "annotations/source/deepfashion/train/000001.json",
+      "sha256": "0cd6faed7982b7c4fbe00438bff8dd802e8b3faf1957c4038197cb98193f9290",
+      "size_bytes": 1565
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰分割\\train\\image\\000002.jpg",
+      "path": "images/deepfashion/train/000002.jpg",
+      "sha256": "6529c704065ab2f87a188cb008851449ebc52e43bba9b5d3f31e151a1ba47433",
+      "size_bytes": 40200
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰分割\\train\\annos\\000002.json",
+      "path": "annotations/source/deepfashion/train/000002.json",
+      "sha256": "bc225e2ca9674ba41dc554d248be251ca4ed683677036bcb6dfa89ebd649d340",
+      "size_bytes": 2460
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰分割\\train\\image\\000003.jpg",
+      "path": "images/deepfashion/train/000003.jpg",
+      "sha256": "4a3157ec1140baaa2293ae1371063206e72e9a335d24fda61c6e58c32d44b69a",
+      "size_bytes": 42457
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰分割\\train\\annos\\000003.json",
+      "path": "annotations/source/deepfashion/train/000003.json",
+      "sha256": "32d268b6cceed3d5a816d1e4c64d8b44fcc9688c8ca47711fad8f2ed72de3e42",
+      "size_bytes": 1130
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰分割\\train\\image\\000004.jpg",
+      "path": "images/deepfashion/train/000004.jpg",
+      "sha256": "15acb6dcf59e404bb805bf7715eb06ac84316c25ea74a82d8b77b8c2e6dd5369",
+      "size_bytes": 43879
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰分割\\train\\annos\\000004.json",
+      "path": "annotations/source/deepfashion/train/000004.json",
+      "sha256": "9d30fc829b3350ed4362c9a3969372ae487ee0a62b1450f02eb9dfa1baae1745",
+      "size_bytes": 1101
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰分割\\validation\\image\\000001.jpg",
+      "path": "images/deepfashion/validation/000001.jpg",
+      "sha256": "8ec2047bbbea7cdfcde12cb5ac46f21900dfd3ec379a2a9190eb7e04e8201e76",
+      "size_bytes": 26479
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰分割\\validation\\annos\\000001.json",
+      "path": "annotations/source/deepfashion/validation/000001.json",
+      "sha256": "6f25ce337ab248f2fdcce3c6fa6cb642c6e5c2799bdd5c3fc0e65103e7302af5",
+      "size_bytes": 4382
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰分割\\validation\\image\\000002.jpg",
+      "path": "images/deepfashion/validation/000002.jpg",
+      "sha256": "a12b3e3f1d79c1c8a49cc5361a65b2f375d956ed0046ccbda43a48b8e8efc3df",
+      "size_bytes": 27176
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰分割\\validation\\annos\\000002.json",
+      "path": "annotations/source/deepfashion/validation/000002.json",
+      "sha256": "51cda189f45556240542d59aceadc129551bea472898883dfe3d0fd9197102f3",
+      "size_bytes": 4733
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰分割\\validation\\image\\000003.jpg",
+      "path": "images/deepfashion/validation/000003.jpg",
+      "sha256": "da2ab1e3ab418e1aa085dd5512aa92d7402aedb6f74c951d44ff2131746f1ffc",
+      "size_bytes": 64266
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰分割\\validation\\annos\\000003.json",
+      "path": "annotations/source/deepfashion/validation/000003.json",
+      "sha256": "616369ddcc5e65d6c42240e81864cf9869010098b3bf603b727617e871100358",
+      "size_bytes": 5275
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰分割\\validation\\image\\000004.jpg",
+      "path": "images/deepfashion/validation/000004.jpg",
+      "sha256": "d1ab9055c437f71f01a78d038afce4095c42701376b062f09391d71152519451",
+      "size_bytes": 67257
+    },
+    {
+      "source_path": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习\\服饰分割\\validation\\annos\\000004.json",
+      "path": "annotations/source/deepfashion/validation/000004.json",
+      "sha256": "6ff9d38a27e109ee0a3d7bed3a6a7a71beded63bdbf946759fa05ce83fb16d90",
+      "size_bytes": 5607
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "task": "fashion_segmentation",
+  "data_contract": "segmentation_record_v1",
+  "source_root": "Alibaba阿里算法实习/服饰分割",
+  "splits": {
+    "train": "train.jsonl",
+    "validation": "validation.jsonl",
+    "test": "test.jsonl"
+  },
+  "test_policy": "inference_only_unlabeled",
+  "model_baseline": {
+    "supervised": "mask2former_or_equivalent",
+    "zero_shot": "groundingdino_plus_sam2",
+    "num_classes": "derive_from_train_manifest"
+  },
+  "metrics": ["mask_iou", "dice", "bbox_iou", "per_category", "by_occlusion", "by_viewpoint", "by_scale", "latency_ms"],
+  "quality_policy": {
+    "reject_out_of_bounds_polygon": true,
+    "preserve_source_coordinates": true,
+    "require_image_annotation_pair": true,
+    "record_sha256": true
+  }
+}

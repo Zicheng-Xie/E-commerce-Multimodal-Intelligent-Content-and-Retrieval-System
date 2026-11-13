@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "source_root": "E:\\code\\Multimodal_E-commerce\\Alibaba阿里算法实习",
+  "output_root": "E:\\code\\Multimodal_E-commerce\\data\\samples",
+  "product": {
+    "train": {
+      "scanned": 129,
+      "selected_by_category": {
+        "3C数码": 8,
+        "服饰穿搭": 8,
+        "家居日用": 8
+      },
+      "requested_per_category": 8,
+      "shortfalls": {},
+      "scan_limit": 50000
+    },
+    "test": {
+      "scanned": 191,
+      "selected_by_category": {
+        "3C数码": 8,
+        "服饰穿搭": 8,
+        "家居日用": 8
+      },
+      "requested_per_category": 8,
+      "shortfalls": {},
+      "scan_limit": 50000
+    }
+  },
+  "fashionai": {
+    "split": "test_a",
+    "selected_by_attribute": {
+      "skirt_length_labels": 2,
+      "coat_length_labels": 2,
+      "collar_design_labels": 2,
+      "lapel_design_labels": 2,
+      "neck_design_labels": 2,
+      "neckline_design_labels": 2,
+      "pant_length_labels": 2,
+      "sleeve_length_labels": 2
+    },
+    "requested_per_attribute": 2,
+    "shortfalls": {},
+    "note": "Official test_a is retained as held-out data; m is preserved."
+  },
+  "deepfashion": {
+    "train": {
+      "selected": 4,
+      "requested": 4,
+      "shortfall": 0,
+      "instances": 6
+    },
+    "validation": {
+      "selected": 4,
+      "requested": 4,
+      "shortfall": 0,
+      "instances": 6
+    }
+  },
+  "sampling_method": "deterministic_first_match_within_official_split",
+  "category_rules": {
+    "fields_in_priority_order": [
+      "label",
+      "title_only_if_label_missing"
+    ],
+    "category_priority": [
+      "3C数码",
+      "服饰穿搭",
+      "家居日用"
+    ],
+    "keywords": {
+      "3C数码": [
+        "手机",
+        "平板",
+        "笔记本",
+        "电脑",
+        "键盘",
+        "鼠标",
+        "耳机",
+        "相机",
+        "摄像",
+        "智能手表",
+        "存储",
+        "充电器",
+        "移动电源",
+        "数码",
+        "显示器",
+        "路由器",
+        "U盘",
+        "硬盘"
+      ],
+      "服饰穿搭": [
+        "T恤",
+        "衬衫",
+        "裙",
+        "裤",
+        "外套",
+        "羽绒",
+        "毛衣",
+        "针织",
+        "卫衣",
+        "西装",
+        "夹克",
+        "风衣",
+        "马甲",
+        "服饰",
+        "鞋",
+        "靴",
+        "帽",
+        "围巾",
+        "婚纱",
+        "汉服",
+        "舞蹈服",
+        "斜挎包",
+        "双肩包"
+      ],
+      "家居日用": [
+        "家居",
+        "家具",
+        "餐桌",
+        "书桌",
+        "茶几",
+        "椅",
+        "沙发",
+        "床",
+        "柜",
+        "收纳",
+        "台灯",
+        "吊灯",
+        "壁灯",
+        "窗帘",
+        "地毯",
+        "枕",
+        "被",
+        "餐具",
+        "杯",
+        "碗",
+        "果盘",
+        "餐盘",
+        "毛巾",
+        "浴巾",
+        "置物",
+        "书架",
+        "拖把",
+        "衣物用刷"
+      ]
+    },
+    "limitation": "Substring heuristic; requires manual category review."
+  },
+  "total_records": 72,
+  "copied_files": 32,
+  "verified_local_images": 24,
+  "pending_product_images": 48
+}

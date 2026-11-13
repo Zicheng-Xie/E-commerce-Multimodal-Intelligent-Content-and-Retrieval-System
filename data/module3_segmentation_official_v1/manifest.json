@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "release_id": "module3_segmentation_official_v1",
+  "source_root": "/Users/macbook/Documents/Multimodal_E-commerce/Alibaba阿里算法实习/服饰分割",
+  "split_policy": "official_source_splits_unchanged",
+  "test_policy": "inference_only_unlabeled",
+  "files": {
+    "train": {
+      "schema_version": 1,
+      "records": 191961,
+      "sha256": "90c1fa8b9b1c88d4d1bfd2a0275303bf0ab4d1f9edb34a1dab3458350665692e",
+      "path": "data/module3_segmentation_official_v1/train.jsonl"
+    },
+    "validation": {
+      "schema_version": 1,
+      "records": 32153,
+      "sha256": "d50afb656673b4c6516a218f2c6eec4fe14ad3ee1965dc22055ce6bb8f387b9f",
+      "path": "data/module3_segmentation_official_v1/validation.jsonl"
+    },
+    "test": {
+      "schema_version": 1,
+      "records": 62629,
+      "sha256": "3e19743090dcc3c52909b964914ad35ecb0a659bcbe214d4a887e76fad83909e",
+      "path": "data/module3_segmentation_official_v1/test.jsonl"
+    }
+  },
+  "scan_report_sha256": "55d049c14b7877f62a2c76255d70e2647513ac93247ddfc268e6ed890b14a77a"
+}

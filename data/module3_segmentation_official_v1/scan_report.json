@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "root": "/Users/macbook/Documents/Multimodal_E-commerce/Alibaba阿里算法实习/服饰分割",
+  "splits": {
+    "train": {
+      "records": 191961,
+      "objects": 312186,
+      "categories": {
+        "long sleeve dress": 7907,
+        "long sleeve outwear": 13457,
+        "long sleeve top": 36064,
+        "short sleeve dress": 17211,
+        "short sleeve outwear": 543,
+        "short sleeve top": 71645,
+        "shorts": 36616,
+        "skirt": 30835,
+        "sling": 1985,
+        "sling dress": 6492,
+        "trousers": 55387,
+        "vest": 16095,
+        "vest dress": 17949
+      },
+      "annotation_quality": {
+        "invalid_bbox": 2,
+        "invalid_polygon": 1534,
+        "valid": 310650
+      },
+      "annotated": true,
+      "orphan_annotations": []
+    },
+    "validation": {
+      "records": 32153,
+      "objects": 52490,
+      "categories": {
+        "long sleeve dress": 1477,
+        "long sleeve outwear": 2011,
+        "long sleeve top": 5966,
+        "short sleeve dress": 3127,
+        "short sleeve outwear": 142,
+        "short sleeve top": 12556,
+        "shorts": 4167,
+        "skirt": 6522,
+        "sling": 322,
+        "sling dress": 1149,
+        "trousers": 9586,
+        "vest": 2113,
+        "vest dress": 3352
+      },
+      "annotation_quality": {
+        "valid": 52490
+      },
+      "annotated": true,
+      "orphan_annotations": []
+    },
+    "test": {
+      "records": 62629,
+      "objects": 0,
+      "categories": {},
+      "annotation_quality": {},
+      "annotated": false,
+      "orphan_annotations": []
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "skirt_length_labels": [
+    "Invisible",
+    "Short Length",
+    "Knee Length",
+    "Midi Length",
+    "Ankle Length",
+    "Floor Length"
+  ],
+  "coat_length_labels": [
+    "Invisible",
+    "High Waist Length",
+    "Regular Length",
+    "Long Length",
+    "Micro Length",
+    "Knee Length",
+    "Midi Length",
+    "Ankle&Floor Length"
+  ],
+  "collar_design_labels": [
+    "Invisible",
+    "Shirt Collar",
+    "Peter Pan",
+    "Puritan Collar",
+    "Rib Collar"
+  ],
+  "lapel_design_labels": [
+    "Invisible",
+    "Notched",
+    "Collarless",
+    "Shawl Collar",
+    "Plus Size Shawl"
+  ],
+  "neck_design_labels": [
+    "Invisible",
+    "Turtle Neck",
+    "Ruffle Semi-High Collar",
+    "Low Turtle Neck",
+    "Draped Collar"
+  ],
+  "neckline_design_labels": [
+    "Invisible",
+    "Strapless Neck",
+    "Deep V Neckline",
+    "Straight Neck",
+    "V Neckline",
+    "Square Neckline",
+    "Off Shoulder",
+    "Round Neckline",
+    "Sweat Heart Neck",
+    "One\tShoulder Neckline"
+  ],
+  "pant_length_labels": [
+    "Invisible",
+    "Short Pant",
+    "Mid Length",
+    "3/4 Length",
+    "Cropped Pant",
+    "Full Length"
+  ],
+  "sleeve_length_labels": [
+    "Invisible",
+    "Sleeveless",
+    "Cup Sleeves",
+    "Short Sleeves",
+    "Elbow Sleeves",
+    "3/4 Sleeves",
+    "Wrist Length",
+    "Long Sleeves",
+    "Extra Long Sleeves"
+  ]
+}

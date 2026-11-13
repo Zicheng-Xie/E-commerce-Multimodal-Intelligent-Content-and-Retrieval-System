@@ -79,3 +79,23 @@ def test_no_complete_human_truth_keeps_all_target_observations_pending() -> None
     assert result["hard_gate_passed"] is None
     assert result["recall_preferred_reached"] is None
     assert result["formal_metrics"] is None and result["goal_met"] is False
+
+
+def test_new_contract_requires_both_precision_and_recall() -> None:
+    """The versioned 80/90 contract treats Recall as a hard threshold."""
+    contract = json.loads(
+        Path("configs/module2_target_p80_r90.json").read_text(encoding="utf-8")
+    )
+    summary, modes, _ = inputs(0.8, 0.899)
+    candidate = assess_current_target(summary, modes, contract)["candidates"][
+        "candidate"
+    ]
+    assert not candidate["hard_gate_passed"]
+    assert (
+        "recall@10_below_required_or_undefined" in candidate["required_failures"]["all"]
+    )
+    summary, modes, _ = inputs(0.8, 0.9)
+    candidate = assess_current_target(summary, modes, contract)["candidates"][
+        "candidate"
+    ]
+    assert candidate["hard_gate_passed"]

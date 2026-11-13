@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>多模态商品检索 · 模块二</title>
+  <link rel="stylesheet" href="/showcase.css">
+  <script src="/showcase.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="商品检索首页"><span class="brand-mark">M</span><span>商品检索<small>MULTIMODAL COMMERCE</small></span></a>
+    <div class="nav-label">工作空间</div>
+    <button class="nav-item active" id="navSearch"><span>⌕</span> 多模态检索</button>
+    <button class="nav-item" id="navCatalog"><span>▦</span> 商品图库 <em id="navCount">—</em></button>
+    <div class="side-note"><span class="live-dot"></span>本地模型服务<small>图片与文字，连接同一商品图库。</small></div>
+    <div class="side-footer">阿里电商 · 模块二<br><span>本地开发演示</span></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><span>工作空间 <i>/</i> <strong id="breadcrumb">多模态检索</strong></span><span class="local-badge"><span class="live-dot"></span> 本地运行</span></header>
+    <main>
+      <section id="searchArea">
+        <div class="eyebrow">MULTIMODAL PRODUCT SEARCH</div>
+        <h1>从商品意图，找到合适商品<span>。</span></h1>
+        <p class="intro">描述你的需求，或上传一张图片。在同一个图库里，发现相关商品。</p>
+        <div class="stats"><span><b id="productCount">—</b> 件商品</span><span>图搜 + 文搜</span><span>返回 Top 10</span></div>
+        <section class="query-panel" aria-label="商品查询">
+          <div class="query-tabs" role="tablist" aria-label="检索方式">
+            <button id="textTab" role="tab" aria-selected="true" class="selected">文字找商品</button>
+            <button id="imageTab" role="tab" aria-selected="false">图片找商品</button>
+          </div>
+          <div class="query-body">
+            <div id="textBox"><label for="queryText" class="sr-only">商品需求</label><textarea id="queryText" maxlength="512" rows="2" placeholder="例如：无线蓝牙耳机，适合日常通勤使用"></textarea><div class="quick-queries"><span>试试搜索</span><button data-query="无线蓝牙耳机">无线耳机</button><button data-query="家用餐椅">家用餐椅</button><button data-query="短袖T恤">短袖 T 恤</button><button data-query="手机壳">手机壳</button></div></div>
+            <div id="imageBox" hidden>
+              <label class="dropzone" id="dropzone" for="imageFile"><span class="upload-symbol">↥</span><span><b>点击上传，或将商品图片拖到这里</b><small>JPG、PNG、WebP · 不超过 8 MB</small></span><input type="file" id="imageFile" accept="image/jpeg,image/png,image/webp" class="sr-only"></label>
+              <div id="imagePreview" hidden><img id="previewImage" alt="已选择的查询图片"><div><b id="previewName">已选择图片</b><small>使用这张图片的主体查找相关商品</small><button class="text-button" id="clearImage">重新选择</button></div></div>
+            </div>
+            <div class="query-actions"><span id="queryHint">原图与标题共同参与商品匹配</span><button class="primary-button" id="searchButton">开始检索 <span>↗</span></button></div>
+          </div>
+        </section>
+        <div class="sample-strip" id="sampleStrip" hidden><div class="sample-heading"><span>也可以从这些图片开始</span><button class="text-button" id="moreSamples">换一组 ↻</button></div><div id="sampleImages"></div></div>
+      </section>
+      <section id="catalogHeading" hidden><div class="eyebrow">PRODUCT LIBRARY</div><h1>全部商品<span>。</span></h1><p class="intro">浏览当前完整统一开发图库，查看原始商品主图与标题。</p></section>
+      <div class="progress" id="progress" role="status" aria-live="polite" hidden><span class="spinner"></span><div><b id="progressMessage">正在检索…</b><small>本地模型正在处理，首次查询可能需要几十秒。</small></div><span id="elapsed">0 秒</span></div>
+      <div id="error" class="error" role="alert" hidden></div>
+      <section class="results-section">
+        <div class="results-heading"><div><h2 id="resultsTitle">逛逛商品图库</h2><p id="resultsMeta">正在读取商品…</p></div><button class="secondary-button" id="showAll">浏览全部商品 ↗</button></div>
+        <div id="cards" class="cards"></div>
+        <div class="pagination" id="pagination"><button class="secondary-button" id="previousPage">← 上一页</button><span id="pageLabel"></span><button class="secondary-button" id="nextPage">下一页 →</button></div>
+      </section>
+      <footer class="page-footer"><span>当前范围：845 件统一开发商品，支持实时输入新查询。</span><span>演示结果不等于独立验收成绩。</span></footer>
+    </main>
+  </div>
+  <dialog id="productDialog"><button class="dialog-close" id="closeDialog" aria-label="关闭商品详情">×</button><div class="product-detail"><img id="detailImage" alt="商品原图"><div><span class="eyebrow">PRODUCT DETAILS</span><h2 id="detailTitle"></h2><p id="detailId"></p><button id="searchSimilar" class="primary-button">用这张图检索 ↗</button><p class="detail-note">展示原始商品主图与标题，未提供交易或价格信息。</p></div></div></dialog>
+</body>
+</html>

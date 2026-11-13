@@ -1,0 +1,64 @@
+{
+  "updated_at": "2026-11-10",
+  "authority": "user_required_consumed_holdout_isolation_and_new_unlabeled_final_reservation",
+  "consumed_roots": [
+    {
+      "path_prefix": "data/module2_consumed_holdouts/",
+      "state": "consumed",
+      "development_or_tuning_allowed": false
+    },
+    {
+      "path_prefix": "artifacts/module2_blind/",
+      "state": "consumed",
+      "development_or_tuning_allowed": false
+    },
+    {
+      "path_prefix": "data/module2_reserved_acceptance/",
+      "state": "consumed",
+      "development_or_tuning_allowed": false
+    },
+    {
+      "path_prefix": "artifacts/module2_business_acceptance/",
+      "state": "consumed",
+      "development_or_tuning_allowed": false
+    },
+    {
+      "path_prefix": "artifacts/module2_independent_business_blind/",
+      "state": "consumed",
+      "development_or_tuning_allowed": false
+    },
+    {
+      "path_prefix": "data/module2_business_blind_consumed/",
+      "state": "consumed",
+      "development_or_tuning_allowed": false
+    },
+    {
+      "path_prefix": "artifacts/module2_grounded_independent_blind/",
+      "state": "consumed",
+      "development_or_tuning_allowed": false
+    },
+    {
+      "path_prefix": "data/module2_grounded_blind_consumed/",
+      "state": "consumed",
+      "development_or_tuning_allowed": false
+    }
+  ],
+  "legacy_reserved_roots": [
+    "artifacts/module2_final_acceptance_20261105/"
+  ],
+  "active_fresh_reservation": "artifacts/module2_final_acceptance_20261110/",
+  "blocked_cli_commands": 18,
+  "acceptance_policy": {
+    "freeze_model_and_human_gold_before_inference": true,
+    "one_shot_evaluation": true,
+    "after_results_seen_consumed_for_future_models": true,
+    "complete_relevance_judgments_required": true,
+    "no_development_metrics_claimed_as_independent": true
+  },
+  "formal_metrics": null,
+  "business_preparation_source_consumption_evidence": {
+    "source_records": 330,
+    "consumed_native_id_overlap": 330,
+    "source_used_by": "scripts/independent_business_blind.py DATASET = artifacts/module2_business_acceptance/dataset"
+  }
+}

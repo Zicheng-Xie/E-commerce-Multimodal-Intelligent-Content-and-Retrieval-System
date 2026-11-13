@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第二阶段 · 检索相关性标注</title>
+<style>
+body{font:16px/1.6 system-ui,sans-serif;margin:24px auto;padding:0 20px;max-width:1250px;background:#f4f6f8;color:#17293e}header{position:sticky;top:0;background:#f4f6f8;padding:12px 0;z-index:1;border-bottom:1px solid #ccd5df}button,input,select{font:inherit;padding:6px;margin:4px}button{cursor:pointer}#cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;margin-top:16px}article{background:white;border:1px solid #ccd5df;border-radius:10px;padding:16px}article img{height:200px;width:100%;object-fit:contain}small{overflow-wrap:anywhere}pre{white-space:pre-wrap;font-size:13px}textarea{width:95%;min-height:45px}#queryImage{max-height:180px;max-width:240px}#status{font-weight:bold}.chosen{background:#bddcd3}.note{color:#526477}
+</style>
+<h1>检索相关性标注</h1>
+<p class="note">请根据商品图片、标题与属性判断是否满足查询条件。未标注和无法判断均保留为空，不会自动当作不相关。此页面不展示模型排序，候选顺序固定。关闭前请导出；页面不会自动保存。</p>
+<header>
+<label>评审人 <input id="reviewer" placeholder="填写姓名或固定代号"></label>
+<label>查询 <select id="query"></select></label>
+<button id="previous">上一页</button><button id="next">下一页</button>
+<button id="export">导出标注</button><label>导入已保存 JSONL <input id="import" type="file" accept=".jsonl"></label>
+<div id="status"></div>
+</header>
+<h2 id="queryTitle"></h2><p id="rule"></p><img id="queryImage" hidden alt="查询图片">
+<p class="note">导出时请保存到 E:\code\Multimodal_E-commerce\artifacts\evaluation_stage2_v1\qrels.reviewed.jsonl。浏览器若直接下载，请把文件保存或复制到该目录。</p>
+<main id="cards"></main>
+<script>
+const DATA = __REVIEW_DATA__;
+const $ = id => document.getElementById(id);
+const key = (q,p) => q + '\t' + p;
+const labels = new Map(DATA.labels.map(row => [key(row.query_id,row.product_id), row]));
+const pageSize = 20;
+let page = 0;
+for (const query of DATA.queries) {
+  const option = document.createElement('option');
+  option.value = query.id;
+  option.textContent = query.id + ' · ' + (query.text || '图片查询');
+  $('query').append(option);
+}
+function current() {return DATA.queries.find(query => query.id === $('query').value);}
+function candidates() {return DATA.catalog.filter(row => row.id !== current().exclude_id);}
+function status() {
+  const query = current();
+  const rows = candidates().map(row => labels.get(key(query.id,row.id)));
+  const count = rows.filter(row => row.grade !== null && row.reviewer.trim()).length;
+  const total = [...labels.values()].filter(row => row.grade !== null && row.reviewer.trim()).length;
+  $('status').textContent = `本查询 ${count}/${rows.length} · 全部 ${total}/${labels.size} · 第 ${page+1}/${Math.ceil(rows.length/pageSize)} 页`;
+}
+function render() {
+  const query = current();
+  $('queryTitle').textContent = query.text || query.id;
+  $('rule').textContent = query.relevance_rule;
+  $('queryImage').hidden = !query.image_path;
+  if (query.image_path) $('queryImage').src = query.image_path;
+  $('cards').replaceChildren();
+  for (const row of candidates().slice(page*pageSize,(page+1)*pageSize)) {
+    const label = labels.get(key(query.id,row.id));
+    const card = document.createElement('article');
+    const image = document.createElement('img'); image.src=row.image_path; image.loading='lazy'; image.alt='商品图片'; card.append(image);
+    const title = document.createElement('p'); title.textContent=row.title; card.append(title);
+    const id = document.createElement('small'); id.textContent=row.id+' · '+row.category; card.append(id);
+    const details = document.createElement('details');
+    const summary = document.createElement('summary'); summary.textContent='原始属性'; details.append(summary);
+    const attributes = document.createElement('pre'); attributes.textContent=JSON.stringify(row.attributes,null,2); details.append(attributes); card.append(details);
+    const buttons = document.createElement('div');
+    for (const [text,grade] of [['相关',1],['不相关',0],['待定 / 清空',null]]) {
+      const button=document.createElement('button'); button.textContent=text;
+      if(label.grade===grade) button.className='chosen';
+      button.onclick=()=>{
+        if(grade!==null && !$('reviewer').value.trim()){alert('请先填写评审人。');return;}
+        label.grade=grade; label.reviewer=$('reviewer').value.trim(); render();
+      };
+      buttons.append(button);
+    }
+    card.append(buttons);
+    const note=document.createElement('textarea'); note.placeholder='争议、依据或无法判断的原因'; note.value=label.note;
+    note.oninput=()=>{label.note=note.value;}; card.append(note);
+    $('cards').append(card);
+  }
+  status();
+}
+$('query').onchange=()=>{page=0;render();};
+$('previous').onclick=()=>{page=Math.max(0,page-1);render();};
+$('next').onclick=()=>{page=Math.min(Math.ceil(candidates().length/pageSize)-1,page+1);render();};
+$('export').onclick=async()=>{
+  const text=[...labels.values()].map(row=>JSON.stringify(row)).join('\n')+'\n';
+  try {
+    if(window.showSaveFilePicker){
+      const handle=await showSaveFilePicker({suggestedName:'qrels.reviewed.jsonl',types:[{description:'JSON Lines',accept:{'application/json':['.jsonl']}}]});
+      const file=await handle.createWritable(); await file.write(text); await file.close();
+    } else {
+      const url=URL.createObjectURL(new Blob([text],{type:'application/json'}));
+      const link=document.createElement('a');link.href=url;link.download='qrels.reviewed.jsonl';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    }
+  } catch(error){if(error.name!=='AbortError') alert(error.message);}
+};
+$('import').onchange=async event=>{
+  try {
+    const file=event.target.files[0];if(!file)return;
+    const rows=(await file.text()).trim().split(/\r?\n/).filter(Boolean).map(line=>JSON.parse(line));
+    const seen=new Set();
+    for(const row of rows){
+      const id=key(row.query_id,row.product_id);
+      if(!labels.has(id)||seen.has(id)||![null,0,1].includes(row.grade)||typeof row.reviewer!=='string'||typeof row.note!=='string')throw Error('文件含重复、未知或格式不正确的标注。');
+      seen.add(id);
+    }
+    if(rows.length!==labels.size)throw Error('标注数量与本评测包不一致。');
+    for(const row of rows)labels.set(key(row.query_id,row.product_id),row);
+    render();
+  }catch(error){alert(error.message);}
+};
+render();
+</script>
+</html>

@@ -108,7 +108,7 @@ def prepare() -> None:
         ROOT / "subject_views_results.json",
         ROOT / "semantic_verifier_model.json",
         PROJECT_ROOT / "scripts/grounded_subject_runtime.py",
-        PROJECT_ROOT / "scripts/gpu_admission.py",
+        PROJECT_ROOT / "scripts/continue_primary_subjects.py",
         PROJECT_ROOT / "scripts/roi_semantic_gate_review.py",
         ROOT / "QA/query_views.native_AI.json",
         ROOT / "QA/source_review_receipt.json",
@@ -220,7 +220,7 @@ def worker() -> None:
         Writes derived artifacts through once, write_json.
     """
     verify_protocol()
-    from gpu_admission import gpu_available
+    from continue_primary_subjects import gpu_available
 
     available, info = gpu_available()
     if not available:

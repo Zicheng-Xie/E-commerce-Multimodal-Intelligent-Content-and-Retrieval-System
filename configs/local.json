@@ -1,0 +1,11 @@
+{
+  "source_root": "Alibaba阿里算法实习",
+  "samples_root": "data/samples",
+  "ollama_base_url": "http://127.0.0.1:11434",
+  "ollama_models_root": "E:/LLM_for_Ollama",
+  "generation_model": "qwen3.5:4b-q4_K_M",
+  "context_length": 4096,
+  "image_max_edge": 768,
+  "seed": 42
+}
+

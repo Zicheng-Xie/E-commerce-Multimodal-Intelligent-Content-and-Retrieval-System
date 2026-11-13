@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2460" height="1050" viewBox="0 0 2460 1050" role="img">
+<title>图3_查询分组与六项评测结果</title>
+<metadata>Source: accepted weekly report 20261017-20261025 and tmp/weekly_1017_1025/quantitative_inputs.json. Live editable text and vector shapes. AI label completion bounds are not confidence intervals.</metadata>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="#192631" stroke-width="1.7"/></marker></defs>
+<rect width="2460" height="1050" fill="white"/>
+<g font-family="Times New Roman, Microsoft YaHei, sans-serif">
+<text x="60" y="60" font-size="32" fill="#192631" font-weight="700" text-anchor="start">（a）315件是被检索的商品数；16／16／8条是发起检索的查询数</text>
+<g data-box="130,115,560,100"><rect x="130" y="115" width="560" height="100" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="410.0" y="175.0" font-size="30" fill="#192631" font-weight="700" text-anchor="middle">图库A：315件商品</text>
+</g>
+<g data-box="1690,115,560,100"><rect x="1690" y="115" width="560" height="100" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="1970.0" y="175.0" font-size="30" fill="#192631" font-weight="700" text-anchor="middle">图库B：315件商品</text>
+</g>
+<g data-box="80,310,650,125"><rect x="80" y="310" width="650" height="125" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="405.0" y="359.5" font-size="30" fill="#192631" font-weight="700" text-anchor="middle">A组：16条查询（8文本＋8图片）</text>
+<text x="405.0" y="405.5" font-size="30" fill="#192631" font-weight="400" text-anchor="middle">用于调整方法</text>
+</g>
+<g data-box="890,310,650,125"><rect x="890" y="310" width="650" height="125" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="1215.0" y="359.5" font-size="30" fill="#192631" font-weight="700" text-anchor="middle">C组：8条图片查询</text>
+<text x="1215.0" y="405.5" font-size="30" fill="#192631" font-weight="400" text-anchor="middle">用于补充检查图片检索</text>
+</g>
+<g data-box="1700,310,650,125"><rect x="1700" y="310" width="650" height="125" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="2025.0" y="359.5" font-size="30" fill="#192631" font-weight="700" text-anchor="middle">B组：16条查询（8文本＋8图片）</text>
+<text x="2025.0" y="405.5" font-size="30" fill="#192631" font-weight="400" text-anchor="middle">用于检查改动是否导致退步</text>
+</g>
+<path d="M410,215 V310" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M570,215 V260 H1215 V310" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M1970,215 V270 H2025 V310" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="890" y="480" font-size="28" fill="#53616c" font-weight="400" text-anchor="start">C组复用图库A；三组不能相加为945件不同商品。</text>
+<text x="60" y="550" font-size="32" fill="#192631" font-weight="700" text-anchor="start">（b）同一双图注意力融合方法的开发结果</text>
+<path d="M70,588 H2390" fill="none" stroke="#192631" stroke-width="2.2"/>
+<text x="80" y="630" font-size="30" fill="#192631" font-weight="700" text-anchor="start">分组</text>
+<text x="510" y="630" font-size="30" fill="#192631" font-weight="700" text-anchor="start">Precision@10</text>
+<text x="860" y="630" font-size="30" fill="#192631" font-weight="700" text-anchor="start">Recall@10</text>
+<text x="1210" y="630" font-size="30" fill="#192631" font-weight="700" text-anchor="start">mAP</text>
+<text x="1560" y="630" font-size="30" fill="#192631" font-weight="700" text-anchor="start">NDCG@10</text>
+<text x="1910" y="630" font-size="30" fill="#192631" font-weight="700" text-anchor="start">MRR</text>
+<text x="2205" y="630" font-size="30" fill="#192631" font-weight="700" text-anchor="start">Hit@1</text>
+<path d="M70,653 H2390" fill="none" stroke="#192631" stroke-width="2.2"/>
+<text x="80" y="712" font-size="30" fill="#192631" font-weight="400" text-anchor="start">A（16条）</text>
+<text x="510" y="712" font-size="29" fill="#192631" font-weight="400" text-anchor="start">82.50–91.88%</text>
+<text x="860" y="712" font-size="29" fill="#192631" font-weight="400" text-anchor="start">39.88–56.89%</text>
+<text x="1210" y="712" font-size="29" fill="#192631" font-weight="400" text-anchor="start">75.90–87.46%</text>
+<text x="1560" y="712" font-size="29" fill="#192631" font-weight="400" text-anchor="start">85.65–95.57%</text>
+<text x="1910" y="712" font-size="29" fill="#192631" font-weight="400" text-anchor="start">100.00%</text>
+<text x="2205" y="712" font-size="29" fill="#192631" font-weight="400" text-anchor="start">100.00%</text>
+<text x="80" y="788" font-size="30" fill="#192631" font-weight="400" text-anchor="start">B（16条）</text>
+<text x="510" y="788" font-size="29" fill="#192631" font-weight="400" text-anchor="start">71.88–86.88%</text>
+<text x="860" y="788" font-size="29" fill="#192631" font-weight="400" text-anchor="start">37.94–61.36%</text>
+<text x="1210" y="788" font-size="29" fill="#192631" font-weight="400" text-anchor="start">70.73–89.72%</text>
+<text x="1560" y="788" font-size="29" fill="#192631" font-weight="400" text-anchor="start">75.92–93.32%</text>
+<text x="1910" y="788" font-size="29" fill="#192631" font-weight="400" text-anchor="start">87.50–96.88%</text>
+<text x="2205" y="788" font-size="29" fill="#192631" font-weight="400" text-anchor="start">81.25–93.75%</text>
+<text x="80" y="864" font-size="30" fill="#192631" font-weight="400" text-anchor="start">C（8条图片）</text>
+<text x="510" y="864" font-size="29" fill="#192631" font-weight="400" text-anchor="start">55.00–78.75%</text>
+<text x="860" y="864" font-size="29" fill="#192631" font-weight="400" text-anchor="start">39.55–56.25%</text>
+<text x="1210" y="864" font-size="29" fill="#192631" font-weight="400" text-anchor="start">47.31–67.84%</text>
+<text x="1560" y="864" font-size="29" fill="#192631" font-weight="400" text-anchor="start">57.44–82.14%</text>
+<text x="1910" y="864" font-size="29" fill="#192631" font-weight="400" text-anchor="start">79.17–100.00%</text>
+<text x="2205" y="864" font-size="29" fill="#192631" font-weight="400" text-anchor="start">62.50–100.00%</text>
+<path d="M70,895 H2390" fill="none" stroke="#192631" stroke-width="2.2"/>
+<path d="M60,918 H2400" fill="none" stroke="#bcc5cd" stroke-width="2.2"/>
+<text x="60" y="962" font-size="30" fill="#192631" font-weight="700" text-anchor="start">图3　不同查询组在对应315件商品图库上的六项结果，按组分别汇总。</text>
+<text x="60" y="1003" font-size="25" fill="#53616c" font-weight="400" text-anchor="start">范围表示AI尚未确定的相关性判断可能带来的最低与最高值，不是置信区间；三组都已用于开发。</text>
+</g></svg>

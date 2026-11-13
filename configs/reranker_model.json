@@ -2,7 +2,7 @@
   "repository": "Qwen/Qwen3-VL-Reranker-2B",
   "revision": "4bd860ac4f15ad1897a214615cccc700f8f71818",
   "code_revision": "393e2978d27852b0d0230d6994f37f9c15bed73c",
-  "path": ".models/Qwen3-VL-Reranker-2B",
+  "path": "E:\\LLM_for_Ollama\\external\\Qwen3-VL-Reranker-2B",
   "files": {
     "1_LogitScore/config.json": "73e3156450564d8a98b7e47bcf5aace0f29600828b51937da545571e84db3ff3",
     "added_tokens.json": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",

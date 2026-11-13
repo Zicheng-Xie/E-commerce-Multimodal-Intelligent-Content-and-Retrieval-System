@@ -1,7 +1,7 @@
 {
   "repository": "Qwen/Qwen3-VL-Embedding-2B",
   "revision": "9f2f7e710d6d81056aa5c0a4f04764fec6bb7bda",
-  "path": ".models/Qwen3-VL-Embedding-2B",
+  "path": "E:\\LLM_for_Ollama\\external\\Qwen3-VL-Embedding-2B",
   "code_revision": "393e2978d27852b0d0230d6994f37f9c15bed73c",
   "vendor_sha256": {
     "qwen3_vl_embedding.py": "0e447b6a80e05527f3fd437ab4f1617a6e7d0df102b8164348bbce787a41b267",

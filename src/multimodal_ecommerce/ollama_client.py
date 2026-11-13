@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import base64
+import hashlib
 import io
 import json
 import re
@@ -14,7 +15,14 @@ from urllib.parse import urlparse
 import httpx
 from PIL import Image, ImageOps
 
+from multimodal_ecommerce.copy_policy import (
+    PROMPT,
+    PROMPT_VERSION,
+    SourceConflictError,
+    source_policy,
+)
 from multimodal_ecommerce.exceptions import EcommerceError
+from multimodal_ecommerce.fact_check import check_copy, normalize_product
 
 CHAT_OPTIONS: dict[str, int] = {
     "num_ctx": 4096,
@@ -180,4 +188,83 @@ class OllamaClient:
             raise OllamaError("Generation was incomplete or truncated.")
         if not result.get("message", {}).get("content", "").strip():
             raise OllamaError("Model returned no visible answer.")
+        return result
+
+    def generate_copy(self, product: dict[str, Any]) -> dict[str, Any]:
+        """Generate and structurally validate Chinese title, detail and 3 bullets.
+
+        Args:
+            product: Product used by this operation.
+
+        Returns:
+            Values produced by this operation, in the stated return order.
+
+        Raises:
+            OllamaError: Input exceeds conservative copy prompt budget; source review
+                required; Prompt approaches context limit; cannot certify untruncated
+                source; Model returned invalid JSON; Unexpected copywriting fields;
+                Expected exactly three selling points; Copywriting fields must be
+                nonempty strings.
+        """
+        product = normalize_product(product)
+        policy = source_policy(product)
+        if policy["status"] == "source_review_required":
+            raise SourceConflictError(policy)
+        schema: dict[str, Any] = {
+            "type": "object",
+            "properties": {
+                "title": {"type": "string"},
+                "description": {"type": "string"},
+                "selling_points": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "minItems": 3,
+                    "maxItems": 3,
+                },
+            },
+            "required": ["title", "description", "selling_points"],
+            "additionalProperties": False,
+        }
+        instruction = PROMPT + json.dumps(
+            policy["generation_input"], ensure_ascii=False
+        )
+        if len(instruction) > 3200:
+            raise OllamaError(
+                "Input exceeds conservative copy prompt budget; source review required"
+            )
+        response = self.chat(instruction, json_schema=schema)
+        if (
+            response.get("prompt_eval_count", 0)
+            >= CHAT_OPTIONS["num_ctx"] - CHAT_OPTIONS["num_predict"]
+        ):
+            raise OllamaError(
+                "Prompt approaches context limit; cannot certify untruncated source"
+            )
+        try:
+            result = json.loads(response["message"]["content"])
+        except json.JSONDecodeError as error:
+            raise OllamaError("Model returned invalid JSON.") from error
+        if not isinstance(result, dict) or set(result) != set(schema["required"]):
+            raise OllamaError("Unexpected copywriting fields.")
+        points = result["selling_points"]
+        if not isinstance(points, list) or len(points) != 3:
+            raise OllamaError("Expected exactly three selling points.")
+        for value in [result["title"], result["description"], *points]:
+            if not isinstance(value, str) or not value.strip():
+                raise OllamaError("Copywriting fields must be nonempty strings.")
+        result["_meta"] = {
+            "model": self.model,
+            "response": response,
+            "prompt_version": PROMPT_VERSION,
+            "prompt_sha256": hashlib.sha256(instruction.encode()).hexdigest(),
+            "source_product": product,
+            "source_policy": policy,
+            "generation_options": dict(CHAT_OPTIONS),
+            "fact_check": check_copy(product, result),
+        }
+        result["_meta"]["release_status"] = (
+            "blocked_by_rules"
+            if result["_meta"]["fact_check"]["status"] == "flagged"
+            else "draft_requires_human_review"
+        )
         return result

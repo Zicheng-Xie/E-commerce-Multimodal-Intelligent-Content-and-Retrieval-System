@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2180" height="1280" viewBox="0 0 2180 1280" role="img">
+<title>图4_下一步如何查问题与验证</title>
+<metadata>Source: accepted weekly report 20261017-20261025 and tmp/weekly_1017_1025/quantitative_inputs.json. Live editable text and vector shapes. AI label completion bounds are not confidence intervals.</metadata>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="#192631" stroke-width="1.7"/></marker></defs>
+<rect width="2180" height="1280" fill="white"/>
+<g font-family="Times New Roman, Microsoft YaHei, sans-serif">
+<g data-box="770,45,640,90"><rect x="770" y="45" width="640" height="90" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="1090.0" y="100.0" font-size="30" fill="#192631" font-weight="700" text-anchor="middle">从图片检索错误开始检查</text>
+</g>
+<path d="M1090,135 V195" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M1090,195.0 L1400.0,280 L1090,365.0 L780.0,280 Z" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="1090" y="270.0" font-size="28" fill="#192631" font-weight="400" text-anchor="middle">图库里是否有</text>
+<text x="1090" y="310.0" font-size="28" fill="#192631" font-weight="400" text-anchor="middle">足够的相关商品？</text>
+<path d="M780,280 H590" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="670" y="258" font-size="28" fill="#a6443e" font-weight="400" text-anchor="start">没有</text>
+<g data-box="80,220,510,120"><rect x="80" y="220" width="510" height="120" fill="#f2f7fa" stroke="#2c628e" stroke-width="2"/>
+<text x="335.0" y="267.0" font-size="30" fill="#2c628e" font-weight="700" text-anchor="middle">补齐目标商品与相似商品</text>
+<text x="335.0" y="313.0" font-size="30" fill="#2c628e" font-weight="400" text-anchor="middle">保留原查询和完整评测规则</text>
+</g>
+<path d="M1090,365 V430" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="1120" y="404" font-size="28" fill="#192631" font-weight="400" text-anchor="start">有</text>
+<path d="M1090,430.0 L1400.0,515 L1090,600.0 L780.0,515 Z" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="1090" y="505.0" font-size="28" fill="#192631" font-weight="400" text-anchor="middle">相关商品是否</text>
+<text x="1090" y="545.0" font-size="28" fill="#192631" font-weight="400" text-anchor="middle">进入了候选池？</text>
+<path d="M780,515 H590" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="660" y="491" font-size="28" fill="#a6443e" font-weight="400" text-anchor="start">没有进入</text>
+<g data-box="80,455,510,120"><rect x="80" y="455" width="510" height="120" fill="#f2f7fa" stroke="#2c628e" stroke-width="2"/>
+<text x="335.0" y="502.0" font-size="30" fill="#2c628e" font-weight="700" text-anchor="middle">调整候选召回</text>
+<text x="335.0" y="548.0" font-size="30" fill="#2c628e" font-weight="400" text-anchor="middle">比较整图、ROI与标题线索</text>
+</g>
+<path d="M1090,600 V665" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="1120" y="639" font-size="28" fill="#192631" font-weight="400" text-anchor="start">已进入</text>
+<g data-box="770,665,640,130"><rect x="770" y="665" width="640" height="130" fill="#f2f7fa" stroke="#2c628e" stroke-width="2"/>
+<text x="1090.0" y="717.0" font-size="30" fill="#2c628e" font-weight="700" text-anchor="middle">检查前10名为何排错</text>
+<text x="1090.0" y="763.0" font-size="30" fill="#2c628e" font-weight="400" text-anchor="middle">补充主售、部件、用途证据并比较融合</text>
+</g>
+<path d="M335,340 V390 H40 V850 H1090" fill="none" stroke="#192631" stroke-width="2.2"/>
+<path d="M335,575 V625 H40" fill="none" stroke="#192631" stroke-width="2.2"/>
+<path d="M1090,795 V875" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<g data-box="770,875,640,110"><rect x="770" y="875" width="640" height="110" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="1090.0" y="917.0" font-size="30" fill="#192631" font-weight="700" text-anchor="middle">固定数据、模型与融合权重</text>
+<text x="1090.0" y="963.0" font-size="30" fill="#192631" font-weight="400" text-anchor="middle">使用全新独立数据验证</text>
+</g>
+<path d="M1410,930 H1600" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<g data-box="1600,865,500,130"><rect x="1600" y="865" width="500" height="130" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="1850.0" y="917.0" font-size="30" fill="#192631" font-weight="700" text-anchor="middle">检查是否达到目标</text>
+<text x="1850.0" y="963.0" font-size="30" fill="#192631" font-weight="400" text-anchor="middle">P@10≥60%；Recall偏好≥85%</text>
+</g>
+<text x="1600" y="1037" font-size="27" fill="#53616c" font-weight="400" text-anchor="start">同时检查其他四项指标是否退步</text>
+<path d="M1850,995 V1080 H1410" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="1550" y="1123" font-size="27" fill="#27756b" font-weight="400" text-anchor="start">通过全部检查</text>
+<path d="M1850,865 V825 H1500 V90 H1410" fill="none" stroke="#a6443e" stroke-width="2.2" stroke-dasharray="9 7" marker-end="url(#arrow)"/>
+<text x="1550" y="160" font-size="27" fill="#a6443e" font-weight="400" text-anchor="start">未通过：继续定位原因</text>
+<g data-box="770,1040,640,90"><rect x="770" y="1040" width="640" height="90" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="1090.0" y="1095.0" font-size="30" fill="#192631" font-weight="700" text-anchor="middle">达到目标后，再测完整在线响应时间</text>
+</g>
+<text x="80" y="955" font-size="28" fill="#a6443e" font-weight="400" text-anchor="start">未达目标：继续按上述三处定位原因</text>
+<text x="80" y="1000" font-size="27" fill="#53616c" font-weight="400" text-anchor="start">两轮已用独立集不重复当作新测试</text>
+<path d="M60,1148 H2120" fill="none" stroke="#bcc5cd" stroke-width="2.2"/>
+<text x="60" y="1192" font-size="30" fill="#192631" font-weight="700" text-anchor="start">图4　下期按“图库不足—候选漏掉—排序错误”逐步定位，再用新数据验证。</text>
+<text x="60" y="1233" font-size="25" fill="#53616c" font-weight="400" text-anchor="start">这是下一步计划；在线验证需包含图文编码、精排与结果返回，并分别记录冷启动和常驻响应时间。</text>
+</g></svg>

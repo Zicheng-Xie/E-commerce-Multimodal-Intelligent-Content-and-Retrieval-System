@@ -424,7 +424,7 @@ def worker() -> None:
         once, panel.save, write_json.
     """
     guard()
-    from gpu_admission import gpu_available
+    from continue_primary_subjects import gpu_available
 
     allowed, info = gpu_available()
     if not allowed:

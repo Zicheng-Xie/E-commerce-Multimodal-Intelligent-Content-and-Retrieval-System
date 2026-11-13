@@ -18,7 +18,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "artifacts/coding_standard_audit"
-SCOPE = ("src", "scripts", "tests", "integration_tests")
+SCOPE = ("src", "scripts", "tests")
 CHECKS = {
     "black": ["-m", "black", "--check", *SCOPE],
     "isort": ["-m", "isort", "--check-only", *SCOPE],

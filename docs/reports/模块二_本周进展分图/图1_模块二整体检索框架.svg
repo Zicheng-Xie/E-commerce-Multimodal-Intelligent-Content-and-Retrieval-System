@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2100" height="890" viewBox="0 0 2100 890" role="img">
+<title>图1_模块二整体检索框架</title>
+<metadata>Source: accepted weekly report 20261017-20261025 and tmp/weekly_1017_1025/quantitative_inputs.json. Live editable text and vector shapes. AI label completion bounds are not confidence intervals.</metadata>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="#192631" stroke-width="1.7"/></marker></defs>
+<rect width="2100" height="890" fill="white"/>
+<g font-family="Times New Roman, Microsoft YaHei, sans-serif">
+<rect x="55" y="45" width="700" height="465" fill="none" stroke="#8d9aa5" stroke-width="1.5" stroke-dasharray="9 7"/>
+<text x="75" y="83" font-size="27" fill="#53616c" font-weight="400" text-anchor="start">图文输入与特征提取</text>
+<g data-box="85,125,250,110"><rect x="85" y="125" width="250" height="110" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="210.0" y="190.0" font-size="30" fill="#192631" font-weight="700" text-anchor="middle">商品图文库</text>
+</g>
+<g data-box="85,335,250,110"><rect x="85" y="335" width="250" height="110" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="210.0" y="377.0" font-size="30" fill="#192631" font-weight="700" text-anchor="middle">用户查询</text>
+<text x="210.0" y="423.0" font-size="30" fill="#192631" font-weight="400" text-anchor="middle">中文文本／图片</text>
+</g>
+<g data-box="405,230,300,130"><rect x="405" y="230" width="300" height="130" fill="#f2f7fa" stroke="#2c628e" stroke-width="2"/>
+<text x="555.0" y="282.0" font-size="30" fill="#2c628e" font-weight="700" text-anchor="middle">Qwen图文嵌入</text>
+<text x="555.0" y="328.0" font-size="30" fill="#2c628e" font-weight="400" text-anchor="middle">提取统一向量</text>
+</g>
+<path d="M335,180 H365 V272 H405" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M335,390 H365 V320 H405" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="795" y="45" width="400" height="465" fill="none" stroke="#8d9aa5" stroke-width="1.5" stroke-dasharray="9 7"/>
+<text x="815" y="83" font-size="27" fill="#53616c" font-weight="400" text-anchor="start">从图库中找出候选商品</text>
+<g data-box="840,125,310,82"><rect x="840" y="125" width="310" height="82" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="995.0" y="176.0" font-size="30" fill="#192631" font-weight="700" text-anchor="middle">整图相似度</text>
+</g>
+<g data-box="840,255,310,82"><rect x="840" y="255" width="310" height="82" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="995.0" y="306.0" font-size="30" fill="#192631" font-weight="700" text-anchor="middle">ROI区域相似度</text>
+</g>
+<g data-box="840,385,310,82"><rect x="840" y="385" width="310" height="82" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="995.0" y="436.0" font-size="30" fill="#192631" font-weight="700" text-anchor="middle">标题语义相似度</text>
+</g>
+<path d="M705,295 H780" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M780,166 V426" fill="none" stroke="#192631" stroke-width="2.2"/>
+<path d="M780,166 H840" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M780,296 H840" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M780,426 H840" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M1150,166 H1230 V426" fill="none" stroke="#192631" stroke-width="2.2"/>
+<path d="M1150,296 H1265" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M1150,426 H1230" fill="none" stroke="#192631" stroke-width="2.2"/>
+<g data-box="1265,230,350,130"><rect x="1265" y="230" width="350" height="130" fill="#f2f7fa" stroke="#2c628e" stroke-width="2"/>
+<text x="1440.0" y="282.0" font-size="30" fill="#2c628e" font-weight="700" text-anchor="middle">Qwen完整图文精排</text>
+<text x="1440.0" y="328.0" font-size="30" fill="#2c628e" font-weight="400" text-anchor="middle">比较查询与候选商品</text>
+</g>
+<g data-box="1725,230,315,130"><rect x="1725" y="230" width="315" height="130" fill="#f2f7fa" stroke="#2c628e" stroke-width="2"/>
+<text x="1882.5" y="282.0" font-size="30" fill="#2c628e" font-weight="700" text-anchor="middle">证据融合</text>
+<text x="1882.5" y="328.0" font-size="30" fill="#2c628e" font-weight="400" text-anchor="middle">得到最终排序</text>
+</g>
+<path d="M1615,295 H1725" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<g data-box="1265,540,350,125"><rect x="1265" y="540" width="350" height="125" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="1440.0" y="589.5" font-size="30" fill="#192631" font-weight="700" text-anchor="middle">主售与局部证据</text>
+<text x="1440.0" y="635.5" font-size="30" fill="#192631" font-weight="400" text-anchor="middle">ROI裁切／局部放大</text>
+</g>
+<g data-box="1725,540,315,125"><rect x="1725" y="540" width="315" height="125" fill="white" stroke="#192631" stroke-width="2"/>
+<text x="1882.5" y="589.5" font-size="30" fill="#192631" font-weight="700" text-anchor="middle">Top-N结果展示</text>
+<text x="1882.5" y="635.5" font-size="30" fill="#192631" font-weight="400" text-anchor="middle">主图／标题／匹配度</text>
+</g>
+<path d="M1440,360 V540" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M1615,602 H1670 V405 H1790 V360" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M1882,360 V540" fill="none" stroke="#192631" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="1265" y="710" font-size="27" fill="#53616c" font-weight="400" text-anchor="start">本周新增比较：整图度量学习、双图注意力辅助证据</text>
+<text x="90" y="580" font-size="28" fill="#53616c" font-weight="400" text-anchor="start">ROI：选择商品所在区域</text>
+<text x="90" y="627" font-size="28" fill="#53616c" font-weight="400" text-anchor="start">裁切或放大时，同时保留原图</text>
+<path d="M60,758 H2040" fill="none" stroke="#bcc5cd" stroke-width="2.2"/>
+<text x="60" y="802" font-size="30" fill="#192631" font-weight="700" text-anchor="start">图1　模块二从图文输入到商品检索结果的处理流程。</text>
+<text x="60" y="843" font-size="25" fill="#53616c" font-weight="400" text-anchor="start">整图、区域和标题提供不同线索；先找候选，再精排，最后结合主售与局部证据排序。</text>
+</g></svg>

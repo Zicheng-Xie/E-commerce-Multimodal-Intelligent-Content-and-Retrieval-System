@@ -1,0 +1,16 @@
+{
+  "version": "p80_required_r90_required_v2",
+  "user_instruction": "Precision@10 ≥80%，Recall@10 ≥90%",
+  "scope": "module2_pdf_product_business_relevance",
+  "k": 10,
+  "precision_at_10_required": 0.8,
+  "recall_at_10_preferred": 0.9,
+  "recall_preferred_is_mandatory": true,
+  "report_scopes": ["all", "text", "image"],
+  "nonregression_baselines": ["global", "region_title"],
+  "nonregression_metrics": ["recall@10", "ap", "ndcg@10", "mrr", "hit@1"],
+  "relevance_definition_unchanged": true,
+  "fixed_top10_denominator": true,
+  "independent_heldout_acceptance_required": true,
+  "historical_contract": "configs/module2_current_target.json"
+}

@@ -1,0 +1,24 @@
+{
+  "prompt_version": "copy-v3-source-constraints",
+  "policy_version": "source-policy-v1",
+  "prompt_sha256": "38bc66e0dc525ae94431b5491bbf28099d4545f78d246ebc513e070d533a0e5f",
+  "options": {
+    "num_ctx": 4096,
+    "num_predict": 512,
+    "temperature": 0,
+    "seed": 42
+  },
+  "think": false,
+  "model": {
+    "name": "qwen3.5:4b-q4_K_M",
+    "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+    "ollama_version": "0.34.1"
+  },
+  "dataset_sha256": "151cfbed660533f3e10e5fe90a4fa73d1bf7375d213f25d13f522b82232b652f",
+  "files": {
+    "src/multimodal_ecommerce/copy_policy.py": "ad03abb6cc0024da7118bfd8cef78ee074d274033fab4dd2a79580ea0e3b0829",
+    "src/multimodal_ecommerce/fact_check.py": "4fb18a13e3d3e0e1e31766823c1d73104f319d97bc8cd2627340cd14da59fb3c",
+    "src/multimodal_ecommerce/ollama_client.py": "fa48c40b04f4964ec1f0e4f6013d50e88cc16891fa5194246a86d5a43a843719",
+    "src/multimodal_ecommerce/copy_experiment.py": "d1e2c2a21929a2d648b3ffe7235fe08913de35f9714c4b3b66216ef8e853a408"
+  }
+}

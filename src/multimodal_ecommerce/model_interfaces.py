@@ -1,4 +1,4 @@
-"""Structural interfaces for local models and regional retrieval."""
+"""Minimal structural interfaces used by generation and checkpoint verification."""
 
 from __future__ import annotations
 
@@ -23,6 +23,34 @@ class ModelInspector(Protocol):
 
     def _request(self, endpoint: str, payload: dict | None = None) -> dict:
         """Read or post a local API operation and return its decoded mapping."""
+        ...
+
+
+class CopyGenerator(Protocol):
+    """Generate a validated factual draft from one normalized product record."""
+
+    def generate_copy(self, product: dict) -> dict:
+        """Return generated fields and their provenance for the supplied product.
+
+        Args:
+            product: Normalized product attributes and title.
+
+        Returns:
+            Draft copy and its generation metadata.
+        """
+        ...
+
+
+class BatchGenerator(CopyGenerator, Protocol):
+    """Expose the model name alongside generation for traceable batch receipts."""
+
+    @property
+    def model(self) -> str:
+        """Identify the model recorded in batch provenance.
+
+        Returns:
+            Local model label reported by the generator.
+        """
         ...
 
 

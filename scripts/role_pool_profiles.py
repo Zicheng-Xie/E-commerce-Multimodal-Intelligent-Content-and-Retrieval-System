@@ -232,7 +232,7 @@ def prepare() -> None:
         PROJECT_ROOT / "configs/reranker_model.json",
         PROJECT_ROOT / "scripts/grounded_subject_runtime.py",
         PROJECT_ROOT / "scripts/business_mask_verifier.py",
-        PROJECT_ROOT / "scripts/gpu_admission.py",
+        PROJECT_ROOT / "scripts/continue_primary_subjects.py",
         PROJECT_ROOT / "scripts/roi_semantic_gate_review.py",
     ]
     paths += [PROJECT_ROOT / r["image_path"] for r in records]
@@ -307,7 +307,7 @@ def profile_worker() -> bool:
     if (ROOT / "profile_receipt.json").exists():
         checked("profile_receipt.json")
         return True
-    from gpu_admission import gpu_available
+    from continue_primary_subjects import gpu_available
     from multimodal_ecommerce.machine_teacher import resolve_local_teacher
 
     available, info = gpu_available()

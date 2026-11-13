@@ -1,0 +1,999 @@
+{
+  "updated_at": "2026-11-09",
+  "purpose": "Evaluation role overlay; historical evidence remains immutable",
+  "rules": [
+    {
+      "path_prefix": "data/",
+      "role": "known_prepared_development_or_exposed",
+      "external_quality_claim_allowed": false,
+      "note": "Includes old project_role=heldout records; a filename or field is not proof of independence"
+    },
+    {
+      "path_prefix": "data/module2_consumed_holdouts/",
+      "role": "consumed_heldout_exposure_registry",
+      "external_quality_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true,
+      "consumed": true,
+      "development_or_training_use_allowed": false,
+      "tuning_use_allowed": false,
+      "model_inference_allowed": false
+    },
+    {
+      "path_prefix": "artifacts/module2_strategy_exploration/",
+      "role": "development_strategy_selection",
+      "external_quality_claim_allowed": false
+    },
+    {
+      "path_prefix": "artifacts/module2_regions_benchmark_v1/",
+      "role": "development",
+      "external_quality_claim_allowed": false
+    },
+    {
+      "path_prefix": "artifacts/module2_cached_ablations_v1/",
+      "role": "development",
+      "external_quality_claim_allowed": false
+    },
+    {
+      "path_prefix": "artifacts/module2_blind/",
+      "role": "consumed_same_item_validation_for_this_frozen_version_only",
+      "formal_acceptance_claim_allowed": false,
+      "public_progress_file": "artifacts/module2_blind/public_status.json",
+      "quality_report": "internal_report.json",
+      "reuse_as_unseen_test_for_later_versions_allowed": false,
+      "consumed": true,
+      "development_or_training_use_allowed": false,
+      "tuning_use_allowed": false,
+      "model_inference_allowed": false,
+      "reuse_as_unseen_test_allowed": false
+    },
+    {
+      "path_prefix": "artifacts/module2_precision/",
+      "role": "internal_development_strategy_and_training_experiments",
+      "formal_acceptance_claim_allowed": false,
+      "new_independent_validation_required": true,
+      "human_review_packet": "development_training_only_top30_incomplete_gallery_labels"
+    },
+    {
+      "path_prefix": "data/module2_training/",
+      "role": "exposed_same_item_training_and_group_disjoint_development",
+      "external_quality_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false
+    },
+    {
+      "path_prefix": "artifacts/module2_training/",
+      "role": "internal_training_and_development_experiments",
+      "formal_acceptance_claim_allowed": false,
+      "new_independent_validation_required": true
+    },
+    {
+      "path_prefix": "artifacts/module2_precision60/",
+      "role": "capacity_audit_and_exposed_business_development_prototype",
+      "formal_acceptance_claim_allowed": false,
+      "new_independent_validation_required": true,
+      "public_progress_file": "artifacts/module2_precision60/public_status.json"
+    },
+    {
+      "path_prefix": "data/module2_reserved_acceptance/",
+      "role": "consumed_business_blind_preparation_source_not_for_development",
+      "external_quality_claim_allowed": false,
+      "groups_and_images_must_be_excluded_from_training_and_other_future_tests": true,
+      "current_candidate_prior_exposure_snapshot": "artifacts/module2_business_acceptance/prior_exposure.json",
+      "consumed": true,
+      "development_or_training_use_allowed": false,
+      "tuning_use_allowed": false,
+      "model_inference_allowed": false,
+      "formal_acceptance_ready": false,
+      "reuse_as_unseen_test_allowed": false
+    },
+    {
+      "path_prefix": "artifacts/module2_business_review/",
+      "role": "development_human_review_and_confirmed_business_target",
+      "formal_acceptance_claim_allowed": false,
+      "public_progress_file": "artifacts/module2_business_review/public_status.json"
+    },
+    {
+      "path_prefix": "artifacts/module2_business_acceptance/",
+      "role": "consumed_business_blind_preparation_source_not_for_development",
+      "development_or_training_use_allowed": false,
+      "model_inference_allowed": false,
+      "formal_acceptance_claim_allowed": false,
+      "consumed": true,
+      "tuning_use_allowed": false,
+      "formal_acceptance_ready": false,
+      "reuse_as_unseen_test_allowed": false
+    },
+    {
+      "path_prefix": "artifacts/module2_machine_assist/",
+      "role": "machine_weak_development_annotation_and_unvalidated_ranking_candidates",
+      "human_labels": false,
+      "formal_acceptance_claim_allowed": false,
+      "machine_agreement_must_not_be_reported_as_business_precision": true,
+      "reserved_acceptance_model_predictions": 0,
+      "public_progress_file": "artifacts/module2_machine_assist/public_status.json"
+    },
+    {
+      "path_prefix": "artifacts/module2_continuation/",
+      "role": "internal_machine_refinement_and_resident_development_service",
+      "human_labels": false,
+      "formal_acceptance_claim_allowed": false,
+      "machine_agreement_must_not_be_reported_as_business_precision": true,
+      "reserved_acceptance_model_predictions": 0,
+      "public_progress_file": "artifacts/module2_continuation/public_status.json",
+      "live_service_runtime_excluded_from_sealed_hashes": true
+    },
+    {
+      "path_prefix": "artifacts/module2_target_p60_r85/",
+      "role": "current_target_development_reporting",
+      "formal_acceptance_claim_allowed": false,
+      "precision_required": 0.6,
+      "recall_preferred": 0.85,
+      "recall_preferred_is_mandatory": false,
+      "public_progress_file": "artifacts/module2_target_p60_r85/current_status.json"
+    },
+    {
+      "path_prefix": "artifacts/module2_precision_recall/",
+      "role": "internal_multi_recall_cross_encoder_and_machine_label_adjudication",
+      "formal_acceptance_claim_allowed": false,
+      "machine_judgments_are_not_human_truth": true,
+      "acceptance_model_predictions": 0,
+      "public_progress_file": "artifacts/module2_precision_recall/public_status.json",
+      "human_score_subdirectory_has_per_revision_receipts": true
+    },
+    {
+      "path_prefix": "data/module2_development_expansion/",
+      "role": "exposed_development_metadata_and_media_candidates_pending_QA",
+      "formal_acceptance_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true,
+      "catalog_usable_does_not_mean_relevant": true
+    },
+    {
+      "path_prefix": "artifacts/module2_catalog_review/",
+      "role": "development_catalog_preparation_and_priority_human_review",
+      "formal_acceptance_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true,
+      "catalog_usable_does_not_mean_relevant": true
+    },
+    {
+      "path_prefix": "artifacts/module2_ai_review/",
+      "role": "AI_assessed_development_not_independent_human_truth",
+      "external_quality_claim_allowed": false,
+      "human_label": false,
+      "acceptance_predictions_allowed": false
+    },
+    {
+      "path_prefix": "artifacts/module2_expanded_development/",
+      "role": "internal_exposed_AI_business_development",
+      "external_quality_claim_allowed": false,
+      "formal_acceptance_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "public_progress_file": "artifacts/module2_expanded_development/public_status.json"
+    },
+    {
+      "path_prefix": "data/module2_visual_coverage_candidates/",
+      "role": "exposed_development_metadata_not_relevance_truth",
+      "external_quality_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "artifacts/module2_visual_coverage/",
+      "role": "internal_query_aware_AI_assessed_business_development_only",
+      "external_quality_claim_allowed": false,
+      "formal_acceptance_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "public_progress_file": "artifacts/module2_visual_coverage/public_status.json"
+    },
+    {
+      "path_prefix": "data/module2_visual_coverage_media/",
+      "role": "exposed_development_media_including_rejected_duplicates",
+      "external_quality_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "data/module2_focus_coverage_candidates/",
+      "role": "query_aware_exposed_development_metadata_not_relevance_truth",
+      "external_quality_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "artifacts/module2_focus_coverage/",
+      "role": "query_aware_exposed_AI_development_not_acceptance",
+      "external_quality_claim_allowed": false,
+      "formal_acceptance_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "public_progress_file": "artifacts/module2_focus_coverage/public_status.json"
+    },
+    {
+      "path_prefix": "artifacts/module2_focus_coverage/head_guard/",
+      "role": "adaptive_development_followup_after_observed_ranking_regression",
+      "external_quality_claim_allowed": false,
+      "independent_validation": false
+    },
+    {
+      "path_prefix": "artifacts/module2_focus_coverage/region_guard/",
+      "role": "adaptive_development_region_prefix_followup",
+      "external_quality_claim_allowed": false,
+      "independent_validation": false
+    },
+    {
+      "path_prefix": "artifacts/module2_focus_coverage/region_guard/modality_mismatch_execution/",
+      "role": "preserved_modality_routing_failure_not_reported_as_intended_method",
+      "external_quality_claim_allowed": false,
+      "formal_acceptance_claim_allowed": false
+    },
+    {
+      "path_prefix": "data/module2_focus_coverage_media/",
+      "role": "exposed_development_not_relevance_truth",
+      "external_quality_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "data/module2_form_coverage_candidates/",
+      "role": "exposed_development_not_relevance_truth",
+      "external_quality_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "data/module2_form_coverage_media/",
+      "role": "exposed_development_not_relevance_truth",
+      "external_quality_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "artifacts/module2_rank_stability/",
+      "role": "adaptive_AI_development_comparison_not_formal_acceptance",
+      "external_quality_claim_allowed": false,
+      "formal_acceptance_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "artifacts/module2_rank_stability/fresh_query_check/",
+      "role": "new_query_development_stress_check_on_exposed_gallery_not_independent_acceptance",
+      "external_quality_claim_allowed": false,
+      "formal_acceptance_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "data/module2_fresh_query_candidates/",
+      "role": "exposed_new_query_development_metadata_not_relevance_truth",
+      "external_quality_claim_allowed": false,
+      "formal_acceptance_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "data/module2_fresh_query_media/",
+      "role": "exposed_new_query_development_media_not_unseen_test",
+      "external_quality_claim_allowed": false,
+      "formal_acceptance_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "artifacts/module2_independent_business_blind/",
+      "role": "consumed_single_frozen_version_independent_data_AI_reviewed_blind_result",
+      "external_quality_claim_allowed": true,
+      "formal_acceptance_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "required_claim_qualifiers": [
+        "independent data AI-reviewed blind evaluation",
+        "balanced closed 300-product 60-query catalog",
+        "not human ground truth or traffic performance"
+      ],
+      "development_or_training_use_allowed": false,
+      "tuning_use_allowed": false,
+      "model_inference_allowed": false,
+      "consumed": true
+    },
+    {
+      "path_prefix": "data/module2_business_blind_consumed/",
+      "role": "consumed_business_heldout_exposure",
+      "external_quality_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true,
+      "development_or_training_use_allowed": false,
+      "tuning_use_allowed": false,
+      "model_inference_allowed": false,
+      "consumed": true
+    },
+    {
+      "path_prefix": "artifacts/module2_structure_development/",
+      "role": "AI_development_and_fixed_family_disjoint_validation_only",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false
+    },
+    {
+      "path_prefix": "artifacts/module2_primary_form_coverage/",
+      "role": "adaptive_coverage_development_and_new_query_validation_only",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false
+    },
+    {
+      "path_prefix": "artifacts/module2_fgclip2_comparison/",
+      "role": "AI_reviewed_exposed_development_method_comparison",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false
+    },
+    {
+      "path_prefix": "artifacts/module2_subject_roi/",
+      "role": "AI_reviewed_exposed_development_subject_ROI_comparison",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false
+    },
+    {
+      "path_prefix": "artifacts/module2_subject_coverage_expansion/",
+      "role": "exposed_AI_development_subject_coverage_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false
+    },
+    {
+      "path_prefix": "data/module2_subject_coverage_candidates/",
+      "role": "exposed_AI_development_subject_coverage_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false
+    },
+    {
+      "path_prefix": "data/module2_subject_coverage_media/",
+      "role": "exposed_AI_development_subject_coverage_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false
+    },
+    {
+      "path_prefix": "data/module2_subject_coverage_final_media/",
+      "role": "exposed_AI_development_subject_coverage_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false
+    },
+    {
+      "path_prefix": "data/module2_subject_coverage_exposure/",
+      "role": "exposed_AI_development_subject_coverage_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false
+    },
+    {
+      "path_prefix": "artifacts/module2_primary_subjects/",
+      "role": "exposed_AI_primary_subject_development_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true,
+      "public_progress_file": "artifacts/module2_primary_subjects/public_status.json"
+    },
+    {
+      "path_prefix": "data/module2_primary_subject_candidates/",
+      "role": "exposed_AI_primary_subject_development_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "data/module2_primary_subject_media/",
+      "role": "exposed_AI_primary_subject_development_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "data/module2_primary_subject_derived/",
+      "role": "exposed_AI_primary_subject_development_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "artifacts/module2_dual_path_development/",
+      "role": "exposed_AI_dual_context_development_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false,
+      "public_progress_file": "artifacts/module2_dual_path_development/public_status.json"
+    },
+    {
+      "path_prefix": "artifacts/module2_caption_roi_development/",
+      "role": "exposed_AI_caption_subject_crop_development_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true,
+      "public_progress_file": "artifacts/module2_caption_roi_development/public_status.json"
+    },
+    {
+      "path_prefix": "artifacts/module2_roi_semantic_gate/",
+      "role": "exposed_AI_query_ROI_semantic_gate_development_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true,
+      "public_progress_file": "artifacts/module2_roi_semantic_gate/public_status.json"
+    },
+    {
+      "path_prefix": "artifacts/module2_pool_capacity_diagnosis/",
+      "role": "internal_development_known_positive_oracle_capacity_not_retrieval_performance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false,
+      "model_inference_performed": false
+    },
+    {
+      "path_prefix": "artifacts/module2_learned_fusion/",
+      "role": "internal_AI_source_family_crossfit_supervised_fusion_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false,
+      "public_progress_file": "artifacts/module2_learned_fusion/public_status.json"
+    },
+    {
+      "path_prefix": "artifacts/module2_balanced_supplement/",
+      "role": "exposed_balanced_development_metadata_and_original_network_failure_evidence",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false
+    },
+    {
+      "path_prefix": "artifacts/module2_balanced_media_recovery/",
+      "role": "exposed_development_raw_media_and_incomplete_multi_query_AI_review",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "artifacts/module2_balanced_pair_review/",
+      "role": "exposed_single_query_native_AI_relation_review_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false,
+      "public_progress_file": "artifacts/module2_balanced_pair_review/public_status.json"
+    },
+    {
+      "path_prefix": "data/module2_balanced_supplement_candidates/",
+      "role": "exposed_development_candidate_metadata_including_failed_URLs",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false
+    },
+    {
+      "path_prefix": "data/module2_balanced_supplement_media/",
+      "role": "exposed_development_original_download_attempt_registry",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false
+    },
+    {
+      "path_prefix": "data/module2_balanced_recovery_media/",
+      "role": "exposed_development_recovered_media_registry_not_unseen",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "data/module2_caption_roi_derived/",
+      "role": "exposed_derived_development_ROI_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "artifacts/module2_balanced_supplement_features/",
+      "role": "exposed_candidate_only_public_profiles_and_full_model_features_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "data/module2_balanced_supplement_derived/",
+      "role": "exposed_supplement_derived_views_and_ROI_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false,
+      "groups_and_images_must_be_excluded_from_future_tests": true
+    },
+    {
+      "path_prefix": "artifacts/module2_balanced_runner/",
+      "role": "frozen_source_guarded_development_pipeline_status_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false,
+      "development_scores_allowed_in_public_status": false
+    },
+    {
+      "path_prefix": "artifacts/module2_balanced_gallery/",
+      "role": "exposed_315_gallery_frozen_family_fusion_AI_development_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false,
+      "development_scores_allowed_in_public_status": false
+    },
+    {
+      "path_prefix": "data/module2_balanced_partial_derived/",
+      "role": "exposed_partial_failure_crop_pixels_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false,
+      "development_scores_allowed_in_public_status": false
+    },
+    {
+      "path_prefix": "artifacts/module2_balanced_gallery_finalization/",
+      "role": "replayed_315_gallery_development_report_finalization_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false,
+      "development_scores_allowed_in_public_status": false
+    },
+    {
+      "path_prefix": "artifacts/module2_subject_attribute_learning/",
+      "role": "exposed_AI_gradient_family_masked_subject_attribute_learning_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false,
+      "development_scores_allowed_in_public_status": false
+    },
+    {
+      "path_prefix": "artifacts/module2_subject_recall_learning/",
+      "role": "exposed_AI_full_gallery_candidate_learning_and_complete_CE_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false,
+      "development_scores_allowed_in_public_status": false
+    },
+    {
+      "path_prefix": "artifacts/module2_pointwise_recall_learning/",
+      "role": "exposed_AI_full_gallery_candidate_learning_and_complete_CE_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false,
+      "development_scores_allowed_in_public_status": false
+    },
+    {
+      "path_prefix": "artifacts/module2_public_conflict_priority/",
+      "role": "exposed_AI_public_conflict_priority_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false,
+      "development_scores_allowed_in_public_status": false
+    },
+    {
+      "path_prefix": "artifacts/module2_grounded_subject_repair/",
+      "role": "exposed_query_only_grounding_repair_development_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false,
+      "development_or_training_use_allowed": true,
+      "development_scores_allowed_in_public_status": false
+    },
+    {
+      "path_prefix": "artifacts/module2_grounded_independent_blind/",
+      "role": "one_shot_independent_AI_blind_consumed_not_human_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "reusable_as_unseen": false,
+      "development_or_training_use_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "tuning_use_allowed": false,
+      "model_inference_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "consumed": true
+    },
+    {
+      "path_prefix": "artifacts/module2_business_grounding_development/",
+      "role": "exposed_AI_business_grounding_development_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false
+    },
+    {
+      "path_prefix": "data/module2_business_grounding_derived/",
+      "role": "exposed_AI_business_grounding_development_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false
+    },
+    {
+      "path_prefix": "artifacts/module2_business_metric_learning/",
+      "role": "exposed_AI_business_grounding_development_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false
+    },
+    {
+      "path_prefix": "artifacts/module2_business_joint_attention/",
+      "role": "exposed_AI_business_grounding_development_not_acceptance",
+      "formal_acceptance_claim_allowed": false,
+      "development_scores_allowed_in_public_status": false,
+      "reusable_as_unseen": false
+    },
+    {
+      "path_prefix": "artifacts/module2_role_pool_development/",
+      "role": "exposed_AI_sale_role_pool_development_not_acceptance",
+      "external_quality_claim_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "human_labels": 0,
+      "formal_metrics": null
+    },
+    {
+      "path_prefix": "data/module2_grounded_blind_consumed/",
+      "role": "consumed_heldout_exposure",
+      "development_or_training_use_allowed": false,
+      "tuning_use_allowed": false,
+      "model_inference_allowed": false,
+      "reuse_as_unseen_test_allowed": false,
+      "consumed": true
+    },
+    {
+      "path_prefix": "artifacts/module2_simple_baseline_20261105/",
+      "role": "exposed_controlled_crop_top20_AI_development",
+      "formal_acceptance_claim_allowed": false,
+      "development_or_training_use_allowed": true,
+      "human_review_required": true,
+      "formal_metrics": null
+    },
+    {
+      "path_prefix": "artifacts/module2_paper_fusion_20261106/",
+      "role": "exposed_paper_mechanism_AI_development",
+      "formal_acceptance_claim_allowed": false,
+      "development_or_training_use_allowed": true,
+      "human_review_required": true,
+      "formal_metrics": null
+    },
+    {
+      "path_prefix": "artifacts/module2_final_acceptance_20261105/",
+      "role": "reserved_new_final_acceptance_media_pending_human_queries_gold_and_final_model",
+      "development_or_training_use_allowed": false,
+      "tuning_use_allowed": false,
+      "model_inference_allowed": false,
+      "formal_acceptance_ready": false,
+      "consumed": false,
+      "formal_metrics": null
+    },
+    {
+      "path_prefix": "artifacts/module2_focus_followup_20261107/",
+      "role": "exposed_development_two_route_replay_and_targeted_review",
+      "development_or_training_use_allowed": true,
+      "formal_acceptance_claim_allowed": false,
+      "formal_metrics": null
+    },
+    {
+      "path_prefix": "artifacts/module2_p80_r90_20261106/",
+      "role": "exposed_p80_r90_development_and_targeted_human_review",
+      "formal_acceptance_claim_allowed": false,
+      "development_or_training_use_allowed": true,
+      "formal_metrics": null
+    },
+    {
+      "path_prefix": "artifacts/module2_final_acceptance_20261110/",
+      "role": "reserved_fresh_final_acceptance_technical_preparation_only",
+      "development_or_training_use_allowed": false,
+      "tuning_use_allowed": false,
+      "model_inference_allowed": false,
+      "formal_acceptance_ready": false,
+      "consumed": false,
+      "formal_metrics": null
+    },
+    {
+      "path_prefix": "artifacts/module2_selected_runtime_20261110/",
+      "role": "exposed_runtime_engineering_development",
+      "development_or_training_use_allowed": true,
+      "tuning_use_allowed": true,
+      "model_inference_allowed": false,
+      "formal_acceptance_ready": false
+    },
+    {
+      "path_prefix": "artifacts/module2_acceptance_gold_20261110/",
+      "role": "reserved_private_independent_human_gold",
+      "development_or_training_use_allowed": false,
+      "tuning_use_allowed": false,
+      "model_inference_allowed": false,
+      "formal_acceptance_ready": false
+    },
+    {
+      "path_prefix": "artifacts/module2_acceptance_runs/",
+      "role": "reserved_one_shot_acceptance_execution",
+      "development_or_training_use_allowed": false,
+      "tuning_use_allowed": false,
+      "model_inference_allowed": false,
+      "formal_acceptance_ready": false
+    }
+  ],
+  "formal_module2_acceptance": {
+    "state": "independent_AI_blind_completed_precision_not_met",
+    "independent_three_category_catalog": true,
+    "independent_text_and_image_queries": true,
+    "complete_human_relevance_labels": false,
+    "e2e_latency_acceptance": false,
+    "metrics": null,
+    "independent_catalog_candidates_prepared": true,
+    "candidate_products": 300,
+    "candidate_image_queries": 30,
+    "text_query_slots": 30,
+    "human_approved_queries": 0,
+    "business_relevance_definition_confirmed": true,
+    "review_authorization": "user_delegated_AI_no_human_wait_required",
+    "AI_blind_protocol_frozen": true,
+    "final_model_frozen": true,
+    "frozen_release": "artifacts/module2_independent_business_blind/release.json",
+    "independent_annotator_claim_allowed": false,
+    "human_labels": 0,
+    "complete_AI_relevance_labels": true,
+    "AI_label_count": 18000,
+    "blind_consumed_registry": "data/module2_business_blind_consumed/records.jsonl",
+    "independent_AI_blind_completed": true,
+    "independent_AI_blind_metrics_file": "artifacts/module2_independent_business_blind/AI_blind_metrics.json",
+    "formal_acceptance": false,
+    "reusable_as_unseen": false,
+    "acceptance_predictions": 60
+  },
+  "precedence": "Most specific prefix wins; no unregistered result is eligible for a formal external claim",
+  "release_policy": "Share progress without development metrics. Same-item heldout results require their exact scope and cannot stand in for formal three-category acceptance.",
+  "current_business_target_contract": "configs/module2_target_p80_r90.json",
+  "current_p80_r90_development_entry": "scripts/module2_p80_r90.py prepare",
+  "current_p80_r90_development_results": "artifacts/module2_p80_r90_20261106/results.json",
+  "current_p80_r90_expanded_pool_results": "artifacts/module2_p80_r90_20261106/expanded_pool/results.json",
+  "current_p80_r90_subject_challenger_results": "artifacts/module2_p80_r90_20261106/subject_challengers/results.json",
+  "current_p80_r90_poster_text_results": "artifacts/module2_p80_r90_20261106/poster_text_replay/results.json",
+  "current_p80_r90_candidate_ocr_results": "artifacts/module2_p80_r90_20261106/candidate_ocr/results.json",
+  "current_p80_r90_recall_boundary_results": "artifacts/module2_p80_r90_20261106/recall_boundary/results.json",
+  "current_shared_development_gallery": "artifacts/module2_p80_r90_20261106/development_benchmark/shared_gallery.json",
+  "current_shared_development_retrieval": "artifacts/module2_p80_r90_20261106/development_benchmark/shared_retrieval.json",
+  "current_priority_human_review_entry": "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_safeguards/human_review/index.html",
+  "current_priority_human_scoring_entry": "scripts/module2_mainline.py score-review",
+  "current_paper_fusion_experiment": "artifacts/module2_paper_fusion_20261106/summary.json",
+  "current_paper_fusion_development_entries": [
+    "scripts/paper_fusion_experiment.py",
+    "scripts/paper_sid_rerank.py"
+  ],
+  "current_module2_progress_file": "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/mainline/status.json",
+  "current_module2_target_status_file": "artifacts/module2_p80_r90_20261106/target_status.json",
+  "current_module2_human_scoring_entry": "scripts/simple_cycle_review.py score",
+  "current_development_expansion_registry": "data/module2_development_expansion/records.jsonl",
+  "current_preparation_exclusion_snapshot": "artifacts/module2_simple_baseline_20261105/post_experiment_exclusions.json",
+  "current_review_workflow": "20_percent_blinded_actual_human_review_by_user",
+  "current_module2_AI_review_file": "artifacts/module2_focus_coverage/judgments.ai.jsonl",
+  "current_AI_diagnostic_file": "artifacts/module2_simple_baseline_20261105/summary.json",
+  "current_reviewed_development_catalog": "artifacts/module2_simple_baseline_20261105/inputs.json",
+  "human_assignment_pending": false,
+  "current_experimental_development_index": "artifacts/module2_focus_coverage/index/manifest.json",
+  "current_visual_coverage_exposure_registry": "data/module2_visual_coverage_candidates/records.jsonl",
+  "current_visual_coverage_media_registry": "data/module2_visual_coverage_media/records.jsonl",
+  "current_focus_coverage_exposure_registry": "data/module2_focus_coverage_candidates/records.jsonl",
+  "current_development_query_entry": "scripts/retrieve_focus_development.py",
+  "current_base_AI_diagnostic_file": "artifacts/module2_focus_coverage/internal_metrics.ai.development.json",
+  "current_guarded_query_entry": "scripts/compare_region_prefix.py query",
+  "current_form_coverage_candidates_registry": "data/module2_form_coverage_candidates/records.jsonl",
+  "current_form_coverage_media_registry": "data/module2_form_coverage_media/records.jsonl",
+  "current_focus_coverage_media_registry": "data/module2_focus_coverage_media/records.jsonl",
+  "current_fresh_query_AI_diagnostic_file": "artifacts/module2_rank_stability/fresh_query_check/internal_metrics.ai.development.json",
+  "current_fresh_query_AI_review_file": "artifacts/module2_rank_stability/fresh_query_check/judgments.ai.jsonl",
+  "current_fresh_query_catalog_file": "artifacts/module2_rank_stability/fresh_query_check/queries.public.json",
+  "current_bounded_image_query_entry": "scripts/retrieve_stable_development.py",
+  "current_fresh_query_candidates_registry": "data/module2_fresh_query_candidates/records.jsonl",
+  "current_fresh_query_media_registry": "data/module2_fresh_query_media/records.jsonl",
+  "current_independent_AI_blind_metrics_file": "artifacts/module2_independent_business_blind/AI_blind_metrics.json",
+  "current_development_experiment": "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_safeguards",
+  "current_development_decision_file": "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/mainline/selection_20261109_primary_safeguards.json",
+  "current_structure_candidates_registry": "data/module2_structure_candidates/records.jsonl",
+  "current_structure_media_registry": "data/module2_structure_media/records.jsonl",
+  "current_structure_cohorts": {
+    "tune": {
+      "catalog": "artifacts/module2_structure_development/tune/catalog.public.json",
+      "index": "artifacts/module2_structure_development/tune/index/manifest.json",
+      "judgments": "artifacts/module2_structure_development/tune/judgments.ai.jsonl",
+      "metrics": "artifacts/module2_structure_development/tune/internal_metrics.ai.development.json"
+    },
+    "validation": {
+      "catalog": "artifacts/module2_structure_development/validation/catalog.public.json",
+      "index": "artifacts/module2_structure_development/validation/index/manifest.json",
+      "judgments": "artifacts/module2_structure_development/validation/judgments.ai.jsonl",
+      "metrics": "artifacts/module2_structure_development/validation/internal_metrics.ai.development.json"
+    }
+  },
+  "development_candidate_selected": "original",
+  "new_independent_AI_blind_after_development_started": true,
+  "formal_metrics": null,
+  "current_primary_form_candidates_registry": "data/module2_primary_form_candidates/records.jsonl",
+  "current_primary_form_media_registry": "data/module2_primary_form_media/records.jsonl",
+  "current_primary_form_fresh_candidates_registry": "data/module2_primary_form_fresh_candidates/records.jsonl",
+  "current_primary_form_fresh_media_registry": "data/module2_primary_form_fresh_media/records.jsonl",
+  "current_open_source_comparison_report": "artifacts/module2_fgclip2_comparison/internal_comparison.ai.development.md",
+  "current_subject_roi_exposure_registry": "data/module2_subject_roi_exposure/records.jsonl",
+  "current_subject_coverage_candidates_registry": "data/module2_subject_coverage_candidates/records.jsonl",
+  "current_subject_coverage_media_registry": "data/module2_subject_coverage_media/records.jsonl",
+  "current_subject_coverage_final_media_registry": "data/module2_subject_coverage_final_media/records.jsonl",
+  "current_subject_coverage_exposure_registry": "data/module2_subject_coverage_exposure/records.jsonl",
+  "current_subject_coverage_comparison_report": "artifacts/module2_subject_coverage_expansion/internal_comparison.ai.development.md",
+  "current_subject_coverage_cohorts": {
+    "tune": {
+      "catalog": "artifacts/module2_subject_coverage_expansion/tune/catalog.public.json",
+      "judgments": "artifacts/module2_subject_coverage_expansion/tune/judgments.ai.jsonl",
+      "metrics": "artifacts/module2_subject_coverage_expansion/tune/internal_metrics.ai.development.json",
+      "index": "artifacts/module2_subject_coverage_expansion/tune/index/manifest.json"
+    },
+    "regression": {
+      "catalog": "artifacts/module2_subject_coverage_expansion/regression/catalog.public.json",
+      "judgments": "artifacts/module2_subject_coverage_expansion/regression/judgments.ai.jsonl",
+      "metrics": "artifacts/module2_subject_coverage_expansion/regression/internal_metrics.ai.development.json",
+      "index": "artifacts/module2_subject_coverage_expansion/regression/index/manifest.json"
+    },
+    "fresh": {
+      "catalog": "artifacts/module2_subject_coverage_expansion/fresh/catalog.public.json",
+      "judgments": "artifacts/module2_subject_coverage_expansion/fresh/judgments.ai.jsonl",
+      "metrics": "artifacts/module2_subject_coverage_expansion/fresh/internal_metrics.ai.development.json",
+      "index": "artifacts/module2_subject_coverage_expansion/tune/index/manifest.json"
+    }
+  },
+  "current_prepared_development_experiment": "artifacts/module2_simple_baseline_20261105",
+  "current_primary_subject_candidates_registry": "data/module2_primary_subject_candidates/records.jsonl",
+  "current_primary_subject_media_registry": "data/module2_primary_subject_media/records.jsonl",
+  "current_prepared_development_protocol": "artifacts/module2_simple_baseline_20261105/protocol.json",
+  "current_completed_development_experiment": "artifacts/module2_simple_baseline_20261105",
+  "current_prepared_development_state": "model_ablation_completed_pending_human_review",
+  "current_primary_subject_comparison_report": "artifacts/module2_primary_subjects/internal_comparison.ai.development.md",
+  "current_primary_subject_derived_registry": "data/module2_primary_subject_derived/records.jsonl",
+  "current_primary_subject_cohorts": {
+    "tune": {
+      "catalog": "artifacts/module2_primary_subjects/tune/catalog.public.json",
+      "judgments": "artifacts/module2_primary_subjects/tune/judgments.ai.jsonl",
+      "metrics": "artifacts/module2_primary_subjects/tune/internal_metrics.ai.development.json",
+      "index": "artifacts/module2_primary_subjects/tune/index/manifest.json"
+    },
+    "regression": {
+      "catalog": "artifacts/module2_primary_subjects/regression/catalog.public.json",
+      "judgments": "artifacts/module2_primary_subjects/regression/judgments.ai.jsonl",
+      "metrics": "artifacts/module2_primary_subjects/regression/internal_metrics.ai.development.json",
+      "index": "artifacts/module2_primary_subjects/regression/index/manifest.json"
+    },
+    "fresh": {
+      "catalog": "artifacts/module2_primary_subjects/fresh/catalog.public.json",
+      "judgments": "artifacts/module2_primary_subjects/fresh/judgments.ai.jsonl",
+      "metrics": "artifacts/module2_primary_subjects/fresh/internal_metrics.ai.development.json",
+      "index": "artifacts/module2_primary_subjects/tune/index/manifest.json"
+    }
+  },
+  "current_dual_context_comparison_report": "artifacts/module2_dual_path_development/internal_comparison.ai.development.md",
+  "current_caption_roi_comparison_report": "artifacts/module2_caption_roi_development/internal_comparison.ai.development.md",
+  "current_caption_roi_derived_registry": "data/module2_caption_roi_derived/records.jsonl",
+  "current_roi_semantic_gate_comparison_report": "artifacts/module2_roi_semantic_gate/internal_comparison.ai.development.md",
+  "current_query_ROI_semantic_gate_judgments": "artifacts/module2_roi_semantic_gate/gate_results.json",
+  "current_pool_capacity_diagnostic_file": "artifacts/module2_pool_capacity_diagnosis/capacity.json",
+  "current_learned_fusion_report": "artifacts/module2_learned_fusion/internal_comparison.ai.development.md",
+  "current_balanced_supplement_acquisition_receipt": "artifacts/module2_balanced_media_recovery/acquisition_receipt.json",
+  "current_balanced_supplement_AI_review_status": "artifacts/module2_balanced_pair_review/public_status.json",
+  "current_balanced_supplement_feature_protocol": "artifacts/module2_balanced_supplement_features/protocol.json",
+  "current_balanced_supplement_feature_status": "artifacts/module2_balanced_supplement_features/public_status.json",
+  "current_balanced_pipeline_status": "artifacts/module2_balanced_gallery_finalization/public_status.json",
+  "current_balanced_pipeline_execution_manifest": "artifacts/module2_balanced_runner/execution_source_manifest.json",
+  "current_balanced_gallery_protocol": "artifacts/module2_balanced_gallery/protocol.json",
+  "current_balanced_pipeline_failure_evidence": "artifacts/module2_balanced_runner/failure.json",
+  "current_balanced_gallery_report": "artifacts/module2_balanced_gallery_finalization/internal_comparison.ai.development.md",
+  "current_subject_attribute_report": "artifacts/module2_subject_attribute_learning/internal_comparison.ai.development.md",
+  "current_subject_recall_status": "artifacts/module2_public_conflict_priority/public_status.json",
+  "current_subject_recall_report": "artifacts/module2_public_conflict_priority/internal_comparison.ai.development.md",
+  "current_pointwise_recall_status": "artifacts/module2_pointwise_recall_learning/public_status.json",
+  "current_pointwise_recall_report": "artifacts/module2_pointwise_recall_learning/internal_comparison.ai.development.md",
+  "current_public_conflict_status": "artifacts/module2_public_conflict_priority/public_status.json",
+  "current_public_conflict_report": "artifacts/module2_public_conflict_priority/internal_comparison.ai.development.md",
+  "current_grounded_development_progress": "artifacts/module2_grounded_subject_repair/public_status.json",
+  "current_grounded_blind_progress": "artifacts/module2_grounded_independent_blind/public_status.json",
+  "current_independent_AI_blind_experiment": "artifacts/module2_grounded_independent_blind",
+  "current_independent_AI_blind_protocol": "artifacts/module2_grounded_independent_blind/release_protocol.json",
+  "current_independent_AI_blind_consumed_registry": "data/module2_grounded_blind_consumed/records.jsonl",
+  "current_independent_AI_blind_report": "artifacts/module2_grounded_independent_blind/internal_comparison.ai.blind.md",
+  "current_independent_AI_blind_decision": "artifacts/module2_grounded_independent_blind/decision.json",
+  "current_independent_AI_blind_verifier": "scripts/grounded_blind_evaluation_recovery.py verify",
+  "current_independent_AI_blind_execution_protocols": [
+    "artifacts/module2_grounded_independent_blind/release_protocol.json",
+    "artifacts/module2_grounded_independent_blind/source_range_execution_protocol.json",
+    "artifacts/module2_grounded_independent_blind/argument_order_execution_protocol.json",
+    "artifacts/module2_grounded_independent_blind/AI_provenance_execution_protocol.json"
+  ],
+  "current_business_grounding_development_status": "artifacts/module2_business_grounding_development/public_status.json",
+  "current_business_grounding_development_doc": "docs/module2_business_grounding_development.md",
+  "current_business_grounding_audit": "artifacts/module2_business_grounding_development/internal_data_quality_audit.json",
+  "current_business_grounding_semantic_protocol": "artifacts/module2_business_grounding_development/semantic_verifier_protocol.json",
+  "current_whole_image_business_metric_experiment": "artifacts/module2_business_metric_learning",
+  "business_grounding_new_independent_AI_blind_started": false,
+  "current_joint_business_attention_experiment": "artifacts/module2_business_joint_attention",
+  "current_joint_business_attention_report": "artifacts/module2_business_joint_attention/internal_comparison.ai.development.md",
+  "current_role_pool_development_doc": "docs/module2_role_pool_development.md",
+  "current_role_pool_development_status": "artifacts/module2_role_pool_development/public_status.json",
+  "role_pool_new_independent_AI_blind_started": false,
+  "current_role_pool_development_report": "artifacts/module2_role_pool_development/internal_comparison.ai.development.md",
+  "human_review_pending": true,
+  "current_human_reviewer": "user_self",
+  "current_human_review_page": "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_safeguards/human_review/index.html",
+  "current_final_acceptance_reservation": "artifacts/module2_final_acceptance_20261105/release_receipt.json",
+  "exclusion_metadata_allowlist": [
+    "artifacts/module2_final_acceptance_20261105/future_selection_exclusions.json",
+    "artifacts/module2_simple_baseline_20261105/post_experiment_exclusions.json",
+    "data/module2_business_blind_consumed/records.jsonl",
+    "data/module2_grounded_blind_consumed/records.jsonl",
+    "artifacts/module2_final_acceptance_20261110/future_selection_exclusions.json",
+    "data/module2_consumed_holdouts/records.jsonl",
+    "data/module2_reserved_acceptance/records.jsonl"
+  ],
+  "current_development_report": "docs/module2_mainline.md",
+  "current_module2_development_mainline": "configs/module2_development_mainline.json",
+  "current_module2_development_entry": "scripts/module2_mainline.py status",
+  "sealed_evaluation_commands": [
+    {
+      "script": "scripts/blind_retrieval.py",
+      "dataset_root": "artifacts/module2_blind/"
+    },
+    {
+      "script": "scripts/finish_blind_gallery.py",
+      "dataset_root": "artifacts/module2_blind/"
+    },
+    {
+      "script": "scripts/verify_blind_predictions.py",
+      "dataset_root": "artifacts/module2_blind/"
+    },
+    {
+      "script": "scripts/independent_business_blind.py",
+      "dataset_root": "artifacts/module2_independent_business_blind/"
+    },
+    {
+      "script": "scripts/score_independent_business_blind.py",
+      "dataset_root": "artifacts/module2_independent_business_blind/"
+    },
+    {
+      "script": "scripts/report_independent_business_blind.py",
+      "dataset_root": "artifacts/module2_independent_business_blind/"
+    },
+    {
+      "script": "scripts/write_blind_native_judgments.py",
+      "dataset_root": "artifacts/module2_independent_business_blind/"
+    },
+    {
+      "script": "scripts/grounded_blind_dataset.py",
+      "dataset_root": "artifacts/module2_grounded_independent_blind/"
+    },
+    {
+      "script": "scripts/grounded_blind_runtime.py",
+      "dataset_root": "artifacts/module2_grounded_independent_blind/"
+    },
+    {
+      "script": "scripts/grounded_blind_source_recovery.py",
+      "dataset_root": "artifacts/module2_grounded_independent_blind/"
+    },
+    {
+      "script": "scripts/grounded_blind_execution_recovery.py",
+      "dataset_root": "artifacts/module2_grounded_independent_blind/"
+    },
+    {
+      "script": "scripts/grounded_blind_evaluation_recovery.py",
+      "dataset_root": "artifacts/module2_grounded_independent_blind/"
+    },
+    {
+      "script": "scripts/grounded_blind_diagnostics.py",
+      "dataset_root": "artifacts/module2_grounded_independent_blind/"
+    },
+    {
+      "script": "scripts/grounded_blind_report.py",
+      "dataset_root": "artifacts/module2_grounded_independent_blind/"
+    },
+    {
+      "script": "scripts/author_grounded_blind_judgments.py",
+      "dataset_root": "artifacts/module2_grounded_independent_blind/"
+    },
+    {
+      "script": "scripts/verify_grounded_blind_release.py",
+      "dataset_root": "artifacts/module2_grounded_independent_blind/"
+    },
+    {
+      "script": "scripts/simple_cycle_holdout.py",
+      "dataset_root": "artifacts/module2_final_acceptance_20261105/"
+    },
+    {
+      "script": "scripts/prepare_business_acceptance.py",
+      "dataset_root": "artifacts/module2_business_acceptance/"
+    }
+  ],
+  "current_final_acceptance_root": "artifacts/module2_final_acceptance_20261110",
+  "current_final_acceptance_exclusion_metadata": "artifacts/module2_final_acceptance_20261110/future_selection_exclusions.json"
+}

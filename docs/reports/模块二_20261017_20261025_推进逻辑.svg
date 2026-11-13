@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="2130" viewBox="0 0 2400 2130" role="img" aria-labelledby="title desc">
+<title id="title">模块二：本周推进逻辑与量化进度</title><desc id="desc">2026年10月17日至25日，从完整精排、补库、两轮独立AI验证，到主体质检、整图学习和双图注意力，最终依据开发指标保留原默认策略。</desc>
+<metadata>Evidence: tmp/weekly_1017_1025/report_content.txt; quantitative_inputs.json. Development OOF is not independent validation. Two blind sets differ and are consumed.</metadata>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#245d91"/></marker><marker id="plan" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#087c79"/></marker></defs>
+<g font-family="Times New Roman, Microsoft YaHei, sans-serif">
+<rect x="0" y="0" width="2400" height="2130" rx="0" fill="#f7f9fc" stroke="none" stroke-width="2"/>
+<text x="64" y="90" font-size="54" fill="#142b43" font-weight="700" text-anchor="start">模块二：本周推进逻辑与量化进度</text>
+<text x="66" y="135" font-size="28" fill="#536779" font-weight="400" text-anchor="start">2026.10.17—10.25 23:00（北京时间）｜先验证问题，再补证据与模型，最后按门槛决定是否升级</text>
+<rect x="64" y="174" width="2272" height="227" rx="20" fill="white" stroke="#d5dfe9" stroke-width="2"/>
+<text x="92" y="218" font-size="30" fill="#245d91" font-weight="700" text-anchor="start">整体框架 · 多模态商品检索</text>
+<rect x="90" y="242" width="352" height="130" rx="12" fill="#eef4fa" stroke="#d7e3ee" stroke-width="2"/>
+<text x="266" y="280" font-size="27" fill="#245d91" font-weight="700" text-anchor="middle">商品库与查询输入</text>
+<text x="266" y="318" font-size="22" fill="#142b43" font-weight="400" text-anchor="middle">商品图文库／中文文本／图片</text>
+<text x="266" y="351" font-size="22" fill="#536779" font-weight="400" text-anchor="middle">本周②补库与评审</text>
+<path d="M444,305 H459" fill="none" stroke="#245d91" stroke-width="4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="463" y="242" width="352" height="130" rx="12" fill="#eef4fa" stroke="#d7e3ee" stroke-width="2"/>
+<text x="639" y="280" font-size="27" fill="#245d91" font-weight="700" text-anchor="middle">图文与区域特征</text>
+<text x="639" y="318" font-size="22" fill="#142b43" font-weight="400" text-anchor="middle">Qwen嵌入／ROI／整图回退</text>
+<text x="639" y="351" font-size="22" fill="#536779" font-weight="400" text-anchor="middle">本周④⑥⑦主体与特征</text>
+<path d="M817,305 H832" fill="none" stroke="#245d91" stroke-width="4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="836" y="242" width="352" height="130" rx="12" fill="#eef4fa" stroke="#d7e3ee" stroke-width="2"/>
+<text x="1012" y="280" font-size="27" fill="#245d91" font-weight="700" text-anchor="middle">多路候选召回</text>
+<text x="1012" y="318" font-size="22" fill="#142b43" font-weight="400" text-anchor="middle">整图／区域／标题候选汇合</text>
+<text x="1012" y="351" font-size="22" fill="#536779" font-weight="400" text-anchor="middle">贯穿各轮完整排序</text>
+<path d="M1190,305 H1205" fill="none" stroke="#245d91" stroke-width="4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="1209" y="242" width="352" height="130" rx="12" fill="#eef4fa" stroke="#d7e3ee" stroke-width="2"/>
+<text x="1385" y="280" font-size="27" fill="#245d91" font-weight="700" text-anchor="middle">完整图文精排</text>
+<text x="1385" y="318" font-size="22" fill="#142b43" font-weight="400" text-anchor="middle">Qwen3-VL-Reranker-2B</text>
+<text x="1385" y="351" font-size="22" fill="#536779" font-weight="400" text-anchor="middle">本周①精排与候选池</text>
+<path d="M1563,305 H1578" fill="none" stroke="#245d91" stroke-width="4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="1582" y="242" width="352" height="130" rx="12" fill="#eef4fa" stroke="#d7e3ee" stroke-width="2"/>
+<text x="1758" y="280" font-size="27" fill="#245d91" font-weight="700" text-anchor="middle">主售证据与融合</text>
+<text x="1758" y="318" font-size="22" fill="#142b43" font-weight="400" text-anchor="middle">局部语义／度量／双图证据</text>
+<text x="1758" y="351" font-size="22" fill="#536779" font-weight="400" text-anchor="middle">本周④⑦⑧策略迭代</text>
+<path d="M1936,305 H1951" fill="none" stroke="#245d91" stroke-width="4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="1955" y="242" width="352" height="130" rx="12" fill="#eef4fa" stroke="#d7e3ee" stroke-width="2"/>
+<text x="2131" y="280" font-size="27" fill="#245d91" font-weight="700" text-anchor="middle">Top-N与可视化</text>
+<text x="2131" y="318" font-size="22" fill="#142b43" font-weight="400" text-anchor="middle">标题／主图／类别／匹配度</text>
+<text x="2131" y="351" font-size="22" fill="#536779" font-weight="400" text-anchor="middle">本周⑨验证后决策</text>
+<text x="64" y="464" font-size="35" fill="#142b43" font-weight="700" text-anchor="start">本周主线 · 由验证结果推动下一步</text>
+<text x="2336" y="462" font-size="25" fill="#536779" font-weight="400" text-anchor="end">实线：本周推进顺序    虚线：下期计划</text>
+<g id="stage-1" data-box="64,505,720,280">
+<rect x="64" y="505" width="720" height="280" rx="18" fill="white" stroke="#cbd7e3" stroke-width="2"/>
+<rect x="64" y="505" width="8" height="280" rx="3" fill="#245d91" stroke="none" stroke-width="2"/>
+<rect x="90" y="529" width="44" height="44" rx="10" fill="#245d91" stroke="none" stroke-width="2"/>
+<text x="112" y="562" font-size="29" fill="white" font-weight="700" text-anchor="middle">1</text>
+<text x="154" y="562" font-size="32" fill="#245d91" font-weight="700" text-anchor="start">完整精排与训练扩容</text>
+<text x="94" y="612" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">完整Qwen精排：比较20／60候选池</text>
+<text x="94" y="655" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">新增训练150组、开发50组，共580张图</text>
+<text x="94" y="698" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">训练区域注意力，比较困难负例与排序策略</text>
+<rect x="86" y="723" width="676" height="45" rx="8" fill="#edf5f8" stroke="none" stroke-width="2"/>
+<text x="100" y="754" font-size="25" fill="#245d91" font-weight="600" text-anchor="start">发现：局部收益存在，整体增益尚不稳定</text>
+</g>
+<g id="stage-2" data-box="840,505,720,280">
+<rect x="840" y="505" width="720" height="280" rx="18" fill="white" stroke="#cbd7e3" stroke-width="2"/>
+<rect x="840" y="505" width="8" height="280" rx="3" fill="#245d91" stroke="none" stroke-width="2"/>
+<rect x="866" y="529" width="44" height="44" rx="10" fill="#245d91" stroke="none" stroke-width="2"/>
+<text x="888" y="562" font-size="29" fill="white" font-weight="700" text-anchor="middle">2</text>
+<text x="930" y="562" font-size="32" fill="#245d91" font-weight="700" text-anchor="start">AI评审与业务补库</text>
+<text x="870" y="612" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">核查原图、原标题与商品相关性</text>
+<text x="870" y="655" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">补充候选与困难负例，保留未知关系</text>
+<text x="870" y="698" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">按版本冻结图库、查询与评审规则</text>
+<rect x="862" y="723" width="676" height="45" rx="8" fill="#edf5f8" stroke="none" stroke-width="2"/>
+<text x="876" y="754" font-size="25" fill="#245d91" font-weight="600" text-anchor="start">因此：用独立数据检验真实业务泛化</text>
+</g>
+<g id="stage-3" data-box="1616,505,720,280">
+<rect x="1616" y="505" width="720" height="280" rx="18" fill="white" stroke="#cbd7e3" stroke-width="2"/>
+<rect x="1616" y="505" width="8" height="280" rx="3" fill="#a25a16" stroke="none" stroke-width="2"/>
+<rect x="1642" y="529" width="44" height="44" rx="10" fill="#a25a16" stroke="none" stroke-width="2"/>
+<text x="1664" y="562" font-size="29" fill="white" font-weight="700" text-anchor="middle">3</text>
+<text x="1706" y="562" font-size="32" fill="#a25a16" font-weight="700" text-anchor="start">第一次独立AI验证</text>
+<text x="1646" y="612" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">300件图库 × 60条查询</text>
+<text x="1646" y="655" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">总体P@10：63.83–71.00%</text>
+<text x="1646" y="698" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">图片P@10：43.33–52.00%</text>
+<rect x="1638" y="723" width="676" height="45" rx="8" fill="#fff0eb" stroke="none" stroke-width="2"/>
+<text x="1652" y="754" font-size="25" fill="#ad3e38" font-weight="600" text-anchor="start">瓶颈：图片P@10容量上界56.67%，仍不足</text>
+</g>
+<g id="stage-4" data-box="1616,855,720,280">
+<rect x="1616" y="855" width="720" height="280" rx="18" fill="white" stroke="#cbd7e3" stroke-width="2"/>
+<rect x="1616" y="855" width="8" height="280" rx="3" fill="#087c79" stroke="none" stroke-width="2"/>
+<rect x="1642" y="879" width="44" height="44" rx="10" fill="#087c79" stroke="none" stroke-width="2"/>
+<text x="1664" y="912" font-size="29" fill="white" font-weight="700" text-anchor="middle">4</text>
+<text x="1706" y="912" font-size="32" fill="#087c79" font-weight="700" text-anchor="start">补强主售定位与局部证据</text>
+<text x="1646" y="962" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">GroundingDINO＋仅查询图Qwen定位</text>
+<text x="1646" y="1005" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">FG-CLIP 2、ROI裁切、放大与整图回退</text>
+<text x="1646" y="1048" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">补主体覆盖；按家族隔离学习证据融合</text>
+<rect x="1638" y="1073" width="676" height="45" rx="8" fill="#edf5f8" stroke="none" stroke-width="2"/>
+<text x="1652" y="1104" font-size="25" fill="#087c79" font-weight="600" text-anchor="start">目的：减少主商品、配件与展示道具混淆</text>
+</g>
+<g id="stage-5" data-box="840,855,720,280">
+<rect x="840" y="855" width="720" height="280" rx="18" fill="white" stroke="#cbd7e3" stroke-width="2"/>
+<rect x="840" y="855" width="8" height="280" rx="3" fill="#a25a16" stroke="none" stroke-width="2"/>
+<rect x="866" y="879" width="44" height="44" rx="10" fill="#a25a16" stroke="none" stroke-width="2"/>
+<text x="888" y="912" font-size="29" fill="white" font-weight="700" text-anchor="middle">5</text>
+<text x="930" y="912" font-size="32" fill="#a25a16" font-weight="700" text-anchor="start">第二次独立AI验证</text>
+<text x="870" y="962" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">96件图库 × 24条查询（全新独立集）</text>
+<text x="870" y="1005" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">总体P@10：49.58–54.17%</text>
+<text x="870" y="1048" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">R@10：89.80–94.86%；图片P：40–42.50%</text>
+<rect x="862" y="1073" width="676" height="45" rx="8" fill="#fff0eb" stroke="none" stroke-width="2"/>
+<text x="876" y="1104" font-size="25" fill="#ad3e38" font-weight="600" text-anchor="start">发现：召回偏好通过，准确率门槛未通过</text>
+</g>
+<g id="stage-6" data-box="64,855,720,280">
+<rect x="64" y="855" width="720" height="280" rx="18" fill="white" stroke="#cbd7e3" stroke-width="2"/>
+<rect x="64" y="855" width="8" height="280" rx="3" fill="#087c79" stroke="none" stroke-width="2"/>
+<rect x="90" y="879" width="44" height="44" rx="10" fill="#087c79" stroke="none" stroke-width="2"/>
+<text x="112" y="912" font-size="29" fill="white" font-weight="700" text-anchor="middle">6</text>
+<text x="154" y="912" font-size="32" fill="#087c79" font-weight="700" text-anchor="start">主体掩码质量审查</text>
+<text x="94" y="962" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">435图审计；DINO 412次、SAM 383次</text>
+<text x="94" y="1005" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">生成1532张视图；24条查询全部看图QA</text>
+<text x="94" y="1048" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">发现鞋跟、耳机头梁、透明杯体被误删</text>
+<rect x="86" y="1073" width="676" height="45" rx="8" fill="#edf5f8" stroke="none" stroke-width="2"/>
+<text x="100" y="1104" font-size="25" fill="#ad3e38" font-weight="600" text-anchor="start">处置：新掩码全局停用，保留完整商品图</text>
+</g>
+<g id="stage-7" data-box="64,1205,720,280">
+<rect x="64" y="1205" width="720" height="280" rx="18" fill="white" stroke="#cbd7e3" stroke-width="2"/>
+<rect x="64" y="1205" width="8" height="280" rx="3" fill="#087c79" stroke="none" stroke-width="2"/>
+<rect x="90" y="1229" width="44" height="44" rx="10" fill="#087c79" stroke="none" stroke-width="2"/>
+<text x="112" y="1262" font-size="29" fill="white" font-weight="700" text-anchor="middle">7</text>
+<text x="154" y="1262" font-size="32" fill="#087c79" font-weight="700" text-anchor="start">整图学习与双图注意力</text>
+<text x="94" y="1312" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">Qwen 2048→256→256投影＋困难样本挖掘</text>
+<text x="94" y="1355" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">完整12层DINOv2：两图512 patch联合注意力</text>
+<text x="94" y="1398" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">投影与匹配头各训练400步；两类骨干冻结</text>
+<rect x="86" y="1423" width="676" height="45" rx="8" fill="#edf5f8" stroke="none" stroke-width="2"/>
+<text x="100" y="1454" font-size="25" fill="#087c79" font-weight="600" text-anchor="start">逻辑：避开坏掩码，学习整图业务匹配证据</text>
+</g>
+<g id="stage-8" data-box="840,1205,720,280">
+<rect x="840" y="1205" width="720" height="280" rx="18" fill="white" stroke="#cbd7e3" stroke-width="2"/>
+<rect x="840" y="1205" width="8" height="280" rx="3" fill="#245d91" stroke="none" stroke-width="2"/>
+<rect x="866" y="1229" width="44" height="44" rx="10" fill="#245d91" stroke="none" stroke-width="2"/>
+<text x="888" y="1262" font-size="29" fill="white" font-weight="700" text-anchor="middle">8</text>
+<text x="930" y="1262" font-size="32" fill="#245d91" font-weight="700" text-anchor="start">固定融合与家族隔离回放</text>
+<text x="870" y="1312" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">0.8父排名＋0.2辅助排名；保留文本原策略</text>
+<text x="870" y="1355" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">7560个真实双图配对、1890次批前向</text>
+<text x="870" y="1398" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">7种方法／280份完整排序／18个家族折模型</text>
+<rect x="862" y="1423" width="676" height="45" rx="8" fill="#edf5f8" stroke="none" stroke-width="2"/>
+<text x="876" y="1454" font-size="25" fill="#245d91" font-weight="600" text-anchor="start">约束：相同已精排候选池，不补零模拟分数</text>
+</g>
+<g id="stage-9" data-box="1616,1205,720,280">
+<rect x="1616" y="1205" width="720" height="280" rx="18" fill="white" stroke="#cbd7e3" stroke-width="2"/>
+<rect x="1616" y="1205" width="8" height="280" rx="3" fill="#a25a16" stroke="none" stroke-width="2"/>
+<rect x="1642" y="1229" width="44" height="44" rx="10" fill="#a25a16" stroke="none" stroke-width="2"/>
+<text x="1664" y="1262" font-size="29" fill="white" font-weight="700" text-anchor="middle">9</text>
+<text x="1706" y="1262" font-size="32" fill="#a25a16" font-weight="700" text-anchor="start">分组评测与升级决策</text>
+<text x="1646" y="1312" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">门槛：P@10≥60%；Recall偏好≥85%</text>
+<text x="1646" y="1355" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">检查mAP、NDCG@10、MRR、Hit@1及退化</text>
+<text x="1646" y="1398" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">开发A／B／C分开报告，双图未见稳定增益</text>
+<rect x="1638" y="1423" width="676" height="45" rx="8" fill="#fff0eb" stroke="none" stroke-width="2"/>
+<text x="1652" y="1454" font-size="25" fill="#ad3e38" font-weight="600" text-anchor="start">本周结论：目标未整体通过，默认策略保留</text>
+</g>
+<path d="M789,645 H832" fill="none" stroke="#245d91" stroke-width="4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1565,645 H1608" fill="none" stroke="#245d91" stroke-width="4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M789,1345 H832" fill="none" stroke="#245d91" stroke-width="4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1565,1345 H1608" fill="none" stroke="#245d91" stroke-width="4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1611,995 H1568" fill="none" stroke="#245d91" stroke-width="4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M835,995 H792" fill="none" stroke="#245d91" stroke-width="4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1976.0,789 V847" fill="none" stroke="#245d91" stroke-width="4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="2004.0" y="827" font-size="24" fill="#536779" font-weight="400" text-anchor="start">图片瓶颈 → 主售补强</text>
+<path d="M424.0,1139 V1197" fill="none" stroke="#245d91" stroke-width="4" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="452.0" y="1177" font-size="24" fill="#536779" font-weight="400" text-anchor="start">掩码受损 → 整图保底</text>
+<rect x="64" y="1535" width="2272" height="263" rx="18" fill="white" stroke="#cbd7e3" stroke-width="2"/>
+<text x="92" y="1581" font-size="31" fill="#245d91" font-weight="700" text-anchor="start">最新开发结果 · 双图注意力固定融合</text>
+<text x="2308" y="1580" font-size="25" fill="#536779" font-weight="400" text-anchor="end">40条曝光查询｜每组315件图库｜12600条AI关系</text>
+<text x="100" y="1629" font-size="27" fill="#536779" font-weight="600" text-anchor="start">分组与样本</text>
+<text x="830" y="1629" font-size="27" fill="#536779" font-weight="600" text-anchor="start">Precision@10</text>
+<text x="1275" y="1629" font-size="27" fill="#536779" font-weight="600" text-anchor="start">Recall@10</text>
+<text x="1720" y="1629" font-size="27" fill="#536779" font-weight="600" text-anchor="start">mAP</text>
+<text x="100" y="1674" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">A：16条（8文本＋8图片）</text>
+<text x="830" y="1674" font-size="29" fill="#142b43" font-weight="600" text-anchor="start">82.50–91.88%</text>
+<text x="1275" y="1674" font-size="29" fill="#142b43" font-weight="600" text-anchor="start">39.88–56.89%</text>
+<text x="1720" y="1674" font-size="29" fill="#142b43" font-weight="600" text-anchor="start">75.90–87.46%</text>
+<text x="100" y="1723" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">B：16条（8文本＋8图片）</text>
+<text x="830" y="1723" font-size="29" fill="#142b43" font-weight="600" text-anchor="start">71.88–86.88%</text>
+<text x="1275" y="1723" font-size="29" fill="#142b43" font-weight="600" text-anchor="start">37.94–61.36%</text>
+<text x="1720" y="1723" font-size="29" fill="#142b43" font-weight="600" text-anchor="start">70.73–89.72%</text>
+<text x="100" y="1772" font-size="27" fill="#142b43" font-weight="400" text-anchor="start">C：8条图片（已曝光）</text>
+<text x="830" y="1772" font-size="29" fill="#142b43" font-weight="600" text-anchor="start">55.00–78.75%</text>
+<text x="1275" y="1772" font-size="29" fill="#142b43" font-weight="600" text-anchor="start">39.55–56.25%</text>
+<text x="1720" y="1772" font-size="29" fill="#142b43" font-weight="600" text-anchor="start">47.31–67.84%</text>
+<rect x="64" y="1830" width="2272" height="145" rx="18" fill="#edf6f5" stroke="#b9d8d3" stroke-width="2"/>
+<text x="96" y="1877" font-size="31" fill="#087c79" font-weight="700" text-anchor="start">下一步：沿失败原因回到数据与检索链路</text>
+<text x="96" y="1925" font-size="29" fill="#142b43" font-weight="400" text-anchor="start">拆解缺正例／池外漏召回／池内错排</text>
+<path d="M770,1916 H865" fill="none" stroke="#087c79" stroke-width="4" stroke-linejoin="round" stroke-dasharray="12 9" marker-end="url(#plan)"/>
+<text x="900" y="1925" font-size="29" fill="#142b43" font-weight="400" text-anchor="start">补主体、用途与结构证据</text>
+<path d="M1330,1916 H1415" fill="none" stroke="#087c79" stroke-width="4" stroke-linejoin="round" stroke-dasharray="12 9" marker-end="url(#plan)"/>
+<text x="1450" y="1925" font-size="29" fill="#142b43" font-weight="400" text-anchor="start">冻结方案后，用全新独立数据验证</text>
+<text x="64" y="2027" font-size="25" fill="#536779" font-weight="400" text-anchor="start">读图口径：P＝Precision@10，R＝Recall@10；所有范围为AI未决标签补全的上下界，不是置信区间。</text>
+<text x="64" y="2067" font-size="25" fill="#536779" font-weight="400" text-anchor="start">两轮独立集的数据与方案不同，不作横向增益比较；开发OOF不等于独立验收，两轮独立集均已消耗。</text>
+<text x="64" y="2107" font-size="25" fill="#536779" font-weight="400" text-anchor="start">工程进度：307项测试通过；最新双图方案尚未完成在线端到端延迟验收。来源：本期周报与冻结指标JSON。</text>
+</g></svg>

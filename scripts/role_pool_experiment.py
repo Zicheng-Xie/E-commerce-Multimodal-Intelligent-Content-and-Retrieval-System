@@ -26,7 +26,7 @@ from multimodal_ecommerce.business_retrieval import BUSINESS_INSTRUCTION
 from multimodal_ecommerce.interval_retrieval_metrics import evaluate_intervals
 from multimodal_ecommerce.safety import PROJECT_ROOT, sha256_file, write_json
 from multimodal_ecommerce.visual_query import DescribedImageReranker
-from pair_identity import pair_identity
+from primary_subject_experiment import pair_identity
 from querywise_paired_bounds import paired_querywise
 from role_pool_profiles import JOINT, OPTIONS, POLICY, ROOT, SCHEMA, checked, digest
 from role_pool_profiles import guard as profile_guard
@@ -150,7 +150,7 @@ def prepare() -> None:
         Path(__file__),
         PROJECT_ROOT / "tests/test_role_pool_experiment.py",
         PROJECT_ROOT / "scripts/querywise_paired_bounds.py",
-        PROJECT_ROOT / "scripts/pair_identity.py",
+        PROJECT_ROOT / "scripts/primary_subject_experiment.py",
         ROOT / "profile_protocol.json",
         JOINT / "frozen_parent_pools.json",
         PROJECT_ROOT
@@ -400,7 +400,7 @@ def infer() -> bool:
                     )
                 else:
                     if engine is None:
-                        from gpu_admission import gpu_available
+                        from continue_primary_subjects import gpu_available
 
                         available, info = gpu_available()
                         if not available:

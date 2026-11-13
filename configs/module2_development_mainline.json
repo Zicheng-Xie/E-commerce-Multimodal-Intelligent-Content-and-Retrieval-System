@@ -1,0 +1,54 @@
+{
+  "mainline_id": "primary_recall_safeguards_v2",
+  "selected_at": "2026-11-09",
+  "selection_authority": "user_authorized_continuation_after_complete_human_swap_review",
+  "role": "development_candidate_verified_swap_gain_pending_total_precision",
+  "artifact_root": "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_recall",
+  "policies": {
+    "text": "verified subject recall and Top20 rerank with protected first two",
+    "image": "caption noun/appearance conflict abstains to original recall; original first two protected; protect third if its model score supports the weaker protected result; visual order within selected Top10"
+  },
+  "frozen_files": {
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_recall/protocol.json": "62ed8ca1e9a6926c726abd2048758c211866cc71d20173626bca816592df41af",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_recall/results.json": "ba093c38a5de9dcd4473aa132aa2cbf637e2129c1f0f5b26ba83698cbebd462c",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_recall/rankings.json": "fef735bf6653f300ca2c81983ad4ad4d9be7734ad84643ec299de8d1bcc33f9d",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_recall/human_review/manifest.json": "0cf7f1a343f2417dd8ca286259d0bf94ccc12be7ea4ba9dee5eede767f8e8cb2",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_recall/human_review/tasks.private.json": "0725a303f0b31f227e3437b5c5c61badcfae77c4201ef11afe393579185f7fab",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/subject_recall/rankings.json": "9e7dfb3125f32ea4db902e2c5e5edb8fd0a305fa89969aae3468044661609d4f",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_recall/human_review/import_receipt.json": "b76bf9d25cb7cd2c3835f25b4caad806e26d6528c1fdb18c37a8da554ae513a8",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_recall/human_review/answers/primary_recall_human_batch_001.csv": "d54f1a6e346aa57fce978d16406abf1fec7b390303cd936f1e9441166b575e12",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_recall/human_review/answers/primary_recall_human_batch_002.csv": "da489aaeb5f08ab337ce54f40a0a19ce2ee29f21e6e4828b7f65d50ef3fdcbba",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_recall/human_review/answers/primary_recall_human_batch_003.csv": "7db29ae88bc88830c7d18fbaf9c9956af71c8c90c1d8123604dbe9d75477fbc8",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_recall/human_review/answers/primary_recall_human_batch_004.csv": "b5c3e06477df4d8c8a87d9319e3174bbaac14437dcb6656e9e785c8146b22f90",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_recall/human_review/answers/primary_recall_human_batch_005.csv": "a7dd398b32730d1c9ad5e5ba6c27099aab05e348f89db84ee4bcecd777a161eb",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_safeguards/protocol.json": "384fa3e68ae13048af87660628633d62e60769bd8867b034cae78d93dfbb56bb",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_safeguards/results.json": "aa4cf5c5628e223cacba9b8e1b22fef7b2cc9e12206d3a3995c5d625d0859c37",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_safeguards/rankings.json": "df7b85578e1800d5c44e0bee7f82a7ffe70c1c546ae126badf21418240e523ef",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_safeguards/human_review/manifest.json": "ee1fb3266fb43a6eff0750c043a0ef27856193ee8be142735e23c042238e5e20",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_safeguards/human_review/tasks.private.json": "ed1480ea7c000f635f6afe177049bed617f0c7524c7ee7438589cd6cf6949123",
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_safeguards/parent_mainline.json": "165b2a3bf3c331cef977466a2c7e87f0422db48eea9294cf68413932e905cf48"
+  },
+  "source_sha256": {
+    "scripts/module2_shared_primary_recall.py": "640d867b782f5c550c1270161f2cac05235af13254d23828216456d381b121d5",
+    "scripts/module2_shared_subject_recall.py": "c743f3f3a2e4f0682db531e2cd8c9b9ebc0fddf5a25aa065f4b916354ce7aeb0",
+    "scripts/module2_shared_evaluation.py": "a6b817e20bf2053db490c63d58c9f98e03ad81da4af6dda5aa2bbb1785291e0c",
+    "src/multimodal_ecommerce/head_guard.py": "f182a1f90c46a3890585a81a398f92ef683427a5315ebeda4e38244f29f3575d",
+    "src/multimodal_ecommerce/simple_baseline.py": "da6938084ad975d399980c729287bd8e23be2c7f267bb2a45fb597291ec6e4a1",
+    "scripts/module2_primary_continuation.py": "d7cbf65c1cb77a81144b948f812c58f5d6a3a0b9350e4d7d6ca90872ca982e40",
+    "src/multimodal_ecommerce/retrieval_safeguards.py": "1d48f20e9104820e758a8a3fab72149eaab8b69d1f19b9d0e09b26b5ec7bf4e3",
+    "src/multimodal_ecommerce/intent_retrieval.py": "c877e6babd3fcc112fa3629ab4eafc46441be3735adde7853184bf0da062c710",
+    "src/multimodal_ecommerce/business_constraints.py": "5b15428b10941568bcd94e40d261ec1f503c765c97d9f239f8ab45055f72d955"
+  },
+  "control_only_roots": [
+    "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/simple_crop_top20"
+  ],
+  "prediction_recompute_required": false,
+  "formal_acceptance": false,
+  "revision": {
+    "parent_mainline_id": "primary_recall_guarded_visual_order",
+    "artifact_root": "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_safeguards",
+    "review_role": "complete_remaining_overall_top10",
+    "new_model_scores": 0
+  },
+  "active_rankings": "artifacts/module2_p80_r90_20261106/development_benchmark/subject_experiment/primary_safeguards/rankings.json"
+}

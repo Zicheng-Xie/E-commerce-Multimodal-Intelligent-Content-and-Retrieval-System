@@ -20,7 +20,7 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-OWNED_ROOTS = ("src", "scripts", "tests", "integration_tests")
+OWNED_ROOTS = ("src", "scripts", "tests")
 EXTERNAL_METHODS = {"do_GET", "do_POST", "visit_AnnAssign"}
 NAME_PATTERN = re.compile(r"_*[a-z][a-z0-9_]*|__[a-z][a-z0-9_]*__")
 GOOGLE_RESULT = re.compile(r"^(Returns|Yields):", re.MULTILINE)
@@ -167,10 +167,7 @@ def _syntax_findings(path: Path, tree: ast.Module) -> list[Finding]:
                         )
                     )
         if isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
-            if (
-                path.parts[0] in {"tests", "integration_tests"}
-                and node.func.id == "print"
-            ):
+            if path.parts[0] == "tests" and node.func.id == "print":
                 results.append(_finding(path, node, "10.2", "print in test"))
             if node.func.id in {"eval", "exec"} and not (
                 path.as_posix() == "src/multimodal_ecommerce/pair_reranker.py"

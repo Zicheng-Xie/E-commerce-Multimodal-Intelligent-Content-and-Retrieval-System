@@ -77,6 +77,24 @@ def test_reject_incomplete_generation(response: dict) -> None:
     client.close()
 
 
+def test_copy_requires_three_nonempty_bullets() -> None:
+    """Successful JSON parsing alone is insufficient to accept copy output."""
+    output: dict = {
+        "title": "标题",
+        "description": "详情",
+        "selling_points": ["一", "二"],
+    }
+    transport = httpx.MockTransport(
+        lambda request: httpx.Response(
+            200, json={"done": True, "message": {"content": json.dumps(output)}}
+        )
+    )
+    client = OllamaClient(client=httpx.Client(transport=transport))
+    with pytest.raises(OllamaError, match="three"):
+        client.generate_copy({"name": "商品"})
+    client.close()
+
+
 def test_storage_refuses_wrong_root(tmp_path: Path) -> None:
     """Do not pull a model when the reference blob belongs to another root.
 

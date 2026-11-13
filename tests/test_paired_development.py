@@ -2,12 +2,24 @@
 
 from __future__ import annotations
 
+import importlib
+from pathlib import Path
+
+import pytest
+
 from multimodal_ecommerce.ai_review_metrics import metric_ranges
-from querywise_paired_bounds import paired_querywise
 
 
-def test_nonregression_uses_same_unknown_labels_for_both_methods() -> None:
-    """Use the canonical paired evaluator; retain every original assertion."""
+def test_nonregression_uses_same_unknown_labels_for_both_methods(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Verify that nonregression uses same unknown labels for both methods.
+
+    Args:
+        monkeypatch: Pytest fixture for restoring patched attributes after the scenario.
+    """
+    monkeypatch.syspath_prepend(str(Path(__file__).resolve().parents[1] / "scripts"))
+    module = importlib.import_module("report_focus_coverage")
     ids = ["known", "unknown", *[f"n{i}" for i in range(10)]]
     ranks: dict = {"q": dict(global_=["unknown", "known", *ids[2:]], candidate=ids)}
     ranks["q"]["global"] = ranks["q"].pop("global_")
@@ -24,7 +36,7 @@ def test_nonregression_uses_same_unknown_labels_for_both_methods() -> None:
     ordinary = metric_ranges(ranks, labels, dict(q="image"))["scopes"]["all"]
     assert ordinary["candidate"]["ranges"]["precision@10"] == [0.1, 0.2]
     assert ordinary["global"]["ranges"]["precision@10"] == [0.1, 0.2]
-    result = paired_querywise(ranks, labels, dict(q="image"), [("candidate", "global")])
+    result = module.paired_differences(ranks, labels, dict(q="image"))
     metrics = result["scopes"]["all"]["candidate"]["global"]
     assert metrics["precision@10"]["delta_range"] == [0, 0]
     assert (

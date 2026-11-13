@@ -198,7 +198,7 @@ def encode() -> None:
     guard()
     if (ROOT / "feature_receipt.json").exists():
         return
-    from gpu_admission import gpu_available
+    from continue_primary_subjects import gpu_available
 
     available, info = gpu_available()
     if not available:

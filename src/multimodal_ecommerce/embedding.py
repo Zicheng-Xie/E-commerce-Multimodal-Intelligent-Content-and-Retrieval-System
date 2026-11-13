@@ -162,6 +162,53 @@ class QwenEmbedder:
             raise RuntimeError("Zero embedding")
         return vector / norm
 
+    def encode_images(self, images: list[Path], query: bool = False) -> np.ndarray:
+        """Encode a small image batch with the same full model and preprocessing.
+
+        Args:
+            images: Local image files; no remote URLs or custom instructions.
+            query: Apply the fixed official query instruction to every image.
+
+        Returns:
+            Finite, normalized vectors with shape (number of images, 2048).
+
+        Raises:
+            ValueError: The batch is empty.
+            RuntimeError: The model returns incomplete, nonfinite or zero vectors.
+        """
+        if not images:
+            raise ValueError("A nonempty local image batch is required")
+        items = []
+        for path in images:
+            with Image.open(path) as source:
+                picture = ImageOps.exif_transpose(source).convert("RGB")
+            items.append(
+                dict(
+                    image=picture,
+                    instruction=self.config[
+                        "query_instruction" if query else "document_instruction"
+                    ],
+                )
+            )
+        self.runtime.synchronize()
+        started = time.perf_counter()
+        values = self.backend.process(items).float().cpu().numpy()
+        self.runtime.synchronize()
+        if values.shape != (len(images), 2048) or not np.isfinite(values).all():
+            raise RuntimeError("Incomplete or nonfinite image batch")
+        norms = np.linalg.norm(values, axis=1, keepdims=True)
+        if np.any(norms < 1e-8):
+            raise RuntimeError("Zero batch embedding")
+        self.timings.append(
+            dict(
+                modality="image_batch",
+                query=query,
+                batch_size=len(images),
+                seconds=time.perf_counter() - started,
+            )
+        )
+        return values / norms
+
     def diagnostics(self) -> dict[str, Any]:
         """Return backend, latency and measured PyTorch memory statistics.
 

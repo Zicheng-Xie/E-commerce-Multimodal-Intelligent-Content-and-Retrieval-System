@@ -1,0 +1,19 @@
+{
+  "seed": 2026110501,
+  "role": "exposed_development_only",
+  "cohorts": ["tune", "regression", "fresh"],
+  "image_queries_only": true,
+  "gallery_policy": "all 411 unique currently available development products; no deletion",
+  "crop_policy": "reuse SHA-verified existing GroundingDINO union boxes; rectangular crop only; unavailable or invalid box keeps full original",
+  "query_policy": "unchanged whole query image; no caption or query crop",
+  "methods": ["whole_cosine", "crop_cosine", "crop_top20_complete_reranker"],
+  "embedding_batch_size": 4,
+  "top_k": 10,
+  "rerank_pool": 20,
+  "rerank_document_image": "original image and original title",
+  "new_masks": false,
+  "learned_fusion": false,
+  "human_audit_fraction": 0.2,
+  "human_accuracy_threshold": 0.8,
+  "formal_metrics": null
+}

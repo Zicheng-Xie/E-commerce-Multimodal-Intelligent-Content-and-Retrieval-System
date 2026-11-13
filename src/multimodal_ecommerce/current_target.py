@@ -1,4 +1,4 @@
-"""Apply the user's current hard Precision / preferred Recall development policy."""
+"""Apply versioned Precision and Recall thresholds to human development results."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ import math
 def assess_current_target(
     summary: dict | None, by_mode: dict | None, contract: dict
 ) -> dict:
-    """Keep preferred Recall distinct from required gates and formal acceptance.
+    """Apply the selected Recall policy and keep formal acceptance independent.
 
     Args:
         summary: Summary used by this operation.
@@ -25,11 +25,12 @@ def assess_current_target(
             coverage differs between scopes; Metrics must be finite fractions or
             undefined.
     """
+    recall_required = contract.get("recall_preferred_is_mandatory", False)
     output = dict(
         contract_version=contract["version"],
         precision_at_10_required=contract["precision_at_10_required"],
         recall_at_10_preferred=contract["recall_at_10_preferred"],
-        recall_preferred_is_mandatory=False,
+        recall_preferred_is_mandatory=recall_required,
         formal_acceptance=False,
         formal_metrics=None,
         goal_met=False,
@@ -77,6 +78,12 @@ def assess_current_target(
                 or precision < contract["precision_at_10_required"] - 1e-12
             ):
                 failed.append("precision@10_below_required_or_undefined")
+            recall_reached = (
+                recall is not None
+                and recall >= contract["recall_at_10_preferred"] - 1e-12
+            )
+            if recall_required and not recall_reached:
+                failed.append("recall@10_below_required_or_undefined")
             for baseline in contract["nonregression_baselines"]:
                 for metric in contract["nonregression_metrics"]:
                     reference = table[baseline][metric]
@@ -88,10 +95,7 @@ def assess_current_target(
             required_failures[scope] = failed
             preferred[scope] = dict(
                 recall_at_10=recall,
-                reached=(
-                    recall is not None
-                    and recall >= contract["recall_at_10_preferred"] - 1e-12
-                ),
+                reached=recall_reached,
                 shortfall=(
                     None
                     if recall is None

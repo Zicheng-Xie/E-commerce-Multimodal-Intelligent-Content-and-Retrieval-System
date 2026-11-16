@@ -1,0 +1,169 @@
+{
+  "case": {
+    "name": "baseline100",
+    "min_size": 128,
+    "max_size": 192,
+    "total_steps": 100
+  },
+  "metrics": {
+    "mask_map": 0.0,
+    "mask_ap50": 0.0,
+    "per_class": {
+      "1": {
+        "ap": 0.0,
+        "ap50": 0.0,
+        "ground_truth": 2
+      },
+      "6": {
+        "ap": 0.0,
+        "ap50": 0.0,
+        "ground_truth": 1
+      },
+      "7": {
+        "ap": 0.0,
+        "ap50": 0.0,
+        "ground_truth": 1
+      },
+      "8": {
+        "ap": 0.0,
+        "ap50": 0.0,
+        "ground_truth": 2
+      }
+    },
+    "protocol": "greedy_class_aware_101_point_no_crowd_no_area_ranges",
+    "seconds": 0.20351970801129937,
+    "gt_counts": {
+      "6": 1,
+      "8": 2,
+      "7": 1,
+      "1": 2
+    },
+    "prediction_counts": {
+      "1": 2
+    },
+    "diagnoses": [
+      {
+        "image_id": "train/115323",
+        "object_index": 0,
+        "category": 6,
+        "reason": "boundary_shift",
+        "best_iou": 0.14999596057521408
+      },
+      {
+        "image_id": "train/016191",
+        "object_index": 0,
+        "category": 8,
+        "reason": "missed",
+        "best_iou": 0
+      },
+      {
+        "image_id": "train/175084",
+        "object_index": 0,
+        "category": 7,
+        "reason": "missed",
+        "best_iou": 0
+      },
+      {
+        "image_id": "train/175084",
+        "object_index": 1,
+        "category": 1,
+        "reason": "missed",
+        "best_iou": 0
+      },
+      {
+        "image_id": "train/077667",
+        "object_index": 0,
+        "category": 8,
+        "reason": "missed",
+        "best_iou": 0
+      },
+      {
+        "image_id": "train/077667",
+        "object_index": 1,
+        "category": 1,
+        "reason": "missed",
+        "best_iou": 0
+      }
+    ]
+  },
+  "probes": {
+    "objects": [
+      {
+        "image_id": "train/115323",
+        "object_index": 0,
+        "category": 6,
+        "rpn_best_iou": 0.7131058573722839,
+        "rpn_recalled_50": true,
+        "correct_class_score_on_recalled_proposals": 0.013008666224777699,
+        "best_proposal_background_score": 0.9539352655410767,
+        "best_proposal_top_class": 0,
+        "final_any_class_best_box_iou": 0.34749162197113037,
+        "final_correct_class_best_box_iou": 0
+      },
+      {
+        "image_id": "train/016191",
+        "object_index": 0,
+        "category": 8,
+        "rpn_best_iou": 0.4762688875198364,
+        "rpn_recalled_50": false,
+        "correct_class_score_on_recalled_proposals": null,
+        "best_proposal_background_score": 0.9992334842681885,
+        "best_proposal_top_class": 0,
+        "final_any_class_best_box_iou": 0,
+        "final_correct_class_best_box_iou": 0
+      },
+      {
+        "image_id": "train/175084",
+        "object_index": 0,
+        "category": 7,
+        "rpn_best_iou": 0.0717773362994194,
+        "rpn_recalled_50": false,
+        "correct_class_score_on_recalled_proposals": null,
+        "best_proposal_background_score": 0.9961308240890503,
+        "best_proposal_top_class": 0,
+        "final_any_class_best_box_iou": 0,
+        "final_correct_class_best_box_iou": 0
+      },
+      {
+        "image_id": "train/175084",
+        "object_index": 1,
+        "category": 1,
+        "rpn_best_iou": 0.1759648323059082,
+        "rpn_recalled_50": false,
+        "correct_class_score_on_recalled_proposals": null,
+        "best_proposal_background_score": 0.9961308240890503,
+        "best_proposal_top_class": 0,
+        "final_any_class_best_box_iou": 0,
+        "final_correct_class_best_box_iou": 0
+      },
+      {
+        "image_id": "train/077667",
+        "object_index": 0,
+        "category": 8,
+        "rpn_best_iou": 0.7425761222839355,
+        "rpn_recalled_50": true,
+        "correct_class_score_on_recalled_proposals": 0.036406975239515305,
+        "best_proposal_background_score": 0.9387004375457764,
+        "best_proposal_top_class": 0,
+        "final_any_class_best_box_iou": 0,
+        "final_correct_class_best_box_iou": 0
+      },
+      {
+        "image_id": "train/077667",
+        "object_index": 1,
+        "category": 1,
+        "rpn_best_iou": 0.692645251750946,
+        "rpn_recalled_50": true,
+        "correct_class_score_on_recalled_proposals": 0.021585792303085327,
+        "best_proposal_background_score": 0.9931214451789856,
+        "best_proposal_top_class": 0,
+        "final_any_class_best_box_iou": 0,
+        "final_correct_class_best_box_iou": 0
+      }
+    ],
+    "rpn_recall50": 0.5
+  },
+  "training_log": [],
+  "additional_train_seconds": 1.334003172814846e-06,
+  "checkpoint_sha256": "b5582700fb04057239c1d6afe2b0a30a10ca5d35bc7ff5f581303160e50c5aff"
+}

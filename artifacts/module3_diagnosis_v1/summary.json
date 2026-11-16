@@ -1,0 +1,41 @@
+[
+  {
+    "case": {
+      "name": "baseline100",
+      "min_size": 128,
+      "max_size": 192,
+      "total_steps": 100
+    },
+    "ap50": 0.0,
+    "ap": 0.0,
+    "rpn_recall50": 0.5,
+    "additional_train_seconds": 1.334003172814846e-06,
+    "inference_and_evaluation_seconds": 0.20351970801129937
+  },
+  {
+    "case": {
+      "name": "resolution100",
+      "min_size": 256,
+      "max_size": 384,
+      "total_steps": 100
+    },
+    "ap50": 0.6262376237623762,
+    "ap": 0.19022277227722773,
+    "rpn_recall50": 0.6666666666666666,
+    "additional_train_seconds": 21.311514708097093,
+    "inference_and_evaluation_seconds": 0.40150124998763204
+  },
+  {
+    "case": {
+      "name": "long500",
+      "min_size": 128,
+      "max_size": 192,
+      "total_steps": 500
+    },
+    "ap50": 0.0,
+    "ap": 0.0,
+    "rpn_recall50": 0.6666666666666666,
+    "additional_train_seconds": 72.28954908298329,
+    "inference_and_evaluation_seconds": 0.20252554095350206
+  }
+]

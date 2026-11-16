@@ -1,0 +1,54 @@
+{
+  "model": "maskrcnn_resnet50_fpn_13_clothing_classes",
+  "epoch": 2,
+  "split": "validation",
+  "losses": [],
+  "predictions": [
+    {
+      "image_id": "validation/000001",
+      "file": "validation_000001.npz",
+      "sha256": "e25c68e8ae3a54e5ac8a99d4fca0989d565ee7c09a9cc927c76c50d94099a57d",
+      "instances": 12
+    },
+    {
+      "image_id": "validation/000002",
+      "file": "validation_000002.npz",
+      "sha256": "aaf9b07b639925d670b51b74a893d74d81ebc7969d0499c0baee7ed92a930e41",
+      "instances": 7
+    }
+  ],
+  "metrics": {
+    "mask_map": 0.0,
+    "mask_ap50": 0.0,
+    "per_class": {
+      "1": null,
+      "5": {
+        "ap": 0.0,
+        "ap50": 0.0,
+        "ground_truth": 2
+      },
+      "11": null,
+      "12": null,
+      "13": {
+        "ap": 0.0,
+        "ap50": 0.0,
+        "ground_truth": 2
+      }
+    },
+    "protocol": "greedy_class_aware_101_point_no_crowd_no_area_ranges"
+  },
+  "elapsed_seconds": 0.19744275009725243,
+  "manifest_sha256": "ba12f32954b821ab507235877c877388964195897fdbcc98b742c5276c6f5f29",
+  "initial_weights_sha256": null,
+  "resumed_from_sha256": "8900e2a69dc4d5b9b7cd191f7eb42356bf6086eac8d552fed8956d00ed701d72",
+  "device": "cpu",
+  "torch_version": "2.8.0",
+  "configuration": {
+    "min_size": 128,
+    "max_size": 192,
+    "backbone_frozen": true,
+    "seed": 42
+  },
+  "scope": "bounded_development_not_full_validation",
+  "test_used": false
+}

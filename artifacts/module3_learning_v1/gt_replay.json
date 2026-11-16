@@ -1,0 +1,72 @@
+{
+  "mask_map": 1.0,
+  "mask_ap50": 1.0,
+  "per_class": {
+    "1": {
+      "ap": 1.0,
+      "ap50": 1.0,
+      "ground_truth": 21
+    },
+    "2": {
+      "ap": 1.0,
+      "ap50": 1.0,
+      "ground_truth": 15
+    },
+    "3": {
+      "ap": 1.0,
+      "ap50": 1.0,
+      "ground_truth": 10
+    },
+    "4": {
+      "ap": 1.0,
+      "ap50": 1.0,
+      "ground_truth": 10
+    },
+    "5": {
+      "ap": 1.0,
+      "ap50": 1.0,
+      "ground_truth": 10
+    },
+    "6": {
+      "ap": 1.0,
+      "ap50": 1.0,
+      "ground_truth": 10
+    },
+    "7": {
+      "ap": 1.0,
+      "ap50": 1.0,
+      "ground_truth": 13
+    },
+    "8": {
+      "ap": 1.0,
+      "ap50": 1.0,
+      "ground_truth": 27
+    },
+    "9": {
+      "ap": 1.0,
+      "ap50": 1.0,
+      "ground_truth": 17
+    },
+    "10": {
+      "ap": 1.0,
+      "ap50": 1.0,
+      "ground_truth": 10
+    },
+    "11": {
+      "ap": 1.0,
+      "ap50": 1.0,
+      "ground_truth": 10
+    },
+    "12": {
+      "ap": 1.0,
+      "ap50": 1.0,
+      "ground_truth": 10
+    },
+    "13": {
+      "ap": 1.0,
+      "ap50": 1.0,
+      "ground_truth": 10
+    }
+  },
+  "protocol": "greedy_class_aware_101_point_no_crowd_no_area_ranges"
+}

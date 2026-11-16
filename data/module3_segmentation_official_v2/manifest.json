@@ -1,0 +1,16 @@
+{
+  "schema_version": 2,
+  "release_id": "module3_segmentation_official_v2",
+  "split_policy": "official_unchanged",
+  "bbox_format": "xywh",
+  "polygon_policy": "preserve_all_source_coordinates",
+  "training_policy": "eligible_images_only",
+  "files": {
+    "train.jsonl": "55f011c2c1b37f8df0cb2847416e6e99d76aa55483f56db7ad56292af7512991",
+    "validation.jsonl": "553bb50d5e1a86e6df568a4f71f119dcf60bc914cdef06e58d2dc520ad9affc7",
+    "test.jsonl": "c2715f2609f23bb09873ad886084ebd1397e937d7170fccb3fc9618d145b3220",
+    "issues.jsonl": "c20da6006ebd5b7c1aee99ecbbca0ae2e60731c6896656d74f5284ef46b432dc",
+    "scan_report.json": "fc3aa3a03d052fa4dffc5d7460358b8a2e88f00634df31f4ae8264367304f185",
+    "categories.json": "b31f4e191b438d76e8ef40114481c71d10df6eef2265e3173d1e6c093c6f635a"
+  }
+}

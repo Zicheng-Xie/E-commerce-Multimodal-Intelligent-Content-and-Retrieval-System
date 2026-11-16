@@ -1,0 +1,6 @@
+{
+  "epoch": 2,
+  "resumed_equals_continuous_all_parameters": true,
+  "optimizer_momentum_restored": true,
+  "test_used": false
+}

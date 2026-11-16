@@ -1,0 +1,18 @@
+{
+  "cpu_training_seconds": 21.587141834083013,
+  "mps_training_seconds": 150.9449553330196,
+  "mps_to_cpu_time_ratio": 6.992354823680229,
+  "cpu_ap50": 0.6262376237623762,
+  "mps_ap50": 0.37623762376237624,
+  "mps_sampled_current_mib": 350.854736328125,
+  "mps_sampled_driver_mib": 1234.734375,
+  "both_checkpoint_reload_verified": true,
+  "test_used": false,
+  "caveats": [
+    "4 train images only, no validation acceptance",
+    "single run per backend, initial process runs overlapped briefly",
+    "timings include transfers and first-use overhead; not steady-state or large-batch benchmark",
+    "sampled MPS live/driver memory, not process peak",
+    "same seed does not imply cross-device identical random sequences or numerics"
+  ]
+}

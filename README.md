@@ -47,6 +47,22 @@ python -m pytest -q tests/test_segmentation.py
 
 ## 当前边界
 
-当前完成的是数据工程与质量门禁，不把结构有效性直接当成语义准确率。正式的服饰属性准确率、主体分割质量和独立视觉验收，需要在冻结评测集后单独报告。
+已完成v2数据发布、Mask R-CNN实例分割入口、项目内AP评测、训练恢复，以及四图CPU/MPS对照。四图学习门槛仍未通过，尚未开展全量训练或正式test推理。
 
-本开发分支：`module-3-dev`。
+本开发分支：`module3-dev`。
+
+
+## 最新同步：2026-11-16
+
+- [完整阶段记录](docs/module3_segmentation.md)
+- [CPU/MPS实测](artifacts/module3_device_comparison_v1/progress.md)：同四图100步CPU约21.6秒/AP50=62.62%，MPS约150.9秒/AP50=37.62%；不是完整验证集成绩。
+- [上传范围与复现边界](docs/module3_git_handoff.md)、[大文件排除与哈希清单](docs/module3_upload_inventory.json)
+- 新增入口：`module3_instances.py --device cpu/mps`、`module3_learning.py`、`module3_diagnose.py`、`module3_device_check.py`。
+
+在Python 3.12环境安装 `requirements-module3.txt` 后，模块三核心测试命令：
+
+```bash
+python -m pytest -c pytest-module3.ini
+```
+
+数据和模型checkpoint保留本地，manifest/审计和小型实验产物已上传。`module3_segmentation.md`中“尚未同步GitHub”均为当时历史状态，本次同步已纳入所列工程进度。

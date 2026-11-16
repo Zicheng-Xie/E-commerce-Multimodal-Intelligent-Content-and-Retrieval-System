@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "task": "fashion_segmentation",
-  "data_contract": "segmentation_record_v1",
+  "data_contract": "segmentation_record_v2",
   "source_root": "Alibaba阿里算法实习/服饰分割",
   "splits": {
     "train": "train.jsonl",
@@ -10,15 +10,39 @@
   },
   "test_policy": "inference_only_unlabeled",
   "model_baseline": {
-    "supervised": "mask2former_or_equivalent",
+    "supervised": "torchvision_maskrcnn_resnet50_fpn_13_classes",
     "zero_shot": "groundingdino_plus_sam2",
-    "num_classes": "derive_from_train_manifest"
+    "num_classes": 14
   },
-  "metrics": ["mask_iou", "dice", "bbox_iou", "per_category", "by_occlusion", "by_viewpoint", "by_scale", "latency_ms"],
+  "metrics": [
+    "mask_iou",
+    "dice",
+    "bbox_iou",
+    "per_category",
+    "by_occlusion",
+    "by_viewpoint",
+    "by_scale",
+    "latency_ms"
+  ],
   "quality_policy": {
     "reject_out_of_bounds_polygon": true,
     "preserve_source_coordinates": true,
     "require_image_annotation_pair": true,
     "record_sha256": true
+  },
+  "data_release": "data/module3_segmentation_official_v2",
+  "learning_check": {
+    "seed": 42,
+    "max_updates": 100,
+    "save_every": 20,
+    "gate_ap50": 0.8,
+    "train_instances_per_class": 20,
+    "validation_instances_per_class": 10,
+    "development_epochs": 5,
+    "checkpoint_selection": [
+      "mask_map",
+      "mask_ap50",
+      "earliest_epoch"
+    ]
   }
 }

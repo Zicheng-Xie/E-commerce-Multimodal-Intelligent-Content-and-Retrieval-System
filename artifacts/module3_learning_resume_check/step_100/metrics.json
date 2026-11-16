@@ -1,0 +1,81 @@
+{
+  "mask_map": 0.0,
+  "mask_ap50": 0.0,
+  "per_class": {
+    "1": {
+      "ap": 0.0,
+      "ap50": 0.0,
+      "ground_truth": 2
+    },
+    "6": {
+      "ap": 0.0,
+      "ap50": 0.0,
+      "ground_truth": 1
+    },
+    "7": {
+      "ap": 0.0,
+      "ap50": 0.0,
+      "ground_truth": 1
+    },
+    "8": {
+      "ap": 0.0,
+      "ap50": 0.0,
+      "ground_truth": 2
+    }
+  },
+  "protocol": "greedy_class_aware_101_point_no_crowd_no_area_ranges",
+  "seconds": 0.19302249990869313,
+  "gt_counts": {
+    "6": 1,
+    "8": 2,
+    "7": 1,
+    "1": 2
+  },
+  "prediction_counts": {
+    "1": 2
+  },
+  "diagnoses": [
+    {
+      "image_id": "train/115323",
+      "object_index": 0,
+      "category": 6,
+      "reason": "boundary_shift",
+      "best_iou": 0.14999596057521408
+    },
+    {
+      "image_id": "train/016191",
+      "object_index": 0,
+      "category": 8,
+      "reason": "missed",
+      "best_iou": 0
+    },
+    {
+      "image_id": "train/175084",
+      "object_index": 0,
+      "category": 7,
+      "reason": "missed",
+      "best_iou": 0
+    },
+    {
+      "image_id": "train/175084",
+      "object_index": 1,
+      "category": 1,
+      "reason": "missed",
+      "best_iou": 0
+    },
+    {
+      "image_id": "train/077667",
+      "object_index": 0,
+      "category": 8,
+      "reason": "missed",
+      "best_iou": 0
+    },
+    {
+      "image_id": "train/077667",
+      "object_index": 1,
+      "category": 1,
+      "reason": "missed",
+      "best_iou": 0
+    }
+  ]
+}

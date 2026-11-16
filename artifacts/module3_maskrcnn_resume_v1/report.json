@@ -1,0 +1,83 @@
+{
+  "model": "maskrcnn_resnet50_fpn_13_clothing_classes",
+  "epoch": 2,
+  "split": "validation",
+  "losses": [
+    {
+      "loss_classifier": 1.7276782989501953,
+      "loss_box_reg": 0.6620849967002869,
+      "loss_mask": 0.7817507982254028,
+      "loss_objectness": 0.11049358546733856,
+      "loss_rpn_box_reg": 0.010519612580537796
+    },
+    {
+      "loss_classifier": 1.3149306774139404,
+      "loss_box_reg": 0.7235042452812195,
+      "loss_mask": 0.7792978286743164,
+      "loss_objectness": 0.0832933560013771,
+      "loss_rpn_box_reg": 0.01677059568464756
+    },
+    {
+      "loss_classifier": 1.0703489780426025,
+      "loss_box_reg": 0.4868326485157013,
+      "loss_mask": 0.628372311592102,
+      "loss_objectness": 0.07507417351007462,
+      "loss_rpn_box_reg": 0.006698978133499622
+    },
+    {
+      "loss_classifier": 0.9337736964225769,
+      "loss_box_reg": 0.7290276885032654,
+      "loss_mask": 0.6521355509757996,
+      "loss_objectness": 0.08696915954351425,
+      "loss_rpn_box_reg": 0.003618593793362379
+    }
+  ],
+  "predictions": [
+    {
+      "image_id": "validation/000001",
+      "file": "validation_000001.npz",
+      "sha256": "e25c68e8ae3a54e5ac8a99d4fca0989d565ee7c09a9cc927c76c50d94099a57d",
+      "instances": 12
+    },
+    {
+      "image_id": "validation/000002",
+      "file": "validation_000002.npz",
+      "sha256": "aaf9b07b639925d670b51b74a893d74d81ebc7969d0499c0baee7ed92a930e41",
+      "instances": 7
+    }
+  ],
+  "metrics": {
+    "mask_map": 0.0,
+    "mask_ap50": 0.0,
+    "per_class": {
+      "1": null,
+      "5": {
+        "ap": 0.0,
+        "ap50": 0.0,
+        "ground_truth": 2
+      },
+      "11": null,
+      "12": null,
+      "13": {
+        "ap": 0.0,
+        "ap50": 0.0,
+        "ground_truth": 2
+      }
+    },
+    "protocol": "greedy_class_aware_101_point_no_crowd_no_area_ranges"
+  },
+  "elapsed_seconds": 1.1591575409984216,
+  "manifest_sha256": "ba12f32954b821ab507235877c877388964195897fdbcc98b742c5276c6f5f29",
+  "initial_weights_sha256": null,
+  "resumed_from_sha256": "18197181a8fae434d5b7f85e9c40461e1bef2210abc22c02ae64a2290dbe23e3",
+  "device": "cpu",
+  "torch_version": "2.8.0",
+  "configuration": {
+    "min_size": 128,
+    "max_size": 192,
+    "backbone_frozen": true,
+    "seed": 42
+  },
+  "scope": "bounded_development_not_full_validation",
+  "test_used": false
+}

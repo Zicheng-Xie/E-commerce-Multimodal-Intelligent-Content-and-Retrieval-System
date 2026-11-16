@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-16",
+  "os": "macOS 15.6.1 arm64",
+  "torch": "2.8.0",
+  "sandbox_mps_built": true,
+  "sandbox_mps_available": false,
+  "outside_sandbox_mps_built": true,
+  "outside_sandbox_mps_available": true,
+  "outside_sandbox_scalar_tensor_success": true,
+  "outside_sandbox_maskrcnn_random_initialization_inference_success": true,
+  "outside_sandbox_maskrcnn_synthetic_single_image_forward_backward_success": true,
+  "synthetic_training_loss": 18.577369689941406,
+  "limitations": "GPU checks are minimal compatibility checks, not throughput benchmarks, not real fashion training, not proof of full-run memory capacity"
+}

@@ -1,0 +1,32 @@
+{
+  "parent_checkpoint_sha256": "cfabe04c049c5bd78955470623a0c485b2b132b2a72d0e8be3c6d7b6ea886999",
+  "subset_sha256": "1f531ad0b9fe9f221d60ab6b2c4248126e714c9ce8cfe1fb77db2358d8414693",
+  "weights_sha256": "bf2d0c1efbc936eeee2bc95a48e80ebc86b891f61b0106485937fc29f9315fc0",
+  "cases": [
+    {
+      "name": "baseline100",
+      "min_size": 128,
+      "max_size": 192,
+      "total_steps": 100
+    },
+    {
+      "name": "resolution100",
+      "min_size": 256,
+      "max_size": 384,
+      "total_steps": 100
+    },
+    {
+      "name": "long500",
+      "min_size": 128,
+      "max_size": 192,
+      "total_steps": 500
+    }
+  ],
+  "seed": 42,
+  "lr": 0.001,
+  "momentum": 0.9,
+  "backbone_frozen": true,
+  "gate_ap50": 0.8,
+  "test_used": false,
+  "scope": "same_four_train_images_only"
+}

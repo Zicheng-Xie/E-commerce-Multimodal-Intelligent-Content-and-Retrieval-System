@@ -1,0 +1,84 @@
+{
+  "model": "maskrcnn_resnet50_fpn_13_clothing_classes",
+  "epoch": 1,
+  "split": "validation",
+  "losses": [
+    {
+      "loss_classifier": 2.611764669418335,
+      "loss_box_reg": 0.585788905620575,
+      "loss_mask": 0.8903270363807678,
+      "loss_objectness": 0.24379144608974457,
+      "loss_rpn_box_reg": 0.010666610673069954
+    },
+    {
+      "loss_classifier": 2.467008352279663,
+      "loss_box_reg": 0.7304385304450989,
+      "loss_mask": 0.8502819538116455,
+      "loss_objectness": 0.241796612739563,
+      "loss_rpn_box_reg": 0.016885485500097275
+    },
+    {
+      "loss_classifier": 2.305483341217041,
+      "loss_box_reg": 0.4225989282131195,
+      "loss_mask": 1.1055855751037598,
+      "loss_objectness": 0.2525075078010559,
+      "loss_rpn_box_reg": 0.007014686241745949
+    },
+    {
+      "loss_classifier": 2.0673787593841553,
+      "loss_box_reg": 0.5795394778251648,
+      "loss_mask": 0.8640531897544861,
+      "loss_objectness": 0.14999637007713318,
+      "loss_rpn_box_reg": 0.0036744887474924326
+    }
+  ],
+  "predictions": [
+    {
+      "image_id": "validation/000001",
+      "file": "validation_000001.npz",
+      "sha256": "e11e5c20cc66a6b7d32db2ca9d7b66fd47af60d2d82185b49c6d2a33d0b3dbd4",
+      "instances": 20
+    },
+    {
+      "image_id": "validation/000002",
+      "file": "validation_000002.npz",
+      "sha256": "802abd2710edff683805fdbc99ba71761124b282c37a21fd94c917c78f639c47",
+      "instances": 20
+    }
+  ],
+  "metrics": {
+    "mask_map": 0.0,
+    "mask_ap50": 0.0,
+    "per_class": {
+      "1": null,
+      "2": null,
+      "5": {
+        "ap": 0.0,
+        "ap50": 0.0,
+        "ground_truth": 2
+      },
+      "9": null,
+      "11": null,
+      "13": {
+        "ap": 0.0,
+        "ap50": 0.0,
+        "ground_truth": 2
+      }
+    },
+    "protocol": "greedy_class_aware_101_point_no_crowd_no_area_ranges"
+  },
+  "elapsed_seconds": 1.2853042499627918,
+  "manifest_sha256": "ba12f32954b821ab507235877c877388964195897fdbcc98b742c5276c6f5f29",
+  "initial_weights_sha256": "bf2d0c1efbc936eeee2bc95a48e80ebc86b891f61b0106485937fc29f9315fc0",
+  "resumed_from_sha256": null,
+  "device": "cpu",
+  "torch_version": "2.8.0",
+  "configuration": {
+    "min_size": 128,
+    "max_size": 192,
+    "backbone_frozen": true,
+    "seed": 42
+  },
+  "scope": "bounded_development_not_full_validation",
+  "test_used": false
+}

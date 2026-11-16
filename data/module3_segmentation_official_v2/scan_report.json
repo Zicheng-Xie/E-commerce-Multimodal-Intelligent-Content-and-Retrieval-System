@@ -1,0 +1,55 @@
+{
+  "schema_version": 2,
+  "splits": {
+    "train": {
+      "images": 191961,
+      "objects": 312186,
+      "eligible_images": 189381,
+      "invalid_polygon": 2688,
+      "invalid_bbox": 3,
+      "categories": {
+        "trousers": 55387,
+        "short sleeve top": 71645,
+        "long sleeve dress": 7907,
+        "long sleeve top": 36064,
+        "skirt": 30835,
+        "shorts": 36616,
+        "long sleeve outwear": 13457,
+        "vest dress": 17949,
+        "short sleeve dress": 17211,
+        "vest": 16095,
+        "sling dress": 6492,
+        "short sleeve outwear": 543,
+        "sling": 1985
+      },
+      "orphan_annotations": []
+    },
+    "validation": {
+      "images": 32153,
+      "objects": 52490,
+      "eligible_images": 32153,
+      "categories": {
+        "sling dress": 1149,
+        "vest": 2113,
+        "short sleeve dress": 3127,
+        "short sleeve top": 12556,
+        "vest dress": 3352,
+        "trousers": 9586,
+        "long sleeve top": 5966,
+        "shorts": 4167,
+        "skirt": 6522,
+        "long sleeve dress": 1477,
+        "long sleeve outwear": 2011,
+        "short sleeve outwear": 142,
+        "sling": 322
+      },
+      "orphan_annotations": []
+    },
+    "test": {
+      "images": 62629,
+      "eligible_images": 0,
+      "categories": {},
+      "orphan_annotations": []
+    }
+  }
+}

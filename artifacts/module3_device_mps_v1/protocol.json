@@ -1,0 +1,21 @@
+{
+  "config": {
+    "device": "mps",
+    "steps": 100,
+    "min_size": 256,
+    "max_size": 384,
+    "seed": 42,
+    "lr": 0.001,
+    "momentum": 0.9,
+    "backbone_frozen": true
+  },
+  "identity": {
+    "subset_sha256": "1f531ad0b9fe9f221d60ab6b2c4248126e714c9ce8cfe1fb77db2358d8414693",
+    "weights_sha256": "bf2d0c1efbc936eeee2bc95a48e80ebc86b891f61b0106485937fc29f9315fc0"
+  },
+  "torch": "2.8.0",
+  "platform": "macOS-15.6.1-arm64-arm-64bit",
+  "mps_available": true,
+  "fallback_env": null,
+  "test_used": false
+}

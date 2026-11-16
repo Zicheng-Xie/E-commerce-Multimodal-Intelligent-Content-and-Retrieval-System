@@ -1,0 +1,243 @@
+{
+  "baselines": {
+    "empty": {
+      "iou": 0.0,
+      "dice": 0.0
+    },
+    "full": {
+      "iou": 0.2230563693576389,
+      "dice": 0.3169643340946804
+    }
+  },
+  "group_metrics": {
+    "category_name": {
+      "sling dress": {
+        "images": 2,
+        "mean_semantic_union_iou": 0.0
+      },
+      "vest": {
+        "images": 2,
+        "mean_semantic_union_iou": 0.0
+      },
+      "short sleeve dress": {
+        "images": 9,
+        "mean_semantic_union_iou": 0.14589629797122086
+      },
+      "short sleeve top": {
+        "images": 2,
+        "mean_semantic_union_iou": 0.09571100764592888
+      },
+      "vest dress": {
+        "images": 4,
+        "mean_semantic_union_iou": 0.0005006675567423231
+      },
+      "trousers": {
+        "images": 1,
+        "mean_semantic_union_iou": 0.01417004048582996
+      }
+    },
+    "occlusion": {
+      "2": {
+        "images": 10,
+        "mean_semantic_union_iou": 0.04437153428318887
+      },
+      "1": {
+        "images": 7,
+        "mean_semantic_union_iou": 0.15182514634684655
+      }
+    },
+    "viewpoint": {
+      "2": {
+        "images": 14,
+        "mean_semantic_union_iou": 0.08415157463195037
+      },
+      "3": {
+        "images": 1,
+        "mean_semantic_union_iou": 0.0
+      },
+      "1": {
+        "images": 1,
+        "mean_semantic_union_iou": 0.16418466120625466
+      }
+    },
+    "scale": {
+      "1": {
+        "images": 5,
+        "mean_semantic_union_iou": 0.002834008097165992
+      },
+      "2": {
+        "images": 7,
+        "mean_semantic_union_iou": 0.08011986926903315
+      },
+      "3": {
+        "images": 5,
+        "mean_semantic_union_iou": 0.1534595161368996
+      }
+    },
+    "zoom_in": {
+      "1": {
+        "images": 11,
+        "mean_semantic_union_iou": 0.05227355685173292
+      },
+      "2": {
+        "images": 5,
+        "mean_semantic_union_iou": 0.1534595161368996
+      }
+    }
+  },
+  "status": "cpu_smoke_only",
+  "model": "three_layer_binary_cnn_random_initialization",
+  "seed": 20261116,
+  "train_ids": [
+    "train/000001",
+    "train/000002",
+    "train/000003",
+    "train/000004",
+    "train/000005",
+    "train/000007",
+    "train/000008",
+    "train/000009",
+    "train/000010",
+    "train/000011",
+    "train/000012",
+    "train/000013",
+    "train/000014",
+    "train/000015",
+    "train/000016",
+    "train/000017",
+    "train/000018",
+    "train/000019",
+    "train/000020",
+    "train/000021",
+    "train/000022",
+    "train/000023",
+    "train/000024",
+    "train/000025",
+    "train/000026",
+    "train/000027",
+    "train/000028",
+    "train/000029",
+    "train/000030",
+    "train/000031",
+    "train/000032",
+    "train/000033"
+  ],
+  "validation_ids": [
+    "validation/000001",
+    "validation/000002",
+    "validation/000003",
+    "validation/000004",
+    "validation/000005",
+    "validation/000006",
+    "validation/000007",
+    "validation/000008",
+    "validation/000009",
+    "validation/000010",
+    "validation/000011",
+    "validation/000012",
+    "validation/000013",
+    "validation/000014",
+    "validation/000015",
+    "validation/000016"
+  ],
+  "epochs": 5,
+  "losses": [
+    0.6680407747626305,
+    0.6222175732254982,
+    0.5717843882739544,
+    0.5259815119206905,
+    0.5244882516562939
+  ],
+  "metrics": [
+    {
+      "image_id": "validation/000001",
+      "iou": 0.0,
+      "dice": 0.0
+    },
+    {
+      "image_id": "validation/000002",
+      "iou": 0.0,
+      "dice": 0.0
+    },
+    {
+      "image_id": "validation/000003",
+      "iou": 0.0,
+      "dice": 0.0
+    },
+    {
+      "image_id": "validation/000004",
+      "iou": 0.0,
+      "dice": 0.0
+    },
+    {
+      "image_id": "validation/000005",
+      "iou": 0.027237354085603113,
+      "dice": 0.05303030303030303
+    },
+    {
+      "image_id": "validation/000006",
+      "iou": 0.0,
+      "dice": 0.0
+    },
+    {
+      "image_id": "validation/000007",
+      "iou": 0.0,
+      "dice": 0.0
+    },
+    {
+      "image_id": "validation/000008",
+      "iou": 0.0020026702269692926,
+      "dice": 0.003997335109926716
+    },
+    {
+      "image_id": "validation/000009",
+      "iou": 0.0,
+      "dice": 0.0
+    },
+    {
+      "image_id": "validation/000010",
+      "iou": 0.16418466120625466,
+      "dice": 0.2820594819315638
+    },
+    {
+      "image_id": "validation/000011",
+      "iou": 0.5738728951656709,
+      "dice": 0.7292493528904228
+    },
+    {
+      "image_id": "validation/000012",
+      "iou": 0.0,
+      "dice": 0.0
+    },
+    {
+      "image_id": "validation/000013",
+      "iou": 0.0,
+      "dice": 0.0
+    },
+    {
+      "image_id": "validation/000014",
+      "iou": 0.29547844374342797,
+      "dice": 0.45616883116883117
+    },
+    {
+      "image_id": "validation/000015",
+      "iou": 0.01417004048582996,
+      "dice": 0.027944111776447105
+    },
+    {
+      "image_id": "validation/000016",
+      "iou": 0.2653606411398041,
+      "dice": 0.41942294159042925
+    }
+  ],
+  "mean_iou": 0.08389416912834749,
+  "elapsed_seconds": 0.38320395804475993,
+  "checkpoint_sha256": "d463242fca4678a3bf204ffe85c5a8cc8c81e7dfa8bc4e5cce1c4fda7de163c6",
+  "dataset_manifest_sha256": "ba12f32954b821ab507235877c877388964195897fdbcc98b742c5276c6f5f29",
+  "torch_version": "2.8.0",
+  "device": "cpu",
+  "checkpoint_reload": true,
+  "single_batch_consistent": true,
+  "test_used": false,
+  "limitations": "Fixed prefix subset; binary semantic union, no instance detection or class metrics; not official validation acceptance"
+}

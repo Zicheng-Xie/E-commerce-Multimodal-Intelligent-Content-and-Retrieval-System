@@ -6,7 +6,7 @@
 
 模块 1 独有 6 个提交，模块 2 独有 3 个提交。提交数量不等于失败数量。
 
-存在不同内容的共同文件为 .flake8、.gitignore、README.md、pyproject.toml。README 属于双方内容修改；.flake8 和 pyproject.toml 属于双方新增。远端 Git 历史获取超时，本次通过共同祖先及文件树完成集成，未声称执行了完整 git merge 或统计了冲突块数量。
+存在不同内容的共同文件为 .flake8、.gitignore、README.md、pyproject.toml。README 属于双方内容修改；.flake8 和 pyproject.toml 属于双方新增。首次实验未执行真实 merge；2026-11-16 已补齐并验证真实 Git 对象 SHA，执行 git merge --no-commit --no-ff 后确认：4 个冲突文件、5 个冲突块（.flake8 1 块，.gitignore 1 块，README.md 1 块，pyproject.toml 2 块）。前三个配置冲突保留模块 2 版本；README 使用实验说明，模块 1 工具配置独立保存。
 
 ## 解决方案
 
@@ -22,3 +22,7 @@
 ## 下一步：网页入口
 
 模块 2 展示页中增加“商品文案生成”入口，后端通过单独生成环境启动有参数白名单的本地任务；先实现输入校验、任务状态和结果展示，再验证 GPU 资源互斥。当前实验只完成源码共存，不宣称网页功能已打通。
+
+## 2026-11-16 实际合并复核
+
+在隔离目录执行真实合并，冲突已全部标记解决。模块 1 独立测试 183 项通过。全量回归首次发现模块 2 云端缺少 assets/business_query_author.js、business_review_jobs.js、catalog_qa.js，造成 3 项失败；本次从本地已有源码补齐这些文件，未改动其逻辑。补齐后全量 639 项通过，另 54 个 subtests 通过。未执行真实模型生成或网页新增入口验收。

@@ -10,6 +10,7 @@ line_length = 88
 python_version = "3.11"
 files = [
     "scripts/test_copywriting_batch.py",
+    "scripts/evaluate_copywriting.py",
     "tests/unit/test_copywriting_logic.py",
 ]
 follow_imports = "skip"

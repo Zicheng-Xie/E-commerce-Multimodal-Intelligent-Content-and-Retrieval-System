@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - "scripts/test_copywriting_*.py"
+      - "scripts/evaluate_copywriting.py"
+      - "scripts/show_copywriting_results.py"
       - "tests/unit/test_copywriting_logic.py"
       - "configs/copywriting-quality.toml"
       - "configs/copywriting.flake8"
@@ -12,6 +14,8 @@ on:
   pull_request:
     paths:
       - "scripts/test_copywriting_*.py"
+      - "scripts/evaluate_copywriting.py"
+      - "scripts/show_copywriting_results.py"
       - "tests/unit/test_copywriting_logic.py"
       - "configs/copywriting-quality.toml"
       - "configs/copywriting.flake8"
@@ -36,21 +40,25 @@ jobs:
         run: >-
           python -m black --config configs/copywriting-quality.toml --check --workers 1
           scripts/test_copywriting_batch.py scripts/test_copywriting_logic.py
+          scripts/evaluate_copywriting.py scripts/show_copywriting_results.py
           tests/unit/test_copywriting_logic.py
       - name: Import order
         run: >-
           python -m isort --settings-path configs/copywriting-quality.toml --check-only
           scripts/test_copywriting_batch.py scripts/test_copywriting_logic.py
+          scripts/evaluate_copywriting.py scripts/show_copywriting_results.py
           tests/unit/test_copywriting_logic.py
       - name: Style
         run: >-
           python -m flake8 --config configs/copywriting.flake8 scripts/test_copywriting_batch.py
-          scripts/test_copywriting_logic.py tests/unit/test_copywriting_logic.py
+          scripts/test_copywriting_logic.py scripts/evaluate_copywriting.py
+          scripts/show_copywriting_results.py tests/unit/test_copywriting_logic.py
       - name: Types
         run: python -m mypy --config-file configs/copywriting-quality.toml
       - name: Error diagnostics
         run: >-
           python -m pylint --rcfile configs/copywriting-quality.toml scripts/test_copywriting_batch.py
-          scripts/test_copywriting_logic.py tests/unit/test_copywriting_logic.py
+          scripts/test_copywriting_logic.py scripts/evaluate_copywriting.py
+          scripts/show_copywriting_results.py tests/unit/test_copywriting_logic.py
       - name: Unit tests without model weights
         run: python scripts/test_copywriting_logic.py
